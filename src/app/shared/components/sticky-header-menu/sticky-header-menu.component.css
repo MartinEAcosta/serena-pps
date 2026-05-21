@@ -1,0 +1,6 @@
+@import '@variables';
+
+.sticky-menu{
+    display: flex;
+    background-color: var(--secondary-color);
+}
