@@ -1,0 +1,336 @@
+@use '@variables' as v;
+
+
+$white-dim:   rgba(255, 255, 255, 0.68);
+$white-faint: rgba(255, 255, 255, 0.13);
+$speed:       650ms;
+$ease:        cubic-bezier(0.76, 0, 0.24, 1);
+
+
+// ─── Contenedor ───────────────────────────────────────────────────────────────
+.carousel {
+  position: relative;
+  user-select: none;
+  width: 100%;
+  // Altura fija con clamp — nunca se mueve por los hijos
+  height: clamp(320px, 58vw, 580px);
+  overflow: hidden;
+  background: v.$white-custom;
+  font-family: v.$font-family;
+
+  // ─── Track ─────────────────────────────────────────────────────────────────
+  &__track {
+    // Llena el contenedor exactamente, sin afectar el flujo externo
+    position: absolute;
+    inset: 0;
+  }
+
+  // ─── Slide ─────────────────────────────────────────────────────────────────
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    // Solo opacity — sin transform ni scale que alteren el tamaño visual
+    transition: opacity $speed $ease;
+    pointer-events: none;
+    will-change: opacity;
+
+    &--active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+  }
+
+  // ─── Imagen ────────────────────────────────────────────────────────────────
+  &__image {
+    // Ocupa todo el slide, sin transform de ningún tipo
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+    padding: 0 clamp(12px, 3vw, 28px);
+    justify-self: right;
+    align-self: center;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    // Sin scale, sin Ken Burns — es lo que causaba el efecto visual de "achique"
+  }
+
+  // ─── Overlay ───────────────────────────────────────────────────────────────
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top,  rgba(v.$secondary-color, 0.88) 0%, rgba(v.$secondary-color, 0.2) 50%, transparent 100%),
+      linear-gradient(to right, rgba(v.$secondary-color, 0.6) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  // ─── Contenido ─────────────────────────────────────────────────────────────
+  &__content {
+    position: absolute;
+    bottom: clamp(56px, 9vw, 100px);
+    left:   clamp(20px, 6vw, 72px);
+    z-index: 2;
+    max-width: min(560px, 80%);
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity   500ms 80ms $ease,
+      transform 500ms 80ms $ease;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__title {
+    font-family: v.$font-family;
+    font-size: clamp(1.7rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: v.$white-custom-light;
+    margin: 0 0 0.35em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+  }
+
+  &__subtitle {
+    font-size: clamp(1.7rem, 4.5vw, 3.2rem);
+    color: v.$secondary-color-light;
+    margin: 0 0 0.35em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: clamp(0.88rem, 1.7vw, 1.08rem);
+    color: $white-dim;
+    margin: 0 0 1.5em;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 26px;
+    background: v.$primary-color;
+    border: 2px solid v.$primary-color;
+    color: v.$white-custom-light;
+    font-family: v.$font-family;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition:
+      background   240ms ease,
+      border-color 240ms ease,
+      transform    200ms ease;
+
+    svg { transition: transform 240ms ease; }
+
+    &:hover {
+      background: v.$primary-color-light;
+      border-color: v.$primary-color-light;
+      transform: translateY(-2px);
+      svg { transform: translateX(4px); }
+    }
+    &:active { transform: translateY(0); }
+  }
+
+  &__cta2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 26px;
+    background: v.$secondary-color;
+    border: 2px solid v.$secondary-color;
+    color: v.$white-custom-light;
+    font-family: v.$font-family;
+    font-size: 0.82rem;
+    margin-left: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition:
+      background   240ms ease,
+      border-color 240ms ease,
+      transform    200ms ease;
+
+    svg { transition: transform 240ms ease; }
+
+    &:hover {
+      background: v.$secondary-color;
+      border-color: v.$secondary-color;
+      transform: translateY(-2px);
+      svg { transform: translateX(4px); }
+    }
+    &:active { transform: translateY(0); }
+  }
+
+  // ─── Flechas ───────────────────────────────────────────────────────────────
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: clamp(40px, 5vw, 52px);
+    height: clamp(40px, 5vw, 52px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $white-faint;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: v.$white-custom-light;
+    cursor: pointer;
+    border-radius: 50%;
+    transition:
+      background   220ms ease,
+      border-color 220ms ease,
+      transform    220ms ease;
+
+    &--prev { left:  clamp(12px, 3vw, 28px); }
+    &--next { right: clamp(12px, 3vw, 28px); }
+
+    &:hover {
+      background: rgba(v.$primary-color, 0.6);
+      border-color: v.$primary-color-light;
+      transform: translateY(-50%) scale(1.1);
+    }
+    &:active { transform: translateY(-50%) scale(0.95); }
+  }
+
+  // ─── Indicadores ───────────────────────────────────────────────────────────
+  &__indicators {
+    position: absolute;
+    bottom: clamp(16px, 2.8vw, 26px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    transition:
+      background    280ms ease,
+      border-color  280ms ease,
+      width         300ms $ease,
+      border-radius 300ms $ease,
+      transform     280ms ease;
+
+    &--active {
+      width: 28px;
+      border-radius: 4px;
+      background: v.$secondary-color-light;
+      border-color: v.$secondary-color-light;
+    }
+
+    &:hover:not(&--active) {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: v.$white-custom-light;
+      transform: scale(1.2);
+    }
+  }
+
+  // ─── Barra de progreso ─────────────────────────────────────────────────────
+  &__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 20;
+    overflow: hidden;
+  }
+
+  &__progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, v.$primary-color, v.$secondary-color-light);
+    animation: progressFill linear forwards;
+  }
+
+  // ─── Contador ──────────────────────────────────────────────────────────────
+  &__counter {
+    position: absolute;
+    top: clamp(14px, 2.5vw, 24px);
+    right: clamp(14px, 3vw, 32px);
+    z-index: 10;
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+    font-family: v.$font-family;
+    color: $white-dim;
+    font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+    letter-spacing: 0.04em;
+  }
+
+  &__counter-current {
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 700;
+    color: v.$white-custom-light;
+    line-height: 1;
+  }
+
+  &__counter-sep {
+    margin: 0 3px;
+    opacity: 0.35;
+  }
+
+  &__counter-total { opacity: 0.5; }
+}
+
+// ─── Keyframes ────────────────────────────────────────────────────────────────
+@keyframes progressFill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media (max-width: 520px) {
+  .carousel {
+    &__arrow { display: none; }
+    &__content {
+      left: 16px;
+      max-width: 90%;
+    }
+  }
+}
+
+// ─── Reduced motion ───────────────────────────────────────────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .carousel {
+    &__slide,
+    &__content,
+    &__cta,
+    &__arrow,
+    &__dot     { transition: none !important; }
+    &__progress-bar { animation: none !important; width: 100% !important; }
+  }
+}

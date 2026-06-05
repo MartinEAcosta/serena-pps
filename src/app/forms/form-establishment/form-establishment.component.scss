@@ -1,0 +1,203 @@
+@use '@variables' as v;
+
+.bg-form-establishment{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2rem 0;
+    font-family: v.$font-family;
+    width: 80%;
+}
+
+.container-title , .container-subtitle{
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    color: v.$white-custom;
+}
+
+.title-section{
+    width: 100%;
+    font-size: 1.35rem;
+    color: v.$black-custom;
+    filter: drop-shadow(0px 3px 8px rgba(0,0,0,0.25));
+}
+
+.subtitle-section{
+    width: 100%;
+    font-size: 1rem;
+    color: v.$black-custom;
+    filter: drop-shadow(0px 3px 8px rgba(0,0,0,0.25));
+}
+
+.form-establishment{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.checkbox-label-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.checkbox-label-container label{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: rgb(57, 57, 57);
+    transition: all 0.3s ease;
+}
+
+.checkbox-label-container input[type="checkbox"]{
+    accent-color: v.$accent-color;
+    border: 2px solid v.$black-custom-light;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.checkbox-pulsed { 
+    color: v.$black-custom;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.top-form , .middle-form, .bottom-form{
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    justify-content: start;
+}
+
+
+.contact-section{
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.contact-section.open{
+    overflow: visible;
+    max-height: 500px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    transform: translateY(0);
+}
+
+.form-field{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.input{
+    display: flex;
+    height: 2rem;
+    border: 2px solid v.$black-custom-light;
+    padding-inline: 0.75rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    outline: none;
+    font-family: v.$font-family;
+    letter-spacing: 1px;
+    color: v.$black-custom;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    background-color: v.$white-custom;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+    border: 2px solid v.$accent-color;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+    appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.input-name-employer, .input-lastname-employer, .input-mail 
+,.input-professional-license, .input-employment-type , .input-presentation {
+    display: flex;
+    width: 70%;
+}
+
+.input-presentation{
+    text-align: center;
+}
+
+.input-cuit, .input-id-establishment, .input-declaration-year, .input-phone{
+    display: flex;
+    width: 30%;
+}
+
+.input-hours{
+    justify-content: center;
+    display:flex;
+    text-align: center;
+    width: 15%;
+}
+
+.select{
+    display: flex;
+    height: 2rem;
+    border: 2px solid v.$black-custom-light;
+    padding-inline: 0.75rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    outline: none;
+    appearance: none;
+    font-family: v.$font-family;
+    letter-spacing: 1px;
+    color: v.$black-custom;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.select-70{
+    display: flex;
+    width: 70%;
+}
+
+.select:focus {
+    background-color: v.$white-custom;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+    border: 2px solid v.$accent-color;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+    transform: translateY(0);
+    border: 2px solid v.$black-custom-light;
+    background-color: v.$white-custom;
+    color: v.$black-custom;
+    padding: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+
+.container-btn-action{
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: flex-end;
+}

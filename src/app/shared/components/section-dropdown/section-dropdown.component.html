@@ -1,0 +1,41 @@
+<section class="dropdown-container">
+    <div class="dropdown-header">
+        <h1>{{ titleHeader }}</h1>
+    </div>
+    @for( dropdownItem of dropdownItems ; track dropdownItem ) {
+        <div class="dropdown-content" [ngClass]="{'open' : isOpenMap().get(dropdownItem.title) }" (click)="toggleDropdown( dropdownItem.title )">
+            <div class="dropdown-extend" [ngClass]="{'open' : isOpenMap().get(dropdownItem.title) }">
+                <div class="dropdown-item-header">
+                    <h2>{{ dropdownItem.title }}</h2>
+                    <div class="svg-container" [ngClass]="{'open' : isOpenMap().get(dropdownItem.title) }">
+                        <svg width="24px" height="24px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                    sketch:type="MSPage">
+                                    <g id="Icon-Set" sketch:type="MSLayerGroup"
+                                        transform="translate(-464.000000, -1087.000000)" fill="#00493B">
+                                        <path
+                                            d="M480,1117 C472.268,1117 466,1110.73 466,1103 C466,1095.27 472.268,1089 480,1089 C487.732,1089 494,1095.27 494,1103 C494,1110.73 487.732,1117 480,1117 L480,1117 Z M480,1087 C471.163,1087 464,1094.16 464,1103 C464,1111.84 471.163,1119 480,1119 C488.837,1119 496,1111.84 496,1103 C496,1094.16 488.837,1087 480,1087 L480,1087 Z M486,1102 L481,1102 L481,1097 C481,1096.45 480.553,1096 480,1096 C479.447,1096 479,1096.45 479,1097 L479,1102 L474,1102 C473.447,1102 473,1102.45 473,1103 C473,1103.55 473.447,1104 474,1104 L479,1104 L479,1109 C479,1109.55 479.447,1110 480,1110 C480.553,1110 481,1109.55 481,1109 L481,1104 L486,1104 C486.553,1104 487,1103.55 487,1103 C487,1102.45 486.553,1102 486,1102 L486,1102 Z"
+                                            id="plus-circle" sketch:type="MSShapeGroup"> </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-item" [ngClass]="isOpenMap().get(dropdownItem.title) ? 'open' : 'closed' ">
+                    @for (item of dropdownItem.items; track item) {
+                        <div class="container-text">
+                            <svg width="24px" height="24px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-right-square</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -985.000000)" fill="#6C02c9"> <path d="M489.535,1001.879 L483.879,1007.54 C483.488,1007.93 482.855,1007.93 482.465,1007.54 C482.074,1007.14 482.074,1006.51 482.465,1006.12 L486.586,1002 L476,1002 C475.447,1002 475,1001.552 475,1001 C475,1000.447 475.447,1000 476,1000 L486.586,1000 L482.465,995.879 C482.074,995.488 482.074,994.854 482.465,994.465 C482.855,994.074 483.488,994.074 483.879,994.465 L489.535,1000.121 C489.775,1000.361 489.85,1000.689 489.795,1001 C489.85,1001.311 489.775,1001.639 489.535,1001.879 L489.535,1001.879 Z M494,985 L470,985 C467.791,985 466,986.791 466,989 L466,1013 C466,1015.21 467.791,1017 470,1017 L494,1017 C496.209,1017 498,1015.21 498,1013 L498,989 C498,986.791 496.209,985 494,985 L494,985 Z" id="arrow-right-square" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                            <p class="text-resouce">{{item.text}}</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</section>

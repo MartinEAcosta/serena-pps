@@ -1,0 +1,173 @@
+<main class="bg-form-establishment">
+    <form class="form-establishment" [formGroup]="establishmentForm" (ngSubmit)="onSubmit()">
+        <div class="form-section">
+            <div class="container-title">
+                <h3 class="title-section">Información del responsable de la declaración jurada</h3>
+            </div>
+            <div class="top-form">
+                <div class="form-field">
+                    <app-label-info [labelText]="'Nombre del Empleador'"
+                        [info]="'Nombre del empleador encargado de la declaración jurada.'" />
+                    <input class="input input-name-employer" type="text" placeholder="Jane"
+                        [formControlName]="'name_employer'">
+                    <app-label-error [control]="establishmentForm.get('name_employer')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Apellido del Empleador'"
+                        [info]="'Nombre del empleador encargado de la declaración jurada.'" />
+                    <input class="input input-lastname-employer" type="text" placeholder="Doe"
+                        [formControlName]="'last_name_employer'">
+                    <app-label-error [control]="establishmentForm.get('last_name_employer')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'CUIT/CUIL del Empleador'"
+                        [info]="'Número de CUIL/CUIT del empleador encargado de la declaración jurada.'" />
+                    <input class="input input-cuit" type="text" inputmode="numeric" placeholder="20455299327"
+                        [formControlName]="'cuit_employer'">
+                    <app-label-error [control]="establishmentForm.get('cuit_employer')!" />
+                </div>
+            </div>
+        </div>
+        <div class="checkbox-label-container">
+            <label for="" [ngClass]="{ 'checkbox-pulsed' : (establishmentForm.get('same_as_contact_person')!.value) }">
+                <input [formControlName]="'same_as_contact_person'" type="checkbox"> Es la persona a contactar del establecimiento.
+            </label>
+        </div>
+        <div class="form-section">
+            <div class="container-title">
+                <h3 class="title-section">Información del Establecimiento</h3>
+            </div>
+            <div class="middle-form">
+                <div class="form-field">
+                    <app-label-info [labelText]="'N° Establecimiento Único'"
+                        [info]="'Código del establecimiento único establecido por la SRT.'"
+                    />
+                    <input class="input input-id-establishment" type="number" placeholder="0103">
+                    <app-label-error [control]="establishmentForm.get('id_establishment')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Periodo de la presentación'" 
+                        [info]="'Año al cual pertenece la declaración jurada o renovación del periodo vencido.'"/>
+                    <input class="input input-declaration-year" type="number" placeholder="2025">
+                    <app-label-error [control]="establishmentForm.get('declaration_year')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Motivo de Presentación'" 
+                        [info]="'Estado de la presentación de la declaración jurada.'" />
+                    <!-- SELECT FIJO O LO ELIMINO -->
+                    <input class="input input-presentation" type="text" placeholder="Presentación Anual" disabled >
+                    <app-label-error [control]="establishmentForm.get('presentation_type')!" />
+                </div>
+            </div>
+            <div class="container-title">
+                <h3 class="title-section">Información de la persona a contactar</h3>
+            </div>
+            <div class="contact-section" [ngClass]="{ 'open' : !establishmentForm.get('same_as_contact_person')!.value}">
+                <div class="middle-form">
+                        <div class="form-field">
+                        <app-label-info [labelText]="'Nombre del Empleador'"
+                            [info]="'Nombre del empleador encargado de la declaración jurada.'" />
+                        <input class="input input-name-employer" type="text" placeholder="Jane"
+                            [formControlName]="'name_employer'">
+                        <app-label-error [control]="establishmentForm.get('name_employer')!" />
+                    </div>
+                    <div class="form-field">
+                        <app-label-info [labelText]="'Apellido del Empleador'"
+                            [info]="'Apellido del empleador encargado de la declaración jurada.'" />
+                        <input class="input input-lastname-employer" type="text" placeholder="Doe"
+                            [formControlName]="'last_name_employer'">
+                        <app-label-error [control]="establishmentForm.get('last_name_employer')!" />
+                    </div>
+                    <div class="form-field">
+                        <app-label-info [labelText]="'CUIT/CUIL del Empleador'"
+                            [info]="'Número de CUIL/CUIT del empleador encargado de la declaración jurada.'" />
+                        <input class="input input-cuit" type="number" placeholder="20455299327"
+                            [formControlName]="'cuit_employer'">
+                        <app-label-error [control]="establishmentForm.get('cuit_employer')!" />
+                    </div>
+                </div>
+            </div>
+            <div class="middle-form">
+                <div class="form-field">
+                    <app-label-info [labelText]="'Teléfono de contacto'"
+                        [info]="'Número telefonico de la persona a contactar en el establecimiento.'" />
+                    <input class="input input-phone" type="text" inputmode="numeric" placeholder="2494352940"
+                        [formControlName]="'contact_phone_establishment'">
+                    <app-label-error [control]="establishmentForm.get('contact_phone_establishment')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Correo electronico del contacto'"
+                        [info]="'Correo electronico de la persona a contactar en el establecimiento.'" />
+                    <input class="input input-mail" type="text" placeholder="example@google.com"
+                        [formControlName]="'contact_email_establishment'">
+                    <app-label-error [control]="establishmentForm.get('contact_email_establishment')!" />
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            <div class="container-title">
+                <h3 class="title-section">Información de Responsables</h3>
+            </div>
+            <div class="container-subtitle">
+                <h4 class="subtitle-section"> Responsable Servicio de Higiene y Seguridad Laboral</h4>
+            </div>
+            <div class="bottom-form">
+                <div class="form-field">
+                    <app-label-info [labelText]="'CUIL/CUIT del Responsable '" 
+                        [info]="'Número de CUIL/CUIT del responsable establecido.'" />
+                    <input class="input input-cuit" type="text" [formControlName]="'cuit_security_responsible'" placeholder="20455299327">
+                    <app-label-error [control]="establishmentForm.get('cuit_security_responsible')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Nombre del Responsable'"
+                        [info]="'Nombre completo del responsable establecido.'" />
+                    <input class="input input-name-employer" type="text" [formControlName]="'name_security_responsible'" placeholder="Charles">
+                    <app-label-error [control]="establishmentForm.get('name_security_responsible')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Apellido del Responsable'" 
+                        [info]="'Apellido completo del responsable establecido.'" />
+                    <input class="input input-lastname-employer" type="text" [formControlName]="'last_name_security_responsible'" placeholder="Darwin">
+                    <app-label-error [control]="establishmentForm.get('last_name_security_responsible')!" />
+                </div>
+            </div>
+            <div class="bottom-form">                
+                <div class="form-field">
+                    <app-label-info [labelText]="'Representación del Responsable'" 
+                        [info]="'Cargo que ocupa en la empresa el responsable establecido.'" />
+                    <app-select [options]="getJobTitleOptions()" [placeholder]="'Seleccionar cargo'" />
+                    <app-label-error [control]="establishmentForm.get('representation_type_security_responsible')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Tipo de contratación del Responsable'" 
+                        [info]="'Tipo de contratación asignada del responsable establecido.'" />
+                    <app-select [options]="getEmploymentTypeOptions()" [placeholder]="'Seleccionar contratación'" />
+                    <app-label-error [control]="establishmentForm.get('employment_type_security_responsible')!" />
+                </div>
+            </div>
+            <div class="bottom-form">
+                <div class="form-field">
+                    <app-label-info [labelText]="'Matricula del Responsable'" 
+                        [info]="'Matricula y Colegio profesional del responsable establecido.'" />
+                    <input class="input input-professional-license" type="text" [formControlName]="'professional_license_security_responsible'" placeholder="Colegio de Profesionales de la Higiene y Seguridad en el Trabajo de la Provincia de Buenos Aires">
+                    <app-label-error [control]="establishmentForm.get('professional_license_security_responsible')!" />
+                </div>
+                <div class="form-field">
+                    <app-label-info [labelText]="'Cantidad de horas trabajadas'" 
+                        [info]="'Numero asignado de horas realizadas mensualmente.'" />
+                    <input class="input input-hours" type="number" [formControlName]="'hourse_worked_security_responsible'" placeholder="32">
+                    <app-label-error [control]="establishmentForm.get('hourse_worked_security_responsible')!" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-btn-action">
+            <button>
+                Guardar
+            </button>
+            <button type="submit">
+                Siguiente
+            </button>
+        </div>
+    </form>
+</main>

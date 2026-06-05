@@ -4,10 +4,13 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@variables": ["./src/variables.scss"],
+      "@assets/*": ["./src/assets/*"],
       "@shared/*": ["./src/app/shared/*"],
+      "@models/*": ["./src/app/models/*"],
     },
     "outDir": "./dist/out-tsc",
-    "rootDir": "./src",
+    "rootDir": "./",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

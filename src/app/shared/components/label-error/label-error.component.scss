@@ -1,0 +1,13 @@
+@use '@variables' as v;
+
+
+.error-label{
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+}
+
+small{
+    font-size: 0.875rem;
+    color: v.$red-custom;
+}

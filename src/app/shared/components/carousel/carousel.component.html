@@ -1,0 +1,97 @@
+<section class="carousel" aria-label="Carrusel de imágenes">
+
+  <!-- Todos los slides apilados con position:absolute — el contenedor NUNCA colapsa -->
+  <div class="carousel__track">
+    @for (slide of slides; track slide.imageUrl; let i = $index) {
+      <div
+        class="carousel__slide"
+        [class.carousel__slide--active]="i === currentIndex()"
+        [attr.aria-hidden]="i !== currentIndex()"
+      >
+        <img
+          class="carousel__image"
+          [src]="slide.imageUrl"
+          [alt]="slide.title || 'Slide ' + (i + 1)"
+          loading="lazy"
+        />
+        <div class="carousel__overlay"></div>
+
+        <div class="carousel__content" [class.carousel__content--visible]="i === currentIndex()">
+          @if (slide.title) {
+            <h2 class="carousel__title">{{ slide.title }}</h2>
+          }
+          @if (slide.subtitle){
+            <p class="carousel__subtitle">{{ slide.subtitle }}</p>
+          }
+          @if (slide.text) {
+            <p class="carousel__text">{{ slide.text }}</p>
+          }
+          @if (slide.ctaLabel) {
+            <button class="carousel__cta" type="button">
+              <span>{{ slide.ctaLabel }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          }
+          @if (slide.ctaLabel2) {
+            <button class="carousel__cta2" type="button">
+              <span>{{ slide.ctaLabel2 }}</span>
+            </button>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Flechas -->
+  @if (showArrows && slides.length > 1) {
+    <button class="carousel__arrow carousel__arrow--prev" (click)="prev()" aria-label="Anterior" type="button">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <button class="carousel__arrow carousel__arrow--next" (click)="next()" aria-label="Siguiente" type="button">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  }
+
+  <!-- Indicadores -->
+  @if (slides.length > 1) {
+    <div class="carousel__indicators" role="tablist" aria-label="Navegación de diapositivas">
+      @for (slide of slides; track slide.imageUrl; let i = $index) {
+        <button
+          class="carousel__dot"
+          [class.carousel__dot--active]="i === currentIndex()"
+          (click)="selectSlide(i)"
+          [attr.aria-label]="'Ir a diapositiva ' + (i + 1)"
+          [attr.aria-selected]="i === currentIndex()"
+          role="tab"
+          type="button"
+        ></button>
+      }
+    </div>
+  }
+
+  <!-- Barra de progreso — se recrea con ngIf trick via currentIndex para reiniciar la animación -->
+  <div class="carousel__progress" aria-hidden="true">
+    <div
+      class="carousel__progress-bar"
+      [style.animation-duration.ms]="autoplayInterval"
+      [attr.data-index]="currentIndex()"
+    ></div>
+  </div>
+
+  <!-- Contador -->
+  <div class="carousel__counter" aria-live="polite" aria-atomic="true">
+    <span class="carousel__counter-current">{{ (currentIndex() + 1).toString().padStart(2, '0') }}</span>
+    <span class="carousel__counter-sep">/</span>
+    <span class="carousel__counter-total">{{ slides.length.toString().padStart(2, '0') }}</span>
+  </div>
+
+</section>

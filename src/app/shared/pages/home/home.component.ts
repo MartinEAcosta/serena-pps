@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "@shared/components/header/header.component";
+import { CarouselComponent } from "@shared/components/carousel/carousel.component";
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent],
+  imports: [CarouselComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
+  
 }

@@ -1,0 +1,40 @@
+@use '@variables' as v;
+
+.bg-sticky-menu{
+    display: flex;
+    width: auto;
+    align-items: center;
+    height: 0.5rem;
+    padding: 20px;
+    background-color: v.$primary-color;
+}
+
+.container-nav{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Finlandica, Arial, sans-serif;
+}
+
+.container-nav svg{
+    padding: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.container-nav svg:hover{
+    stroke: v.$secondary-color-light;
+    fill: v.$secondary-color-light;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.container-nav .btn-rounded {
+    background-color: v.$accent-color;
+    color: v.$white-custom;
+    font-size: 1rem;
+    padding: 0 0.3rem;
+    border-radius: 20px;
+}

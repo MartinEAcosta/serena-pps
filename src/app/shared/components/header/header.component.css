@@ -1,6 +1,0 @@
-@import '@variables';
-
-header{
-    display: flex;
-    background-color: var(--white-light);
-}
