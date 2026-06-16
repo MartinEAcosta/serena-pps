@@ -1,0 +1,53 @@
+@use '@variables' as v;
+
+.form-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 4.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 0;
+    background-color: rgb(224, 224, 224, 0.55);
+    border-radius: 0.8rem;
+    box-shadow: 0 6px 14px rgba( 0 ,0 ,0, 0.2);
+    transition: all 0.3s ease;
+    padding-bottom: 1rem;
+
+}
+
+.open{
+    overflow: visible;
+    max-height: 1900px;
+    height: auto;
+    transition: all 0.3s ease;
+
+    .svg-container svg {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
+}
+
+.svg-container svg{
+    transition: transform 0.3s ease;
+}
+
+.container-title{
+    display: flex;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    color: v.$white-custom;
+
+}
+
+.container-title:hover{
+    background-color: rgb(224, 224, 224, 0.65);
+}
+
+.title-section{
+    font-size: 1.35rem;
+    color: v.$black-custom;
+    filter: drop-shadow(0px 3px 8px rgba(0,0,0,0.25));
+}

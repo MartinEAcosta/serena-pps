@@ -1,0 +1,12 @@
+<div class="form-field" 
+    [formGroup]="form">
+    <app-label-info [labelText]="labelText"
+        [info]="info" />
+    <input class="input" [ngClass]="'input-'+prefix" type="{{type}}"
+        [formControlName]="prefix" 
+        [placeholder]="placeholder"
+    >
+    <div class="reserved-space">
+        <app-label-error [control]="control!" />
+    </div>
+</div>

@@ -8,27 +8,82 @@
 }
 
 .info-container{
-    margin: auto;
+    margin: 1.5rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     width: 80%;
-    height: 10rem;
-    padding: 3rem 0;
+    justify-items: center;
+    align-items: center;
     font-family: v.$font-family;
 }
 
 .card-info{
     display: flex;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     border: none;
     box-shadow: 0px 5px 8px rgba( 0, 0, 0, 0.2);
     width: 80%;
-    height: 100%;
+    height: 80%;
     flex-direction: column;
     font-size: 1.5rem;
     background-color: v.$secondary-color;
     color: v.$white-custom;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
+.card-green-dark{
+    font-size: 2rem;
+}
+
+.card-green-light{
+    background-color: v.$primary-color;
+}
+
+.card-accent{
+    background-color: v.$accent-color;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.btn-action {
+    border-radius: 10px;
+    background-color: inherit;
+    margin: 0.5rem 0;
+    border: 2px solid;
+    font-size: 1.3rem;
+    font-family: v.$font-family;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.green-light{
+    max-width: 7rem;
+    padding: 0.5rem 1rem;    
+    border-color: v.$primary-color-light;
+    color: v.$primary-color-light;
+}
+
+.green-dark{
+    max-width: 10rem;
+    padding: 0.5rem;    
+    border-color: v.$secondary-color;
+    color: v.$secondary-color;
+}
+
+.small-text-info {
+    font-size: 1.2rem;
+    color: v.$secondary-color-light;
+}
+
+.text-info-border{
+    margin: 0.2rem 0;
+    padding: 1rem;
+    border: 2px solid;
+    border-radius: 10px;
+}

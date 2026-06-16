@@ -1,0 +1,28 @@
+@use '@variables' as v;
+
+.container-subtitle{
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    color: v.$white-custom;
+}
+
+.subtitle-section{
+  width: 100%;
+  font-size: 1rem;
+  color: v.$black-custom;
+  filter: drop-shadow(0px 3px 8px rgba(0,0,0,0.25));
+}
+
+.form-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columnas fijas siempre
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  align-items: start;
+}
+
+.col-1 { grid-column: 1; }
+.col-2 { grid-column: 2; }
+.col-3 { grid-column: 3; }
+.col-span-2 { grid-column: span 2; }

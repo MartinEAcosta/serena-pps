@@ -1,0 +1,49 @@
+@use '@variables' as v;
+
+.btn-basic{
+    display: flex;
+    font-family: v.$font-family;
+    color: v.$white-custom;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0,0,0 , 0.2);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0px 5px 10px rgba(0,0,0 , 0.15);
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.btn-secondary {
+    background-color: #2563eb;
+
+    &:hover {
+        background-color: #1d4ed8;
+
+    }
+}
+
+.btn-success{
+    background-color: #16a34a;
+
+    &:hover {
+        background-color: #15803d;
+    }
+}

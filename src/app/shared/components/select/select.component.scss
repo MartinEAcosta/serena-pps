@@ -3,7 +3,7 @@
 
 .container-filter-select{
     display: flex;
-    width: 50%;
+    width: 65%;
     height: 2rem;
     z-index: 1;
     padding-inline: 0.75rem;    
@@ -39,7 +39,6 @@
         transform: rotate(90deg);
         transition: all 0.3s ease;    
     }
-
 }
 
 .option-default {

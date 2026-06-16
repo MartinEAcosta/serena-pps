@@ -1,0 +1,106 @@
+<main class="bg-form-establishment">
+    <form class="form-establishment" [formGroup]="establishmentForm" (ngSubmit)="onSubmit()">
+        <app-form-section [title]="'Información del responsable'"> 
+            <div class="form-section-content" container-inputs >
+                <app-employer-fields 
+                    [form]="establishmentForm"
+                    [prefix_fields]="'employer'"
+                />
+                <div class="checkbox-label-container">
+                    <label for="" [ngClass]="{ 'checkbox-pulsed' : (establishmentForm.get('same_as_contact_person')!.value) }">
+                        <input [formControlName]="'same_as_contact_person'" type="checkbox"> Es la persona a contactar del establecimiento.
+                    </label>
+                </div>
+            </div>
+        </app-form-section>
+        <app-form-section [title]="'Información del Establecimiento'" >
+            <div class="form-section-content middle-form" container-inputs>
+                    
+                <app-form-field 
+                    [labelText]="'N° Establecimiento Único'"
+                    [info]="'Código del establecimiento único establecido por la SRT.'"
+                    [type]="'number'"
+                    [placeholder]="'032'"
+                    [prefix]="'id_establishment'"
+                    [form]="establishmentForm"
+                />
+
+                <app-form-field 
+                    [labelText]="'Periodo de la presentación'"
+                    [info]="'Año al cual pertenece la declaración jurado o renovación'"
+                    [type]="'number'"
+                    [placeholder]="'2025'"
+                    [prefix]="'declaration_year'"
+                    [form]="establishmentForm"
+                />
+
+                <div class="form-field">
+                    <app-label-info                     
+                        [labelText]="'Motivo de presentación'"
+                        [info]="'Estado de la presentación de la declaración jurada.'"
+                    />
+                    <span class="input input-disabled input-presentation_type"> {{ presentation_type }} </span>
+                </div>
+
+            </div>
+        </app-form-section>
+        <app-form-section [title]="'Información de la persona a contactar'">
+            <div class="form-section-content" container-inputs>
+                <div class="contact-section" [ngClass]="{ 'open' : !establishmentForm.get('same_as_contact_person')!.value}">
+                    <div class="form-employer-fields">
+                        <app-employer-fields [form]="establishmentForm" [prefix_fields]="'employer_responsible'" />
+                    </div>
+                </div>
+                <div class="middle-form">
+                    <div class="form-field">
+                        <app-label-info [labelText]="'Teléfono de contacto'"
+                            [info]="'Número telefonico de la persona a contactar en el establecimiento.'" />
+                        <input class="input input-phone" type="text" inputmode="numeric" placeholder="2494352940"
+                            [formControlName]="'contact_phone_establishment'">
+                        <app-label-error [control]="establishmentForm.get('contact_phone_establishment')!" />
+                    </div>
+                    <div class="form-field col-3">
+                        <app-label-info [labelText]="'Correo electronico'"
+                            [info]="'Correo electronico de la persona a contactar en el establecimiento.'" />
+                        <input class="input input-mail" type="text" placeholder="example@google.com"
+                            [formControlName]="'contact_email_establishment'">
+                        <app-label-error [control]="establishmentForm.get('contact_email_establishment')!" />
+                    </div>
+                </div>
+            </div>
+        </app-form-section>
+        <app-form-section [title]="'Información de Responsables'">
+            <div class="form-section-content" container-inputs>
+    
+                <app-responsible-fields
+                    [subtitle]="'Responsable del Servicio de Higiene y Seguridad Laboral'"
+                    [form]="establishmentForm"
+                    [jobTitleOptions]="getEmploymentTypeOptions()"
+                    [employmentTypeOptions]="getJobTitleOptions()"
+                    [prefix_fields]="'security_responsible'"
+                />
+    
+                <app-responsible-fields
+                    [subtitle]="'Responsable del Servicio de Medicina del Trabajo  '"
+                    [form]="establishmentForm"
+                    [jobTitleOptions]="getEmploymentTypeOptions()"
+                    [employmentTypeOptions]="getJobTitleOptions()"
+                    [prefix_fields]="'occupational_medicine_responsible'"
+                />
+    
+                <app-responsible-fields
+                    [subtitle]="'Responsable de Datos  '"
+                    [form]="establishmentForm"
+                    [jobTitleOptions]="getEmploymentTypeOptions()"
+                    [employmentTypeOptions]="getJobTitleOptions()"
+                    [prefix_fields]="'data_responsible'"
+                />
+            </div>
+        </app-form-section>
+
+        <div class="container-actions">
+           <app-btn-basic [label]="'Guardar'" [variant]="'secondary'" />
+           <app-btn-basic [label]="'Siguiente'" [variant]="'success'" />
+        </div>
+    </form>
+</main>

@@ -1,21 +1,45 @@
 import { Routes } from '@angular/router';
-import { CarcinogenicAgentsComponent } from '@shared/pages/carcinogenic-agents/carcinogenic-agents.component';
 
 import { HomeComponent, ResourcesComponent } from '@shared/pages';
+import { CarcinogenicAgentsLayoutComponent } from './carcinogenic-agents/layout/carcinogenic-agents-layout/carcinogenic-agents-layout.component';
+import { FormEstablishmentComponent } from './carcinogenic-agents/components/form-establishment/form-establishment.component';
+import { FormWorkStructureComponent } from './carcinogenic-agents/components/form-work-structure/form-work-structure.component';
 
 export const routes: Routes = [
 
   { 
-    path : '' , 
+    path: '' , 
     component: HomeComponent,
   },
   {
-    path : 'recursos',
+    path: 'recursos',
     component: ResourcesComponent,
   },
   {
-    path : 'resolucion-cancerigenos',
-    component: CarcinogenicAgentsComponent,
+    path: 'resolucion-cancerigenos',
+    component: CarcinogenicAgentsLayoutComponent,
+    children : [
+      {
+        path: 'establecimiento',
+        component : FormEstablishmentComponent
+      },
+      {
+        path: 'sectores-puestos',
+        component: FormWorkStructureComponent
+      },
+      // {
+      //   path: 'sustancias-cancerigenas',
+      //   component: 
+      // },
+      {
+        path: '**',
+        redirectTo : 'establecimiento'
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 
 ];

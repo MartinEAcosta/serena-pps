@@ -1,16 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CarcinogenicAgentsComponent } from './carcinogenic-agents.component';
 
-  let component: CarcinogenicAgentsComponent;
-  let fixture: ComponentFixture<CarcinogenicAgentsComponent>;
+import { FormSectionComponent } from './form-section.component';
+
+describe('FormSectionComponent', () => {
+  let component: FormSectionComponent;
+  let fixture: ComponentFixture<FormSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CarcinogenicAgentsComponent]
+      imports: [FormSectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CarcinogenicAgentsComponent);
+    fixture = TestBed.createComponent(FormSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
