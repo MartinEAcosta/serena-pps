@@ -2,19 +2,20 @@
 
 .bg-form-work-structure{
     display: flex;
+    width: 100%;
     flex: 1;
     justify-content: center;
     align-items: center;
     margin: auto;
     padding: 2rem 0;
     font-family: v.$font-family;
-    width: 100%;
 }
 
 .form-work-structure{
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 2rem;
 }
 
 .form-section{
@@ -74,6 +75,7 @@
 .subtitle{
     display: flex;
     width: 100%;
+    font-size: 1.25rem;
     padding: 0.5rem 0;
     color: v.$black-custom;
     font-weight: bold;

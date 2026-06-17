@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormFieldComponent } from "../../../forms/components/form-field/form-field.component";
+import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
 
 @Component({
   selector: 'app-form-work-structure',
-  imports: [ReactiveFormsModule, FormFieldComponent],
+  imports: [ReactiveFormsModule, FormFieldComponent, FormSectionComponent],
   templateUrl: './form-work-structure.component.html',
   styleUrl: './form-work-structure.component.scss'
 })

@@ -18,6 +18,19 @@
     gap: 2rem;
 }
 
+.responsibles-content:last-child{
+    margin-bottom: 2rem;
+}
+
+.responsibles-divider{
+    display: block;
+    width: 80%;
+    height: 1px;
+    margin: 4rem auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
 .checkbox-label-container{
     display: flex;
     margin: 0 1rem;
@@ -52,8 +65,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 columnas fijas siempre
   gap: 1rem;
-  width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
   align-items: start;
 }
 
@@ -76,6 +88,10 @@
     opacity: 1;
     transition: all 0.5s ease;
     transform: translateY(0);
+}
+
+.form-section-content{
+    padding-bottom: 1rem;
 }
 
 .form-field{
@@ -107,7 +123,6 @@
 }
 
 .input-presentation_type {
-    
     width: 65%;
 }
 
@@ -185,7 +200,6 @@
     padding: 0.25rem;
     transition: all 0.3s ease;
 }
-
 
 .container-actions{
     display: flex;

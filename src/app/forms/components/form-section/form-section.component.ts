@@ -16,7 +16,6 @@ export class FormSectionComponent {
   constructor(){}
 
   toggleOpen () : void {
-    console.log('toggle' + this.isOpen())
     this.isOpen.set(!this.isOpen());
   }
 }

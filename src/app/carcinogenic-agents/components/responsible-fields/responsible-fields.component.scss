@@ -1,14 +1,14 @@
 @use '@variables' as v;
 
 .container-subtitle{
-    padding: 0.2rem 1rem;
-    border-radius: 1rem;
-    color: v.$white-custom;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  color: v.$white-custom;
 }
 
 .subtitle-section{
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: v.$black-custom;
   filter: drop-shadow(0px 3px 8px rgba(0,0,0,0.25));
 }
@@ -16,9 +16,9 @@
 .form-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 columnas fijas siempre
-  gap: 1rem;
+  gap: 1rem 0;
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
   align-items: start;
 }
 

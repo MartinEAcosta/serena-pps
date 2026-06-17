@@ -1,41 +1,48 @@
 <main class="bg-form-work-structure">
     <form class="form-work-structure" [formGroup]="workStructureForm" (ngSubmit)="onSubmit()">
-        <div class="form-section">
-            <div class="container-title">
-                <h3 class="title-section">Conformación empresarial</h3>
+        <app-form-section [title]="'Conformación empresarial'">
+            <div class="form-section-content" container-inputs >
+                <div class="top-form">
+                    <label class="subtitle" for="">Trabajadores propios</label>
+                    <div class="form-field">
+                        <p>Indicar la cantidad de trabajadores propios vinculados al establecimiento, que se encargan de desarrollar <span> actividades administrativas </span>:</p>
+                        <input class="input" type="text" name="" id="" placeholder="20">
+                    </div>
+                    <div class="form-field">
+                        <p>Indicar la cantidad de trabajadores propios vinculados al establecimiento, que se encargan de desarrollar <span> actividades de producción </span>:</p>
+                        <input class="input" type="text" name="" id="" placeholder="15">
+                    </div>
+                </div>
+                <div class="top-form">
+                    <label class="subtitle" for="">Trabajadores de servicios eventuales</label>
+                    <div class="form-field">
+                        <p>Indicar la cantidad de trabajadores de servicio eventuales, que se encargan de desarrollar <span> actividades administrativas </span>:</p>
+                        <input class="input" type="text" name="" id="" placeholder="20">
+                    </div>
+                    <div class="form-field">
+                        <p>Indicar la cantidad de trabajadores de servicios eventuales, que se encargan de desarrollar <span> actividades de producción </span>:</p>
+                        <input class="input" type="text" name="" id="" placeholder="15">
+                    </div>
+                </div>
             </div>
-            <div class="top-form">
-                <label class="subtitle" for="">Trabajadores propios</label>
-                <div class="form-field">
-                    <p>Indicar la cantidad de trabajadores propios vinculados al establecimiento, que se encargan de desarrollar <span> actividades administrativas </span>:</p>
-                    <input class="input" type="text" name="" id="" placeholder="20">
-                </div>
-                <div class="form-field">
-                    <p>Indicar la cantidad de trabajadores propios vinculados al establecimiento, que se encargan de desarrollar <span> actividades de producción </span>:</p>
-                    <input class="input" type="text" name="" id="" placeholder="15">
-                </div>
+        </app-form-section>
+        <app-form-section [title]="'Sectores y Puestos'">
+            <div class="form-section-content middle-form" container-inputs>
+                    <app-form-field
+                        [labelText]="'Nombre del sector'"
+                        [info]="'Nombre del sector expuesto a un agente cancerigeno.'"
+                        [prefix]="'sector'"
+                        [placeholder]="'Producción'" 
+                        [form]="workStructureForm"
+                    />
+                    <app-form-field
+                        [labelText]="'Actividad del sector'"
+                        [info]="'Actividad relacionada al sector declarado.'"
+                        [prefix]="'sector'"
+                        [placeholder]="'261000'" 
+                        [form]="workStructureForm"
+                    />
             </div>
-            <div class="top-form">
-                <label class="subtitle" for="">Trabajadores de servicios eventuales</label>
-                <div class="form-field">
-                    <p>Indicar la cantidad de trabajadores de servicio eventuales, que se encargan de desarrollar <span> actividades administrativas </span>:</p>
-                    <input class="input" type="text" name="" id="" placeholder="20">
-                </div>
-                <div class="form-field">
-                    <p>Indicar la cantidad de trabajadores de servicios eventuales, que se encargan de desarrollar <span> actividades de producción </span>:</p>
-                    <input class="input" type="text" name="" id="" placeholder="15">
-                </div>
-            </div>
-        </div>
-        <div class="middle-form">
-                <h3 class="title-section">Sectores y Puestos</h3>
-                <app-form-field
-                    [title]="'Nombre'"
-                    [info]="'Nombre del sector expuesto a un agente cancerigeno.'"
-                    [prefix]="'sector'"
-                    [placeholder]="'Producción'" 
-                    [form]="workStructureForm"
-                />
-        </div>
+        </app-form-section>
     </form>
 </main>
