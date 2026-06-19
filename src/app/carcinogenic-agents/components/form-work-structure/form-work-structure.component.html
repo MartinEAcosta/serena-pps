@@ -27,22 +27,41 @@
             </div>
         </app-form-section>
         <app-form-section [title]="'Sectores y Puestos'">
-            <div class="form-section-content middle-form" container-inputs>
-                    <app-form-field
-                        [labelText]="'Nombre del sector'"
-                        [info]="'Nombre del sector expuesto a un agente cancerigeno.'"
-                        [prefix]="'sector'"
-                        [placeholder]="'Producción'" 
-                        [form]="workStructureForm"
+            <div class="form-section-content" container-inputs formArrayName="job_positions">
+                @for( group of jobPositions.controls; track $index) {
+                    <app-job-position 
+                        [form]="group"
                     />
-                    <app-form-field
-                        [labelText]="'Actividad del sector'"
-                        [info]="'Actividad relacionada al sector declarado.'"
-                        [prefix]="'sector'"
-                        [placeholder]="'261000'" 
-                        [form]="workStructureForm"
-                    />
+                }
             </div>
+            <!-- <div class="form-section-content middle-form" container-inputs>
+                <app-form-field 
+                    [labelText]="'Nombre del Puesto'"
+                    [info]="'Nombre del puesto expuesto a un agente cancerigeno.'"
+                    [prefix]="'job_position'"
+                    [placeholder]="'Operador de linea de montaje'"
+                    [form]="workStructureForm"
+                />
+                <app-select-search 
+                    [labelText]="'Actividad del puesto'"
+                    [info]="'Código de actividad relacionada al puesto declarado.'"
+                    [options]="jobActivityCodes"
+                    [prefix]="'job_activity_code'"
+                    [placeholder]="'Seleccionar código de actividad'"
+                    [form]="workStructureForm"    
+                />
+                <app-form-field 
+                    [labelText]="'Descripción adicional del puesto'"
+                    [info]="'Descripción adicional del puesto en caso de que se lo necesite.'"
+                    [prefix]="'job_activity_additional_description'"
+                    [placeholder]="'Ensamblaje de modulos electronicos'"
+                    [form]="workStructureForm"
+                />
+            </div> -->
         </app-form-section>
+            <app-add-button
+                [text]="'Añadir sector y puesto'" 
+                (click)="createJobPosition()"   
+            />
     </form>
 </main>

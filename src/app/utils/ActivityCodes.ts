@@ -1,0 +1,5367 @@
+import { FilterOption } from "./filters/filter.interface";
+
+export const SectorActivityCodes: FilterOption[] = [
+    {
+        value: "101011",
+        label: "MATANZA DE GANADO BOVINO (INCLUYE BUFALOS)",
+    },
+    {
+        value: "101012",
+        label: "PROCESAMIENTO DE CARNE DE GANADO BOVINO",
+    },
+    {
+        value: "101013",
+        label: "SALADERO Y PELADERO DE CUEROS DE GANADO BOVINO",
+    },
+    {
+        value: "101020",
+        label: "PRODUCCION Y PROCESAMIENTO DE CARNE DE AVES",
+    },
+    {
+        value: "101030",
+        label: "ELABORACION DE FIAMBRES Y EMBUTIDOS",
+    },
+    {
+        value: "101040",
+        label: "MATANZA DE GANADO EXCEPTO EL BOVINO Y PROCESAMIENTO DE SU CARNE (INCLUYE GANADO OVINO, PORCINO, EQUINO, ETC.)",
+    },
+    {
+        value: "101091",
+        label: "FABRICACION DE ACEITES Y GRASAS DE ORIGEN ANIMAL",
+    },
+    {
+        value: "101099",
+        label: "MATANZA DE ANIMALES N.C.P. Y PROCESAMIENTO DE SU CARNE, ELABORACION DE SUBPRODUCTOS CARNICOS N.C.P. (INCLUYE PRODUCCION DE CARNE FRESCA, REFRIGERADA O CONGELADA DE LIEBRE, CONEJO, ANIMALES DE CAZA, ETC.)",
+    },
+    {
+        value: "102001",
+        label: "ELABORACION DE PESCADOS DE MAR, CRUSTACEOS Y  PRODUCTOS MARINOS",
+    },
+    {
+        value: "102002",
+        label: "ELABORACION DE PESCADOS DE RIOS Y LAGUNAS Y OTROS PRODUCTOS FLUVIALES Y LACUSTRES",
+    },
+    {
+        value: "102003",
+        label: "FABRICACION DE ACEITES, GRASAS, HARINAS Y PRODUCTOS A BASE DE PESCADOS",
+    },
+    {
+        value: "103011",
+        label: "PREPARACION DE CONSERVAS DE FRUTAS, HORTALIZAS Y LEGUMBRES",
+    },
+    {
+        value: "103012",
+        label: "ELABORACION Y ENVASADO DE DULCES, MERMELADAS Y JALEAS",
+    },
+    {
+        value: "103020",
+        label: "ELABORACION DE JUGOS NATURALES Y SUS CONCENTRADOS, DE FRUTAS, HORTALIZAS Y LEGUMBRES (NO INCLUYE LA ELABORACION DE JUGOS PARA DILUIR O EN POLVO LLAMADOS SINTETICOS O DE UN CONTENIDO EN JUGOS NATURALES INFERIOR AL 50% ACTIVIDAD 110492)",
+    },
+    {
+        value: "103030",
+        label: "ELABORACION DE FRUTAS, HORTALIZAS Y LEGUMBRES CONGELADAS",
+    },
+    {
+        value: "103091",
+        label: "ELABORACION DE HORTALIZAS Y LEGUMBRES DESHIDRATADAS O DESECADAS, PREPARACION N.C.P. DE HORTALIZAS Y LEGUMBRES (INCLUYE LA ELABORACION DE HARINA Y ESCAMAS DE PAPA, SEMOLA DE HORTALIZAS Y LEGUMBRES,  HORTALIZAS Y LEGUMBRES DESHIDRATADAS, ETC.)",
+    },
+    {
+        value: "103099",
+        label: "ELABORACION DE FRUTAS DESHIDRATADAS O DESECADAS, PREPARACION N.C.P. DE FRUTAS",
+    },
+    {
+        value: "104011",
+        label: "ELABORACION DE ACEITES Y GRASAS VEGETALES  SIN REFINAR",
+    },
+    {
+        value: "104012",
+        label: "ELABORACION DE ACEITE DE OLIVA",
+    },
+    {
+        value: "104013",
+        label: "ELABORACION DE ACEITES Y GRASAS VEGETALES REFINADOS (NO INCLUYE ACEITE DE OLIVA -ACTIVIDAD 104012-)",
+    },
+    {
+        value: "104020",
+        label: "ELABORACION DE MARGARINAS Y GRASAS VEGETALES COMESTIBLES SIMILARES",
+    },
+    {
+        value: "105010",
+        label: "ELABORACION DE LECHES Y PRODUCTOS LACTEOS DESHIDRATADOS (INCLUYE LA OBTENCION DE QUESOS, HELADOS, MANTECA, POSTRES LACTEOS, YOGUR Y OTROS PRODUCTOS LACTEOS FERMENTADOS O COAGULADOS CUANDO SON OBTENIDOS EN FORMA INTEGRADA CON LA PRODUCCION DE LECHE)",
+    },
+    {
+        value: "105020",
+        label: "ELABORACION DE QUESOS (INCLUYE LA PRODUCCION DE SUERO)",
+    },
+    {
+        value: "105030",
+        label: "ELABORACION INDUSTRIAL DE HELADOS",
+    },
+    {
+        value: "105090",
+        label: "ELABORACION DE PRODUCTOS LACTEOS N.C.P. (INCLUYE LA PRODUCCION DE CASEINAS, MANTECA, POSTRES, ETC., CUANDO NO SON OBTENIDOS E FORMA INTEGRADA CON LA PRODUCCION DE LECHE)",
+    },
+    {
+        value: "106110",
+        label: "MOLIENDA DE TRIGO",
+    },
+    {
+        value: "106120",
+        label: "PREPARACION DE ARROZ",
+    },
+    {
+        value: "106131",
+        label: "ELABORACION DE ALIMENTOS A BASE DE CEREALES",
+    },
+    {
+        value: "106139",
+        label: "PREPARACION Y MOLIENDA DE LEGUMBRES Y CEREALES N.C.P., EXCEPTO TRIGO Y ARROZ Y MOLIENDA HUMEDA DE MAIZ",
+    },
+    {
+        value: "106200",
+        label: "ELABORACION DE ALMIDONES Y PRODUCTOS DERIVADOS DEL ALMIDON, MOLIENDA HUMEDA DE MAIZ (INCLUYE LA ELABORACION DE GLUCOSA Y GLUTEN)",
+    },
+    {
+        value: "107110",
+        label: "ELABORACION DE GALLETITAS Y BIZCOCHOS",
+    },
+    {
+        value: "107121",
+        label: "ELABORACION INDUSTRIAL DE PRODUCTOS DE PANADERIA, EXCEPTO GALLETITAS Y BIZCOCHOS (INCLUYE LA ELABORACION DE PRODUCTOS DE PANADERIA FRESCOS, CONGELADOS Y SECOS)",
+    },
+    {
+        value: "107129",
+        label: "ELABORACION DE PRODUCTOS DE PANADERIA N.C.P. (INCLUYE LA ELABORACION DE PAN, FACTURAS, CHURROS, PRE-PIZZAS, MASAS DE HOJALDRE, MASAS FRITAS, TORTAS, TARTAS, ETC), (NO INCLUYE LA FABRICACION DE SANDWICH 561040)",
+    },
+    {
+        value: "107200",
+        label: "ELABORACION DE AZUCAR",
+    },
+    {
+        value: "107301",
+        label: "ELABORACION DE CACAO Y CHOCOLATE",
+    },
+    {
+        value: "107309",
+        label: "ELABORACION DE PRODUCTOS DE CONFITERIA N.C.P. (INCLUYE ALFAJORES, CARAMELOS, FRUTAS CONFITADAS, PASTILLAS, GOMAS DE MASCAR, ETC.)",
+    },
+    {
+        value: "107410",
+        label: "ELABORACION DE PASTAS ALIMENTARIAS FRESCAS",
+    },
+    {
+        value: "107420",
+        label: "ELABORACION DE PASTAS ALIMENTARIAS SECAS",
+    },
+    {
+        value: "107500",
+        label: "ELABORACION DE COMIDAS PREPARADAS PARA REVENTA (INCLUYE LA ELABORACION DE COMIDAS PREPARADAS PARA REVENTA EN SUPERMERCADOS, KIOSCOS, CAFETERIAS, ETC.)",
+    },
+    {
+        value: "107911",
+        label: "TOSTADO, TORRADO Y MOLIENDA DE CAFE",
+    },
+    {
+        value: "107912",
+        label: "ELABORACION Y MOLIENDA DE HIERBAS AROMATICAS Y  ESPECIAS",
+    },
+    {
+        value: "107920",
+        label: "PREPARACION DE HOJAS DE TE",
+    },
+    {
+        value: "107930",
+        label: "ELABORACION DE YERBA MATE",
+    },
+    {
+        value: "107991",
+        label: "ELABORACION DE EXTRACTOS, JARABES Y CONCENTRADOS",
+    },
+    {
+        value: "107992",
+        label: "ELABORACION DE VINAGRES",
+    },
+    {
+        value: "107999",
+        label: "ELABORACION DE PRODUCTOS ALIMENTICIOS N.C.P. (INCLUYE LA ELABORACION DE POLVOS PARA PREPARAR POSTRES Y GELATINAS, LEVADURA, PRODUCTOS PARA COPETIN, SOPAS, SAL DE MESA, MAYONESA, MOSTAZA, ETC.)",
+    },
+    {
+        value: "108000",
+        label: "ELABORACION DE ALIMENTOS PREPARADOS PARA ANIMALES",
+    },
+    {
+        value: "109000",
+        label: "SERVICIOS INDUSTRIALES PARA LA ELABORACION DE ALIMENTOS Y BEBIDAS (INCLUYE PROCESOS Y OPERACIONES QUE PERMITEN QUE EL PRODUCTO ALIMENTICIO Y LAS BEBIDAS ESTEN EN ESTADO HIGIENICO SANITARIO PARA CONSUMO HUMANO O PARA SU UTILIZACION COMO MATERIAS PRIMAS DE",
+    },
+    {
+        value: "110100",
+        label: "DESTILACION, RECTIFICACION Y MEZCLA DE BEBIDAS ESPIRITOSAS",
+    },
+    {
+        value: "110211",
+        label: "ELABORACION DE MOSTO",
+    },
+    {
+        value: "110212",
+        label: "ELABORACION DE VINOS (INCLUYE EL FRACCIONAMIENTO)",
+    },
+    {
+        value: "110290",
+        label: "ELABORACION DE SIDRA Y OTRAS BEBIDAS ALCOHOLICAS FERMENTADAS",
+    },
+    {
+        value: "110300",
+        label: "ELABORACION DE CERVEZA, BEBIDAS MALTEADAS Y MALTA",
+    },
+    {
+        value: "110411",
+        label: "EMBOTELLADO DE AGUAS NATURALES Y MINERALES",
+    },
+    {
+        value: "110412",
+        label: "FABRICACION DE SODAS",
+    },
+    {
+        value: "110420",
+        label: "ELABORACION DE BEBIDAS GASEOSAS, EXCEPTO SODA",
+    },
+    {
+        value: "110491",
+        label: "ELABORACION DE HIELO",
+    },
+    {
+        value: "110492",
+        label: "ELABORACION DE BEBIDAS NO ALCOHOLICAS N.C.P. (INCLUYE LOS JUGOS PARA DILUIR O EN POLVO LLAMADOS SINTETICOS O DE UN CONTENIDO EN JUGOS NATURALES INFERIOR AL 50%), (NO INCLUYE A LOS JUGOS NATURALES Y SUS CONCENTRADOS, DE FRUTAS, HORTALIZAS Y LEGUMBRES -",
+    },
+    {
+        value: "11111",
+        label: "CULTIVO DE ARROZ",
+    },
+    {
+        value: "11112",
+        label: "CULTIVO DE TRIGO",
+    },
+    {
+        value: "11119",
+        label: "CULTIVO DE CEREALES N.C.P., EXCEPTO LOS DE USO FORRAJERO (INCLUYE ALFORFON, CEBADA CERVECERA, ETC.)",
+    },
+    {
+        value: "11121",
+        label: "CULTIVO DE MAIZ",
+    },
+    {
+        value: "11129",
+        label: "CULTIVO DE CEREALES DE USO FORRAJERO N.C.P.",
+    },
+    {
+        value: "11130",
+        label: "CULTIVO DE PASTOS DE USO FORRAJERO",
+    },
+    {
+        value: "11211",
+        label: "CULTIVO DE SOJA",
+    },
+    {
+        value: "11291",
+        label: "CULTIVO DE GIRASOL",
+    },
+    {
+        value: "11299",
+        label: "CULTIVO DE OLEAGINOSAS N.C.P. EXCEPTO SOJA Y GIRASOL (INCLUYE LOS CULTIVOS DE OLEAGINOSAS PARA ACEITES COMESTIBLES Y/O USO INDUSTRIAL: CARTAMO, COLZA, JOJOBA, LINO OLEAGINOSO, MANI, RICINO, SESAMO, TUNG, ETC.)",
+    },
+    {
+        value: "11310",
+        label: "CULTIVO DE PAPA, BATATA Y MANDIOCA",
+    },
+    {
+        value: "11321",
+        label: "CULTIVO DE TOMATE",
+    },
+    {
+        value: "11329",
+        label: "CULTIVO DE BULBOS, BROTES, RAICES Y HORTALIZAS DE FRUTO N.C.P. (INCLUYE AJI, AJO, ALCAPARRA, BERENJENA, CEBOLLA, CALABAZA, ESPARRAGO, FRUTILLA, MELON, PEPINO, PIMIENTO, SANDIA, ZANAHORIA, ZAPALLO, ZAPALLITO, ETC.)",
+    },
+    {
+        value: "11331",
+        label: "CULTIVO DE HORTALIZAS DE HOJA Y DE OTRAS HORTALIZAS FRESCAS (INCLUYE ACELGA, APIO, COLES, ESPINACA, LECHUGA, PEREJIL, RADICHETA, REPOLLO, ETC.)",
+    },
+    {
+        value: "11341",
+        label: "CULTIVO DE LEGUMBRES FRESCAS (INCLUYE ARVEJA, CHAUCHA, HABA, LUPINO, ETC.)",
+    },
+    {
+        value: "11342",
+        label: "CULTIVO DE LEGUMBRES SECAS (INCLUYE GARBANZO, LENTEJA, POROTO, ETC.)",
+    },
+    {
+        value: "11400",
+        label: "CULTIVO DE TABACO",
+    },
+    {
+        value: "11501",
+        label: "CULTIVO DE ALGODON",
+    },
+    {
+        value: "11509",
+        label: "CULTIVO DE PLANTAS PARA LA OBTENCION DE FIBRAS N.C.P. (INCLUYE ABACA, CAÑAMO, FORMIO, LINO TEXTIL, MAIZ DE GUINEA, RAMIO, YUTE, ETC.)",
+    },
+    {
+        value: "11911",
+        label: "CULTIVO DE FLORES",
+    },
+    {
+        value: "11912",
+        label: "CULTIVO DE PLANTAS ORNAMENTALES",
+    },
+    {
+        value: "11990",
+        label: "CULTIVOS TEMPORALES N.C.P.",
+    },
+    {
+        value: "120010",
+        label: "PREPARACION DE HOJAS DE TABACO",
+    },
+    {
+        value: "120091",
+        label: "ELABORACION DE CIGARRILLOS",
+    },
+    {
+        value: "120099",
+        label: "ELABORACION DE PRODUCTOS DE TABACO N.C.P.",
+    },
+    {
+        value: "12110",
+        label: "CULTIVO DE VID PARA VINIFICAR",
+    },
+    {
+        value: "12121",
+        label: "CULTIVO DE UVA DE MESA",
+    },
+    {
+        value: "12200",
+        label: "CULTIVO DE FRUTAS CITRICAS (INCLUYE BERGAMOTA, LIMA, LIMON, MANDARINA, NARANJA, POMELO, KINOTO, ETC.)",
+    },
+    {
+        value: "12311",
+        label: "CULTIVO DE MANZANA Y PERA",
+    },
+    {
+        value: "12319",
+        label: "CULTIVO DE FRUTAS DE PEPITA N.C.P. (INCLUYE MEMBRILLO, NISPERO, ETC.)",
+    },
+    {
+        value: "12320",
+        label: "CULTIVO DE FRUTAS DE CAROZO (INCLUYE CEREZA, CIRUELA, DAMASCO, DURAZNO, PELON, ETC.)",
+    },
+    {
+        value: "12410",
+        label: "CULTIVO DE FRUTAS TROPICALES Y SUBTROPICALES (INCLUYE BANANA, ANANA, MAMON, PALTA, ETC.)",
+    },
+    {
+        value: "12420",
+        label: "CULTIVO DE FRUTAS SECAS (INCLUYE ALMENDRA, AVELLANA, CASTAÑA, NUEZ, PISTACHO, ETC.)",
+    },
+    {
+        value: "12490",
+        label: "CULTIVO DE FRUTAS N.C.P. (INCLUYE KIWI, ARANDANOS, MORA, GROSELLA, ETC.)",
+    },
+    {
+        value: "12510",
+        label: "CULTIVO DE CAÑA DE AZUCAR",
+    },
+    {
+        value: "12590",
+        label: "CULTIVO DE PLANTAS SACARIFERAS N.C.P. (INCLUYE REMOLACHA AZUCARERA, ETC.)",
+    },
+    {
+        value: "12600",
+        label: "CULTIVO DE FRUTOS OLEAGINOSOS (INCLUYE EL CULTIVO DE OLIVO, COCO, PALMA, ETC.)",
+    },
+    {
+        value: "12701",
+        label: "CULTIVO DE YERBA MATE",
+    },
+    {
+        value: "12709",
+        label: "CULTIVO DE TE Y OTRAS PLANTAS CUYAS HOJAS SE UTILIZAN PARA PREPARAR INFUSIONES",
+    },
+    {
+        value: "12800",
+        label: "CULTIVO DE ESPECIAS Y DE PLANTAS AROMATICAS Y MEDICINALES",
+    },
+    {
+        value: "12900",
+        label: "CULTIVOS PERENNES N.C.P.",
+    },
+    {
+        value: "13011",
+        label: "PRODUCCION DE SEMILLAS HIBRIDAS DE CEREALES Y OLEAGINOSAS",
+    },
+    {
+        value: "13012",
+        label: "PRODUCCION DE SEMILLAS VARIETALES O AUTOFECUNDADAS DE CEREALES, OLEAGINOSAS, Y FORRAJERAS",
+    },
+    {
+        value: "13013",
+        label: "PRODUCCION DE SEMILLAS DE HORTALIZAS Y LEGUMBRES, FLORES Y PLANTAS ORNAMENTALES Y ARBOLES FRUTALES",
+    },
+    {
+        value: "13019",
+        label: "PRODUCCION DE SEMILLAS DE CULTIVOS AGRICOLAS N.C.P.",
+    },
+    {
+        value: "13020",
+        label: "PRODUCCION DE OTRAS FORMAS DE PROPAGACION DE CULTIVOS AGRICOLAS (INCLUYE GAJOS, BULBOS, ESTACAS ENRAIZADAS O NO, ESQUEJES, PLANTINES, ETC.)",
+    },
+    {
+        value: "131110",
+        label: "PREPARACION DE FIBRAS TEXTILES VEGETALES, DESMOTADO DE ALGODON (INCLUYE LA PREPARACION DE FIBRAS DE YUTE, RAMIO, CAÑAMO Y LINO)",
+    },
+    {
+        value: "131120",
+        label: "PREPARACION DE FIBRAS ANIMALES DE USO TEXTIL",
+    },
+    {
+        value: "131131",
+        label: "FABRICACION DE HILADOS TEXTILES DE LANA, PELOS Y SUS MEZCLAS",
+    },
+    {
+        value: "131132",
+        label: "FABRICACION DE HILADOS TEXTILES DE ALGODON Y SUS MEZCLAS",
+    },
+    {
+        value: "131139",
+        label: "FABRICACION DE HILADOS TEXTILES N.C.P., EXCEPTO DE LANA  Y DE ALGODON",
+    },
+    {
+        value: "131201",
+        label: "FABRICACION DE TEJIDOS (TELAS) PLANOS DE LANA Y SUS MEZCLAS, INCLUYE HILANDERIAS Y TEJEDURIAS INTEGRADAS",
+    },
+    {
+        value: "131202",
+        label: "FABRICACION DE TEJIDOS (TELAS) PLANOS DE ALGODON Y SUS MEZCLAS, INCLUYE HILANDERIAS Y TEJEDURIAS INTEGRADAS",
+    },
+    {
+        value: "131209",
+        label: "FABRICACION DE TEJIDOS (TELAS) PLANOS DE FIBRAS TEXTILES N.C.P., INCLUYE HILANDERIAS Y TEJEDURIAS INTEGRADAS",
+    },
+    {
+        value: "131300",
+        label: "ACABADO DE PRODUCTOS TEXTILES",
+    },
+    {
+        value: "139100",
+        label: "FABRICACION DE TEJIDOS DE PUNTO",
+    },
+    {
+        value: "139201",
+        label: "FABRICACION DE FRAZADAS, MANTAS, PONCHOS, COLCHAS, COBERTORES, ETC.",
+    },
+    {
+        value: "139202",
+        label: "FABRICACION DE ROPA DE CAMA Y MANTELERIA",
+    },
+    {
+        value: "139203",
+        label: "FABRICACION DE ARTICULOS DE LONA Y SUCEDANEOS DE LONA",
+    },
+    {
+        value: "139204",
+        label: "FABRICACION DE BOLSAS DE MATERIALES TEXTILES PARA PRODUCTOS A GRANEL",
+    },
+    {
+        value: "139209",
+        label: "FABRICACION DE ARTICULOS CONFECCIONADOS DE MATERIALES TEXTILES N.C.P., EXCEPTO PRENDAS DE VESTIR",
+    },
+    {
+        value: "139300",
+        label: "FABRICACION DE TAPICES Y ALFOMBRAS",
+    },
+    {
+        value: "139400",
+        label: "FABRICACION DE CUERDAS, CORDELES, BRAMANTES Y REDES",
+    },
+    {
+        value: "139900",
+        label: "FABRICACION DE PRODUCTOS TEXTILES N.C.P.",
+    },
+    {
+        value: "141110",
+        label: "CONFECCION DE ROPA INTERIOR, PRENDAS PARA DORMIR Y PARA LA PLAYA",
+    },
+    {
+        value: "141120",
+        label: "CONFECCION DE ROPA DE TRABAJO, UNIFORMES Y GUARDAPOLVOS",
+    },
+    {
+        value: "14113",
+        label: "CRIA DE GANADO BOVINO, EXCEPTO LA REALIZADA EN CABAÑAS Y PARA LA PRODUCCION DE LECHE (INCLUYE: GANADO BUBALINO)",
+    },
+    {
+        value: "141130",
+        label: "CONFECCION DE PRENDAS DE VESTIR PARA BEBES Y NIÑOS",
+    },
+    {
+        value: "14114",
+        label: "INVERNADA  DE GANADO BOVINO EXCEPTO EL ENGORDE EN CORRALES (FEED-LOT)",
+    },
+    {
+        value: "141140",
+        label: "CONFECCION DE PRENDAS DEPORTIVAS",
+    },
+    {
+        value: "14115",
+        label: "ENGORDE EN CORRALES (FEED-LOT)",
+    },
+    {
+        value: "141191",
+        label: "FABRICACION DE ACCESORIOS DE VESTIR EXCEPTO DE CUERO",
+    },
+    {
+        value: "141199",
+        label: "CONFECCION DE PRENDAS DE VESTIR N.C.P., EXCEPTO PRENDAS DE PIEL, CUERO Y DE PUNTO",
+    },
+    {
+        value: "141201",
+        label: "FABRICACION DE ACCESORIOS DE VESTIR DE CUERO",
+    },
+    {
+        value: "141202",
+        label: "CONFECCION DE PRENDAS DE VESTIR DE CUERO",
+    },
+    {
+        value: "14121",
+        label: "CRIA DE GANADO BOVINO REALIZADA EN CABAÑAS (INCLUYE: GANADO BUBALINO Y LA PRODUCCION DE SEMEN)",
+    },
+    {
+        value: "142000",
+        label: "TERMINACION Y TEÑIDO DE PIELES, FABRICACION DE ARTICULOS DE PIEL",
+    },
+    {
+        value: "14211",
+        label: "CRIA DE GANADO EQUINO, EXCEPTO LA REALIZADA EN HARAS (INCLUYE EQUINOS DE TRABAJO, ASNOS, MULAS, BURDEGANOS)",
+    },
+    {
+        value: "14221",
+        label: "CRIA DE GANADO EQUINO REALIZADA EN HARAS (INCLUYE LA PRODUCCION DE SEMEN)",
+    },
+    {
+        value: "14300",
+        label: "CRIA DE CAMELIDOS (INCLUYE ALPACA, GUANACO, LLAMA, VICUÑA)",
+    },
+    {
+        value: "143010",
+        label: "FABRICACION DE MEDIAS",
+    },
+    {
+        value: "143020",
+        label: "FABRICACION DE PRENDAS DE VESTIR Y ARTICULOS SIMILARES DE PUNTO",
+    },
+    {
+        value: "14410",
+        label: "CRIA DE GANADO OVINO -EXCEPTO EN CABAÑAS Y PARA LA  PRODUCCION DE LANA Y LECHE-",
+    },
+    {
+        value: "14420",
+        label: "CRIA DE GANADO OVINO REALIZADA EN CABAÑAS",
+    },
+    {
+        value: "14430",
+        label: "CRIA DE GANADO CAPRINO -EXCEPTO LA REALIZADA EN CABAÑAS Y PARA PRODUCCION DE PELOS Y DE LECHE-",
+    },
+    {
+        value: "14440",
+        label: "CRIA DE GANADO CAPRINO REALIZADA EN CABAÑAS",
+    },
+    {
+        value: "14510",
+        label: "CRIA DE GANADO PORCINO, EXCEPTO LA REALIZADA EN CABAÑAS",
+    },
+    {
+        value: "14520",
+        label: "CRIA DE GANADO PORCINO REALIZADO EN CABAÑAS",
+    },
+    {
+        value: "14610",
+        label: "PRODUCCION DE LECHE BOVINA (INCLUYE LA CRIA PARA LA PRODUCCION DE LECHE DE VACA Y LA PRODUCCION DE LECHE BUBALINA)",
+    },
+    {
+        value: "14620",
+        label: "PRODUCCION DE LECHE DE OVEJA Y DE CABRA",
+    },
+    {
+        value: "14710",
+        label: "PRODUCCION DE LANA Y PELO DE OVEJA Y CABRA (CRUDA)",
+    },
+    {
+        value: "14720",
+        label: "PRODUCCION DE PELOS DE GANADO N.C.P.",
+    },
+    {
+        value: "14810",
+        label: "CRIA DE AVES DE CORRAL, EXCEPTO PARA LA PRODUCCION DE HUEVOS",
+    },
+    {
+        value: "14820",
+        label: "PRODUCCION DE HUEVOS",
+    },
+    {
+        value: "149000",
+        label: "SERVICIOS INDUSTRIALES PARA LA INDUSTRIA CONFECCIONISTA (INCLUYE PROCESOS DE PLANCHADO Y ACONDICIONAMIENTO DE PRENDAS: TEÑIDO, GASTADO A LA PIEDRA (STONE WASH), IMPERMEABILIZADO, LAVADEROS Y SECADEROS INDUSTRIALES, ETC.)",
+    },
+    {
+        value: "14910",
+        label: "APICULTURA (INCLUYE LA PRODUCCION DE MIEL, JALEA REAL, POLEN, PROPOLEO, ETC.)",
+    },
+    {
+        value: "14920",
+        label: "CUNICULTURA",
+    },
+    {
+        value: "14930",
+        label: "CRIA DE ANIMALES PELIFEROS, PILIFEROS Y PLUMIFEROS, EXCEPTO DE LAS ESPECIES GANADERAS (INCLUYE CRIA DE VISON, NUTRIA, CHINCHILLA, REPTILES, ETC.)",
+    },
+    {
+        value: "14990",
+        label: "CRIA DE ANIMALES Y OBTENCION DE PRODUCTOS DE ORIGEN ANIMAL, N.C.P. (INCLUYE CIERVO, GATO, GUSANO DE SEDA, LOMBRIZ, PAJARO, PERRO, RANA, ANIMALES PARA EXPERIMENTACION, CARACOLES VIVOS, FRESCOS, CONGELADOS Y SECOS -EXCEPTO MARINOS-, CERA DE INSECTOS EXCEPT",
+    },
+    {
+        value: "151100",
+        label: "CURTIDO Y TERMINACION DE CUEROS",
+    },
+    {
+        value: "151200",
+        label: "FABRICACION DE MALETAS, BOLSOS DE MANO Y SIMILARES, ARTICULOS DE TALABARTERIA Y ARTICULOS DE CUERO N.C.P.",
+    },
+    {
+        value: "152011",
+        label: "FABRICACION DE CALZADO DE CUERO, EXCEPTO CALZADO DEPORTIVO Y ORTOPEDICO",
+    },
+    {
+        value: "152021",
+        label: "FABRICACION DE CALZADO DE MATERIALES N.C.P., EXCEPTO CALZADO DEPORTIVO Y ORTOPEDICO",
+    },
+    {
+        value: "152031",
+        label: "FABRICACION DE CALZADO DEPORTIVO",
+    },
+    {
+        value: "152040",
+        label: "FABRICACION DE PARTES DE CALZADO",
+    },
+    {
+        value: "161001",
+        label: "ASERRADO Y CEPILLADO DE MADERA  NATIVA",
+    },
+    {
+        value: "161002",
+        label: "ASERRADO Y CEPILLADO DE MADERA IMPLANTADA",
+    },
+    {
+        value: "16111",
+        label: "SERVICIOS DE LABRANZA, SIEMBRA, TRANSPLANTE  Y  CUIDADOS CULTURALES",
+    },
+    {
+        value: "16112",
+        label: "SERVICIOS DE PULVERIZACION, DESINFECCION Y FUMIGACION TERRESTRE",
+    },
+    {
+        value: "16113",
+        label: "SERVICIOS DE PULVERIZACION, DESINFECCION Y FUMIGACION AEREA",
+    },
+    {
+        value: "16119",
+        label: "SERVICIOS DE MAQUINARIA AGRICOLA N.C.P., EXCEPTO LOS DE COSECHA MECANICA (INCLUYE CLASIFICADO Y/O TAMAÑADO, RASTRILLADO, ROTURACION DE TERRENO, ETC.)",
+    },
+    {
+        value: "16120",
+        label: "SERVICIOS DE COSECHA MECANICA (INCLUYE LA COSECHA MECANICA DE GRANOS, CAÑA DE AZUCAR, ALGODON, FORRAJES, EL ENFARDADO, ENROLLADO, ETC.)",
+    },
+    {
+        value: "16130",
+        label: "SERVICIOS DE CONTRATISTAS DE MANO DE OBRA AGRICOLA (INCLUYE LA PODA DE ARBOLES, TRANSPLANTE, COSECHA MANUAL DE CITRUS, ALGODON, ETC.)",
+    },
+    {
+        value: "16140",
+        label: "SERVICIOS DE POST COSECHA (INCLUYE SERVICIOS DE LAVADO DE PAPAS,  ACONDICIONAMIENTO, LIMPIEZA, ETC, DE GRANOS ANTES DE IR A LOS MERCADOS PRIMARIOS), (EXCLUYE LOS SERVICIOS DE PROCESAMIENTO DE SEMILLAS PARA SU SIEMBRA)",
+    },
+    {
+        value: "16150",
+        label: "SERVICIOS DE PROCESAMIENTO DE SEMILLAS PARA SU SIEMBRA (INCLUYE LA SELECCION DE SEMILLAS)",
+    },
+    {
+        value: "16190",
+        label: "SERVICIOS DE APOYO AGRICOLAS N.C.P (INCLUYE  EXPLOTACION DE SISTEMAS DE RIEGO, INJERTOS DE PLANTAS, CONSTRUCCION Y PLANTACION DE ALMACIGOS, ALQUILER DE COLMENAS, ETC.), (NO INCLUYE MANTENIMIENTO DE JARDINES, PARQUES Y CEMENTERIOS: ACTIVIDAD 813000, PLANI",
+    },
+    {
+        value: "16210",
+        label: "INSEMINACION ARTIFICIAL Y SERVICIOS N.C.P. PARA MEJORAR LA REPRODUCCION DE LOS ANIMALES Y EL RENDIMIENTO DE SUS PRODUCTOS",
+    },
+    {
+        value: "162100",
+        label: "FABRICACION DE HOJAS DE MADERA PARA ENCHAPADO, FABRICACION DE TABLEROS CONTRACHAPADOS, TABLEROS LAMINADOS, TABLEROS DE PARTICULAS Y TABLEROS Y PANELES N.C.P. (INCLUYE LA FABRICACION DE MADERA TERCIADA Y  MACHIMBRE)",
+    },
+    {
+        value: "16220",
+        label: "SERVICIOS DE CONTRATISTAS DE MANO DE OBRA PECUARIA (INCLUYE ARREO, CASTRACION DE AVES, PASTURAJE,  ETC.)",
+    },
+    {
+        value: "162201",
+        label: "FABRICACION DE ABERTURAS Y ESTRUCTURAS DE MADERA PARA LA CONSTRUCCION",
+    },
+    {
+        value: "162202",
+        label: "FABRICACION DE VIVIENDAS PREFABRICADAS DE MADERA",
+    },
+    {
+        value: "16230",
+        label: "SERVICIOS DE ESQUILA DE ANIMALES",
+    },
+    {
+        value: "162300",
+        label: "FABRICACION DE RECIPIENTES DE MADERA",
+    },
+    {
+        value: "162901",
+        label: "FABRICACION DE ATAUDES",
+    },
+    {
+        value: "162902",
+        label: "FABRICACION DE ARTICULOS DE MADERA EN TORNERIAS",
+    },
+    {
+        value: "162903",
+        label: "FABRICACION DE PRODUCTOS DE CORCHO",
+    },
+    {
+        value: "162909",
+        label: "FABRICACION DE PRODUCTOS DE MADERA N.C.P, FABRICACION DE ARTICULOS DE PAJA Y MATERIALES TRENZABLES (INCLUYE ENMARCADO DE CUADROS, CARPINTERIA CUANDO NO EXPLICITA ESPECIALIDAD)",
+    },
+    {
+        value: "16291",
+        label: "SERVICIOS PARA EL CONTROL DE PLAGAS, BAÑOS PARASITICIDAS, ETC.",
+    },
+    {
+        value: "16292",
+        label: "ALBERGUE Y CUIDADO DE  ANIMALES DE TERCEROS",
+    },
+    {
+        value: "16299",
+        label: "SERVICIOS DE APOYO PECUARIOS N.C.P.",
+    },
+    {
+        value: "17010",
+        label: "CAZA Y REPOBLACION  DE ANIMALES DE CAZA (INCLUYE LA CAZA DE ANIMALES PARA OBTENER CARNE, PIELES Y CUEROS Y LA CAPTURA DE ANIMALES VIVOS PARA ZOOLOGICOS, ANIMALES DE COMPAÑIA, PARA INVESTIGACION, ETC.)",
+    },
+    {
+        value: "170101",
+        label: "FABRICACION DE PASTA DE MADERA",
+    },
+    {
+        value: "170102",
+        label: "FABRICACION DE PAPEL Y CARTON EXCEPTO ENVASES",
+    },
+    {
+        value: "17020",
+        label: "SERVICIOS DE APOYO PARA LA CAZA",
+    },
+    {
+        value: "170201",
+        label: "FABRICACION DE PAPEL ONDULADO Y ENVASES DE PAPEL",
+    },
+    {
+        value: "170202",
+        label: "FABRICACION DE CARTON ONDULADO Y ENVASES DE CARTON",
+    },
+    {
+        value: "170910",
+        label: "FABRICACION DE ARTICULOS DE PAPEL Y CARTON DE USO DOMESTICO E HIGIENICO SANITARIO",
+    },
+    {
+        value: "170990",
+        label: "FABRICACION DE ARTICULOS DE PAPEL Y CARTON N.C.P. (NO INCLUYE EL PAPEL DE LIJA:  239900)",
+    },
+    {
+        value: "181101",
+        label: "IMPRESION DE DIARIOS Y REVISTAS",
+    },
+    {
+        value: "181109",
+        label: "IMPRESION N.C.P., EXCEPTO DE DIARIOS Y REVISTAS",
+    },
+    {
+        value: "181200",
+        label: "SERVICIOS RELACIONADOS CON LA IMPRESION",
+    },
+    {
+        value: "182000",
+        label: "REPRODUCCION DE GRABACIONES",
+    },
+    {
+        value: "191000",
+        label: "FABRICACION DE PRODUCTOS DE HORNOS DE COQUE",
+    },
+    {
+        value: "192000",
+        label: "FABRICACION DE PRODUCTOS DE LA REFINACION DEL PETROLEO",
+    },
+    {
+        value: "201110",
+        label: "FABRICACION DE GASES INDUSTRIALES Y MEDICINALES COMPRIMIDOS O LICUADOS",
+    },
+    {
+        value: "201120",
+        label: "FABRICACION DE CURTIENTES NATURALES Y SINTETICOS",
+    },
+    {
+        value: "201130",
+        label: "FABRICACION DE MATERIAS COLORANTES BASICAS, EXCEPTO PIGMENTOS PREPARADOS",
+    },
+    {
+        value: "201140",
+        label: "FABRICACION DE COMBUSTIBLE NUCLEAR, SUSTANCIAS Y MATERIALES RADIACTIVOS",
+    },
+    {
+        value: "201180",
+        label: "FABRICACION DE MATERIAS QUIMICAS INORGANICAS BASICAS N.C.P.",
+    },
+    {
+        value: "201190",
+        label: "FABRICACION DE MATERIAS QUIMICAS ORGANICAS BASICAS N.C.P. (INCLUYE LA FABRICACION DE ALCOHOLES EXCEPTO EL ETILICO,  SUSTANCIAS QUIMICAS PARA LA ELABORACION DE SUSTANCIAS PLASTICAS, CARBON VEGETAL, ETC.)",
+    },
+    {
+        value: "201210",
+        label: "FABRICACION DE ALCOHOL",
+    },
+    {
+        value: "201220",
+        label: "FABRICACION DE BIOCOMBUSTIBLES EXCEPTO ALCOHOL",
+    },
+    {
+        value: "201300",
+        label: "FABRICACION DE ABONOS Y COMPUESTOS DE NITROGENO",
+    },
+    {
+        value: "201401",
+        label: "FABRICACION DE RESINAS Y CAUCHOS SINTETICOS",
+    },
+    {
+        value: "201409",
+        label: "FABRICACION DE MATERIAS PLASTICAS EN FORMAS PRIMARIAS N.C.P.",
+    },
+    {
+        value: "202101",
+        label: "FABRICACION DE INSECTICIDAS, PLAGUICIDAS Y  PRODUCTOS QUIMICOS DE USO AGROPECUARIO",
+    },
+    {
+        value: "202200",
+        label: "FABRICACION DE PINTURAS, BARNICES Y PRODUCTOS DE REVESTIMIENTO SIMILARES, TINTAS DE IMPRENTA Y MASILLAS",
+    },
+    {
+        value: "202311",
+        label: "FABRICACION DE PREPARADOS PARA LIMPIEZA, PULIDO Y SANEAMIENTO",
+    },
+    {
+        value: "202312",
+        label: "FABRICACION DE JABONES Y DETERGENTES",
+    },
+    {
+        value: "202320",
+        label: "FABRICACION DE COSMETICOS, PERFUMES Y  PRODUCTOS DE HIGIENE Y TOCADOR",
+    },
+    {
+        value: "202906",
+        label: "FABRICACION DE EXPLOSIVOS Y PRODUCTOS DE PIROTECNIA",
+    },
+    {
+        value: "202907",
+        label: "FABRICACION DE COLAS, ADHESIVOS, APRESTOS Y CEMENTOS EXCEPTO LOS ODONTOLOGICOS OBTENIDOS DE SUSTANCIAS MINERALES Y VEGETALES",
+    },
+    {
+        value: "202908",
+        label: "FABRICACION DE PRODUCTOS QUIMICOS N.C.P. (INCLUYE LA PRODUCCION DE ACEITES ESENCIALES, TINTAS EXCEPTO PARA IMPRENTA, ETC.)",
+    },
+    {
+        value: "203000",
+        label: "FABRICACION DE FIBRAS MANUFACTURADAS",
+    },
+    {
+        value: "204000",
+        label: "SERVICIOS INDUSTRIALES PARA LA FABRICACION DE SUSTANCIAS Y PRODUCTOS QUIMICOS",
+    },
+    {
+        value: "210010",
+        label: "FABRICACION DE MEDICAMENTOS DE USO HUMANO Y PRODUCTOS FARMACEUTICOS",
+    },
+    {
+        value: "210020",
+        label: "FABRICACION DE MEDICAMENTOS DE USO VETERINARIO",
+    },
+    {
+        value: "210030",
+        label: "FABRICACION DE SUSTANCIAS QUIMICAS PARA LA ELABORACION DE MEDICAMENTOS",
+    },
+    {
+        value: "210090",
+        label: "FABRICACION DE PRODUCTOS DE LABORATORIO Y PRODUCTOS BOTANICOS DE USO FARMACEUTICO N.C.P.",
+    },
+    {
+        value: "21010",
+        label: "PLANTACION DE BOSQUES",
+    },
+    {
+        value: "21020",
+        label: "REPOBLACION Y CONSERVACION DE BOSQUES NATIVOS Y ZONAS FORESTADAS",
+    },
+    {
+        value: "21030",
+        label: "EXPLOTACION DE VIVEROS FORESTALES (INCLUYE PROPAGACION DE ESPECIES FORESTALES)",
+    },
+    {
+        value: "22010",
+        label: "EXTRACCION DE PRODUCTOS FORESTALES DE BOSQUES CULTIVADOS (INCLUYE TALA DE ARBOLES, DESBASTE DE TRONCOS Y PRODUCCION DE MADERA EN BRUTO, LEÑA, POSTES)",
+    },
+    {
+        value: "22020",
+        label: "EXTRACCION DE PRODUCTOS FORESTALES DE BOSQUES NATIVOS (INCLUYE TALA DE ARBOLES, DESBASTE DE TRONCOS Y PRODUCCION DE MADERA EN BRUTO, LEÑA, POSTES, LA EXTRACCION DE RODRIGONES, VARAS, VARILLAS Y LA RECOLECCION DE  GOMAS NATURALES, LIQUENES, MUSGOS, RESINA",
+    },
+    {
+        value: "221110",
+        label: "FABRICACION DE CUBIERTAS Y CAMARAS",
+    },
+    {
+        value: "221120",
+        label: "RECAUCHUTADO Y RENOVACION DE CUBIERTAS",
+    },
+    {
+        value: "221901",
+        label: "FABRICACION DE  AUTOPARTES DE CAUCHO EXCEPTO CAMARAS Y CUBIERTAS",
+    },
+    {
+        value: "221909",
+        label: "FABRICACION  DE PRODUCTOS DE CAUCHO N.C.P.",
+    },
+    {
+        value: "222010",
+        label: "FABRICACION DE ENVASES PLASTICOS",
+    },
+    {
+        value: "222090",
+        label: "FABRICACION DE PRODUCTOS PLASTICOS EN FORMAS BASICAS Y ARTICULOS DE PLASTICO N.C.P., EXCEPTO MUEBLES",
+    },
+    {
+        value: "231010",
+        label: "FABRICACION DE ENVASES DE VIDRIO",
+    },
+    {
+        value: "231020",
+        label: "FABRICACION Y ELABORACION DE VIDRIO PLANO",
+    },
+    {
+        value: "231090",
+        label: "FABRICACION DE PRODUCTOS DE VIDRIO N.C.P.",
+    },
+    {
+        value: "239100",
+        label: "FABRICACION DE PRODUCTOS DE CERAMICA REFRACTARIA",
+    },
+    {
+        value: "239201",
+        label: "FABRICACION DE LADRILLOS",
+    },
+    {
+        value: "239202",
+        label: "FABRICACION DE REVESTIMIENTOS CERAMICOS",
+    },
+    {
+        value: "239209",
+        label: "FABRICACION DE PRODUCTOS DE ARCILLA Y CERAMICA NO REFRACTARIA PARA USO ESTRUCTURAL N.C.P.",
+    },
+    {
+        value: "239310",
+        label: "FABRICACION DE ARTICULOS SANITARIOS DE CERAMICA",
+    },
+    {
+        value: "239391",
+        label: "FABRICACION DE OBJETOS CERAMICOS PARA USO DOMESTICO EXCEPTO ARTEFACTOS SANITARIOS",
+    },
+    {
+        value: "239399",
+        label: "FABRICACION DE ARTICULOS DE CERAMICA NO REFRACTARIA PARA USO NO ESTRUCTURAL N.C.P.",
+    },
+    {
+        value: "239410",
+        label: "ELABORACION DE CEMENTO",
+    },
+    {
+        value: "239421",
+        label: "ELABORACION DE  YESO",
+    },
+    {
+        value: "239422",
+        label: "ELABORACION DE CAL",
+    },
+    {
+        value: "239510",
+        label: "FABRICACION DE MOSAICOS",
+    },
+    {
+        value: "239591",
+        label: "ELABORACION DE HORMIGON",
+    },
+    {
+        value: "239592",
+        label: "FABRICACION DE PREMOLDEADAS PARA LA CONSTRUCCION",
+    },
+    {
+        value: "239593",
+        label: "FABRICACION DE ARTICULOS DE CEMENTO, FIBROCEMENTO Y YESO EXCEPTO HORMIGON Y MOSAICOS",
+    },
+    {
+        value: "239600",
+        label: "CORTE, TALLADO Y ACABADO DE LA PIEDRA (INCLUYE MARMOLES Y GRANITOS, ETC.)",
+    },
+    {
+        value: "239900",
+        label: "FABRICACION DE PRODUCTOS MINERALES NO METALICOS N.C.P. (INCLUYE LA FABRICACION DE ABRASIVOS, LIJAS, MEMBRANAS ASFALTICAS, ETC.)",
+    },
+    {
+        value: "24010",
+        label: "SERVICIOS FORESTALES PARA LA EXTRACCION DE MADERA (INCLUYE TALA DE ARBOLES, ACARREO Y TRANSPORTE EN EL INTERIOR DEL BOSQUE, SERVICIOS REALIZADOS POR TERCEROS, ETC.)",
+    },
+    {
+        value: "24020",
+        label: "SERVICIOS FORESTALES EXCEPTO LOS SERVICIOS PARA LA EXTRACCION DE MADERA (INCLUYE PROTECCION CONTRA INCENDIOS, EVALUACION DE MASAS FORESTALES EN PIE, ESTIMACION DEL VALOR DE LA MADERA, ETC.)",
+    },
+    {
+        value: "241001",
+        label: "LAMINACION Y ESTIRADO. PRODUCCION DE LINGOTES, PLANCHAS O BARRAS FABRICADAS POR OPERADORES INDEPENDIENTES",
+    },
+    {
+        value: "241009",
+        label: "FABRICACION EN INDUSTRIAS BASICAS DE PRODUCTOS DE HIERRO Y ACERO N.C.P. (INCLUYE LA PRODUCCION DE HOJALATA)",
+    },
+    {
+        value: "242010",
+        label: "ELABORACION DE ALUMINIO PRIMARIO Y SEMIELABORADOS DE ALUMINIO",
+    },
+    {
+        value: "242090",
+        label: "FABRICACION DE PRODUCTOS PRIMARIOS DE METALES PRECIOSOS Y METALES NO FERROSOS N.C.P. Y SUS SEMIELABORADOS",
+    },
+    {
+        value: "243100",
+        label: "FUNDICION DE HIERRO Y ACERO",
+    },
+    {
+        value: "243200",
+        label: "FUNDICION DE METALES NO FERROSOS",
+    },
+    {
+        value: "251101",
+        label: "FABRICACION DE CARPINTERIA METALICA",
+    },
+    {
+        value: "251102",
+        label: "FABRICACION DE PRODUCTOS METALICOS PARA USO ESTRUCTURAL",
+    },
+    {
+        value: "251200",
+        label: "FABRICACION DE TANQUES, DEPOSITOS Y RECIPIENTES DE METAL (INCLUYE LA FABRICACION DE SILOS)",
+    },
+    {
+        value: "251300",
+        label: "FABRICACION DE GENERADORES DE VAPOR",
+    },
+    {
+        value: "252000",
+        label: "FABRICACION DE ARMAS Y MUNICIONES",
+    },
+    {
+        value: "259100",
+        label: "FORJADO, PRENSADO, ESTAMPADO Y LAMINADO DE METALES, PULVIMETALURGIA",
+    },
+    {
+        value: "259200",
+        label: "TRATAMIENTO Y REVESTIMIENTO DE METALES Y TRABAJOS DE METALES EN GENERAL",
+    },
+    {
+        value: "259301",
+        label: "FABRICACION DE HERRAMIENTAS MANUALES Y SUS ACCESORIOS",
+    },
+    {
+        value: "259302",
+        label: "FABRICACION DE ARTICULOS DE CUCHILLERIA Y UTENSILLOS DE MESA Y DE COCINA",
+    },
+    {
+        value: "259309",
+        label: "FABRICACION DE CERRADURAS, HERRAJES Y ARTICULOS DE FERRETERIA N.C.P.",
+    },
+    {
+        value: "259910",
+        label: "FABRICACION DE ENVASES METALICOS",
+    },
+    {
+        value: "259991",
+        label: "FABRICACION DE TEJIDOS DE ALAMBRE",
+    },
+    {
+        value: "259992",
+        label: "FABRICACION DE CAJAS DE SEGURIDAD",
+    },
+    {
+        value: "259993",
+        label: "FABRICACION DE PRODUCTOS METALICOS DE TORNERIA Y/O MATRICERIA",
+    },
+    {
+        value: "259999",
+        label: "FABRICACION DE PRODUCTOS ELABORADOS DE METAL N.C.P.",
+    },
+    {
+        value: "261000",
+        label: "FABRICACION DE COMPONENTES ELECTRONICOS",
+    },
+    {
+        value: "262000",
+        label: "FABRICACION DE EQUIPOS Y PRODUCTOS INFORMATICOS",
+    },
+    {
+        value: "263000",
+        label: "FABRICACION  DE EQUIPOS DE COMUNICACIONES Y TRANSMISORES DE RADIO Y TELEVISION",
+    },
+    {
+        value: "264000",
+        label: "FABRICACION DE RECEPTORES DE RADIO Y TELEVISION, APARATOS DE GRABACION Y REPRODUCCION DE SONIDO Y VIDEO, Y PRODUCTOS CONEXOS",
+    },
+    {
+        value: "265101",
+        label: "FABRICACION DE INSTRUMENTOS Y APARATOS PARA MEDIR, VERIFICAR, ENSAYAR, NAVEGAR Y OTROS FINES, EXCEPTO EL EQUIPO DE CONTROL DE PROCESOS INDUSTRIALES",
+    },
+    {
+        value: "265102",
+        label: "FABRICACION DE EQUIPO DE CONTROL DE PROCESOS INDUSTRIALES",
+    },
+    {
+        value: "265200",
+        label: "FABRICACION DE RELOJES",
+    },
+    {
+        value: "266010",
+        label: "FABRICACION DE EQUIPO MEDICO Y QUIRURGICO Y DE APARATOS ORTOPEDICOS PRINCIPALMENTE ELECTRONICOS Y/O ELECTRICOS (INCLUYE EQUIPOS DE LABORATORIO, ESTERILIZADORES, PANELES PARA OBSERVACION DE RADIOGRAFIAS, TORNOS, ETC.)",
+    },
+    {
+        value: "266090",
+        label: "FABRICACION DE EQUIPO MEDICO Y QUIRURGICO Y DE APARATOS ORTOPEDICOS N.C.P. (INCLUYE PROTESIS, APARATOS ORTOPEDICOS, MATERIALES PARA FRACTURAS, ETC.)",
+    },
+    {
+        value: "267001",
+        label: "FABRICACION DE EQUIPAMIENTO E INSTRUMENTOS OPTICOS Y SUS ACCESORIOS",
+    },
+    {
+        value: "267002",
+        label: "FABRICACION DE APARATOS Y ACCESORIOS PARA FOTOGRAFIA EXCEPTO PELICULAS, PLACAS Y PAPELES SENSIBLES",
+    },
+    {
+        value: "268000",
+        label: "FABRICACION DE SOPORTES OPTICOS Y MAGNETICOS (INCLUYE CD, DISQUETES, CINTAS MAGNETICAS, TARJETAS MAGNETIZADAS, ETC.)",
+    },
+    {
+        value: "271010",
+        label: "FABRICACION DE MOTORES, GENERADORES Y TRANSFORMADORES ELECTRICOS",
+    },
+    {
+        value: "271020",
+        label: "FABRICACION DE APARATOS DE DISTRIBUCION Y CONTROL DE LA ENERGIA ELECTRICA",
+    },
+    {
+        value: "272000",
+        label: "FABRICACION DE ACUMULADORES, PILAS Y BATERIAS PRIMARIAS",
+    },
+    {
+        value: "273110",
+        label: "FABRICACION DE CABLES DE FIBRA OPTICA",
+    },
+    {
+        value: "273190",
+        label: "FABRICACION DE HILOS Y CABLES AISLADOS N.C.P.",
+    },
+    {
+        value: "274000",
+        label: "FABRICACION DE LAMPARAS ELECTRICAS Y EQUIPO DE ILUMINACION",
+    },
+    {
+        value: "275010",
+        label: "FABRICACION DE COCINAS, CALEFONES, ESTUFAS Y CALEFACTORES NO ELECTRICOS",
+    },
+    {
+        value: "275020",
+        label: "FABRICACION DE HELADERAS, FREEZERS, LAVARROPAS Y SECARROPAS",
+    },
+    {
+        value: "275091",
+        label: "FABRICACION DE VENTILADORES, EXTRACTORES DE AIRE, ASPIRADORAS Y SIMILARES",
+    },
+    {
+        value: "275092",
+        label: "FABRICACION DE PLANCHAS, CALEFACTORES, HORNOS ELECTRICOS, TOSTADORAS Y OTROS APARATOS GENERADORES DE CALOR",
+    },
+    {
+        value: "275099",
+        label: "FABRICACION DE APARATOS DE USO DOMESTICO N.C.P. (INCLUYE ENCERADORAS, PULIDORAS, BATIDORAS, LICUADORAS Y SIMILARES)",
+    },
+    {
+        value: "279000",
+        label: "FABRICACION  DE EQUIPO ELECTRICO N.C.P.",
+    },
+    {
+        value: "281100",
+        label: "FABRICACION  DE  MOTORES  Y  TURBINAS,  EXCEPTO  MOTORES  PARA AERONAVES, VEHICULOS AUTOMOTORES   Y MOTOCICLETAS",
+    },
+    {
+        value: "281201",
+        label: "FABRICACION DE BOMBAS",
+    },
+    {
+        value: "281301",
+        label: "FABRICACION DE COMPRESORES, GRIFOS Y VALVULAS",
+    },
+    {
+        value: "281400",
+        label: "FABRICACION DE COJINETES, ENGRANAJES, TRENES DE ENGRANAJE Y PIEZAS DE TRANSMISION",
+    },
+    {
+        value: "281500",
+        label: "FABRICACION DE HORNOS, HOGARES Y QUEMADORES",
+    },
+    {
+        value: "281600",
+        label: "FABRICACION DE MAQUINARIA Y EQUIPO DE ELEVACION Y MANIPULACION (INCLUYE LA FABRICACION DE ASCENSORES, ESCALERAS MECANICAS, MONTACARGAS, ETC.)",
+    },
+    {
+        value: "281700",
+        label: "FABRICACION DE MAQUINARIA Y EQUIPO DE OFICINA, EXCEPTO EQUIPO INFORMATICO",
+    },
+    {
+        value: "281900",
+        label: "FABRICACION DE  MAQUINARIA Y EQUIPO DE USO GENERAL N.C.P. (INCLUYE LA FABRICACION DE EQUIPOS DE AIRE ACONDICIONADO, MATAFUEGOS, ETC.)",
+    },
+    {
+        value: "282110",
+        label: "FABRICACION DE TRACTORES",
+    },
+    {
+        value: "282120",
+        label: "FABRICACION DE MAQUINARIA Y EQUIPO DE USO AGROPECUARIO Y FORESTAL",
+    },
+    {
+        value: "282130",
+        label: "FABRICACION DE IMPLEMENTOS DE USO AGROPECUARIO",
+    },
+    {
+        value: "282200",
+        label: "FABRICACION DE MAQUINAS HERRAMIENTA",
+    },
+    {
+        value: "282300",
+        label: "FABRICACION DE MAQUINARIA METALURGICA",
+    },
+    {
+        value: "282400",
+        label: "FABRICACION DE MAQUINARIA PARA LA EXPLOTACION DE MINAS Y CANTERAS Y PARA OBRAS DE CONSTRUCCION (INCLUYE LA FABRICACION DE MAQUINAS Y EQUIPOS VIALES, EQUIPOS PARA LA EXTRACCION DE PETROLEO Y GAS, ETC.)",
+    },
+    {
+        value: "282500",
+        label: "FABRICACION DE MAQUINARIA PARA LA ELABORACION DE ALIMENTOS, BEBIDAS Y TABACO",
+    },
+    {
+        value: "282600",
+        label: "FABRICACION DE MAQUINARIA PARA LA ELABORACION DE PRODUCTOS TEXTILES, PRENDAS DE VESTIR Y CUEROS",
+    },
+    {
+        value: "282901",
+        label: "FABRICACION DE MAQUINARIA PARA LA INDUSTRIA DEL PAPEL Y LAS ARTES GRAFICAS",
+    },
+    {
+        value: "282909",
+        label: "FABRICACION DE MAQUINARIA Y EQUIPO DE USO ESPECIAL N.C.P.",
+    },
+    {
+        value: "291000",
+        label: "FABRICACION DE VEHICULOS AUTOMOTORES (INCLUYE LA FABRICACION DE MOTORES PARA AUTOMOTORES)",
+    },
+    {
+        value: "292000",
+        label: "FABRICACION DE CARROCERIAS PARA VEHICULOS AUTOMOTORES, FABRICACION DE REMOLQUES Y SEMIRREMOLQUES",
+    },
+    {
+        value: "293011",
+        label: "RECTIFICACION DE MOTORES",
+    },
+    {
+        value: "293090",
+        label: "FABRICACION DE PARTES, PIEZAS Y ACCESORIOS PARA VEHICULOS AUTOMOTORES Y SUS MOTORES N.C.P.",
+    },
+    {
+        value: "301100",
+        label: "CONSTRUCCION Y REPARACION DE BUQUES (INCLUYE CONSTRUCCION DE ESTRUCTURAS FLOTANTES)",
+    },
+    {
+        value: "301200",
+        label: "CONSTRUCCION Y REPARACION DE EMBARCACIONES DE RECREO Y DEPORTE",
+    },
+    {
+        value: "302000",
+        label: "FABRICACION Y REPARACION DE LOCOMOTORAS Y DE MATERIAL RODANTE PARA TRANSPORTE FERROVIARIO",
+    },
+    {
+        value: "303000",
+        label: "FABRICACION Y REPARACION DE AERONAVES",
+    },
+    {
+        value: "309100",
+        label: "FABRICACION DE MOTOCICLETAS",
+    },
+    {
+        value: "309200",
+        label: "FABRICACION DE BICICLETAS Y DE SILLONES DE RUEDAS ORTOPEDICOS",
+    },
+    {
+        value: "309900",
+        label: "FABRICACION DE EQUIPO DE TRANSPORTE N.C.P.",
+    },
+    {
+        value: "310010",
+        label: "FABRICACION DE MUEBLES Y PARTES DE MUEBLES, PRINCIPALMENTE DE MADERA",
+    },
+    {
+        value: "310020",
+        label: "FABRICACION DE MUEBLES Y PARTES DE MUEBLES, EXCEPTO LOS QUE SON PRINCIPALMENTE DE MADERA (METAL, PLASTICO, ETC.)",
+    },
+    {
+        value: "310030",
+        label: "FABRICACION DE SOMIERES Y COLCHONES",
+    },
+    {
+        value: "31110",
+        label: "PESCA DE ORGANISMOS MARINOS, EXCEPTO CUANDO ES REALIZADA EN BUQUES PROCESADORES",
+    },
+    {
+        value: "31120",
+        label: "PESCA Y ELABORACION DE PRODUCTOS MARINOS REALIZADA A BORDO DE BUQUES PROCESADORES",
+    },
+    {
+        value: "31130",
+        label: "RECOLECCION DE ORGANISMOS MARINOS EXCEPTO PECES, CRUSTACEOS Y MOLUSCOS (INCLUYE LA RECOLECCION DE ALGAS MARINAS)",
+    },
+    {
+        value: "31200",
+        label: "PESCA CONTINENTAL: FLUVIAL Y LACUSTRE",
+    },
+    {
+        value: "31300",
+        label: "SERVICIOS DE APOYO PARA LA PESCA",
+    },
+    {
+        value: "32000",
+        label: "EXPLOTACION DE CRIADEROS DE PECES, GRANJAS PISCICOLAS Y OTROS FRUTOS ACUATICOS  (ACUICULTURA)",
+    },
+    {
+        value: "321011",
+        label: "FABRICACION DE JOYAS FINAS Y ARTICULOS CONEXOS",
+    },
+    {
+        value: "321012",
+        label: "FABRICACION DE OBJETOS DE PLATERIA",
+    },
+    {
+        value: "321020",
+        label: "FABRICACION DE BIJOUTERIE (INCLUYE LA FABRICACION DE JOYAS DE FANTASIA Y ACCESORIOS SIMILARES)",
+    },
+    {
+        value: "322001",
+        label: "FABRICACION DE INSTRUMENTOS DE MUSICA",
+    },
+    {
+        value: "323001",
+        label: "FABRICACION DE ARTICULOS DE DEPORTE (INCLUYE EQUIPOS DE DEPORTE PARA GIMNASIA Y CAMPOS DE JUEGOS, EQUIPOS DE PESCA Y CAMPING, ETC., EXCEPTO INDUMENTARIA DEPORTIVA: 141040)",
+    },
+    {
+        value: "324000",
+        label: "FABRICACION DE JUEGOS Y JUGUETES",
+    },
+    {
+        value: "329010",
+        label: "FABRICACION DE LAPICES, LAPICERAS,  BOLIGRAFOS, SELLOS Y ARTICULOS SIMILARES PARA OFICINAS Y ARTISTAS",
+    },
+    {
+        value: "329020",
+        label: "FABRICACION DE ESCOBAS, CEPILLOS Y PINCELES",
+    },
+    {
+        value: "329030",
+        label: "FABRICACION DE CARTELES, SEÑALES E INDICADORES  -ELECTRICOS O NO-",
+    },
+    {
+        value: "329040",
+        label: "FABRICACION DE EQUIPO DE PROTECCION Y SEGURIDAD, EXCEPTO CALZADO",
+    },
+    {
+        value: "329090",
+        label: "INDUSTRIAS MANUFACTURERAS N.C.P. (INCLUYE FABRICACION DE PARAGUAS, TERMOS, PELUCAS, ETC.)",
+    },
+    {
+        value: "331101",
+        label: "REPARACION Y MANTENIMIENTO DE PRODUCTOS DE METAL, EXCEPTO MAQUINARIA Y EQUIPO",
+    },
+    {
+        value: "331210",
+        label: "REPARACION Y MANTENIMIENTO DE MAQUINARIA DE USO GENERAL",
+    },
+    {
+        value: "331220",
+        label: "REPARACION Y MANTENIMIENTO DE MAQUINARIA Y EQUIPO DE USO AGROPECUARIO Y FORESTAL",
+    },
+    {
+        value: "331290",
+        label: "REPARACION Y MANTENIMIENTO DE MAQUINARIA DE USO ESPECIAL N.C.P.",
+    },
+    {
+        value: "331301",
+        label: "REPARACION Y MANTENIMIENTO DE INSTRUMENTOS MEDICOS, OPTICOS Y DE PRECISION, EQUIPO FOTOGRAFICO, APARATOS PARA MEDIR, ENSAYAR O NAVEGAR, RELOJES, EXCEPTO PARA USO PERSONAL O DOMESTICO",
+    },
+    {
+        value: "331400",
+        label: "REPARACION Y MANTENIMIENTO DE MAQUINARIA Y APARATOS ELECTRICOS",
+    },
+    {
+        value: "331900",
+        label: "REPARACION Y MANTENIMIENTO DE MAQUINAS Y EQUIPO N.C.P.",
+    },
+    {
+        value: "332000",
+        label: "INSTALACION DE MAQUINARIA Y EQUIPOS INDUSTRIALES",
+    },
+    {
+        value: "351110",
+        label: "GENERACION DE ENERGIA TERMICA CONVENCIONAL (INCLUYE LA PRODUCCION DE ENERGIA ELECTRICA MEDIANTE MAQUINAS TURBO-GAS, TURBO VAPOR, CICLO COMBINADO Y TURBO DIESEL)",
+    },
+    {
+        value: "351120",
+        label: "GENERACION DE ENERGIA TERMICA NUCLEAR (INCLUYE LA PRODUCCION DE ENERGIA ELECTRICA MEDIANTE COMBUSTIBLE NUCLEAR)",
+    },
+    {
+        value: "351130",
+        label: "GENERACION DE ENERGIA HIDRAULICA (INCLUYE LA PRODUCCION DE ENERGIA ELECTRICA MEDIANTE CENTRALES DE BOMBEO)",
+    },
+    {
+        value: "351190",
+        label: "GENERACION DE ENERGIA N.C.P. (INCLUYE LA PRODUCCION DE ENERGIA ELECTRICA MEDIANTE FUENTES DE ENERGIA SOLAR, BIOMASA, EOLICA, GEOTERMICA, MAREOMOTRIZ, ETC.)",
+    },
+    {
+        value: "351201",
+        label: "TRANSPORTE DE ENERGIA ELECTRICA",
+    },
+    {
+        value: "351310",
+        label: "COMERCIO MAYORISTA DE ENERGIA ELECTRICA",
+    },
+    {
+        value: "351320",
+        label: "DISTRIBUCION DE ENERGIA ELECTRICA",
+    },
+    {
+        value: "352010",
+        label: "FABRICACION DE GAS Y PROCESAMIENTO DE GAS NATURAL",
+    },
+    {
+        value: "352020",
+        label: "DISTRIBUCION DE COMBUSTIBLES GASEOSOS POR TUBERIAS (NO INCLUYE EL TRANSPORTE POR GASODUCTOS)",
+    },
+    {
+        value: "353001",
+        label: "SUMINISTRO DE VAPOR Y AIRE ACONDICIONADO",
+    },
+    {
+        value: "360010",
+        label: "CAPTACION, DEPURACION Y DISTRIBUCION DE AGUA DE FUENTES SUBTERRANEAS",
+    },
+    {
+        value: "360020",
+        label: "CAPTACION, DEPURACION Y DISTRIBUCION DE AGUA DE FUENTES SUPERFICIALES",
+    },
+    {
+        value: "370000",
+        label: "SERVICIOS DE DEPURACION DE AGUAS RESIDUALES, ALCANTARILLADO Y CLOACAS",
+    },
+    {
+        value: "381100",
+        label: "RECOLECCION, TRANSPORTE, TRATAMIENTO Y DISPOSICION FINAL DE RESIDUOS NO PELIGROSOS",
+    },
+    {
+        value: "381200",
+        label: "RECOLECCION, TRANSPORTE, TRATAMIENTO Y DISPOSICION FINAL DE RESIDUOS PELIGROSOS",
+    },
+    {
+        value: "382010",
+        label: "RECUPERACION DE MATERIALES Y DESECHOS METALICOS",
+    },
+    {
+        value: "382020",
+        label: "RECUPERACION DE MATERIALES Y DESECHOS NO METALICOS",
+    },
+    {
+        value: "390000",
+        label: "DESCONTAMINACION Y OTROS SERVICIOS DE GESTION DE RESIDUOS",
+    },
+    {
+        value: "410011",
+        label: "CONSTRUCCION, REFORMA Y REPARACION DE EDIFICIOS RESIDENCIALES (INCLUYE LA CONSTRUCCION, REFORMA Y REPARACION  DE VIVIENDAS UNIFAMILIARES Y MULTIFAMILIARES, BUNGALOES, CABAÑAS, CASAS DE CAMPO, DEPARTAMENTOS, ALBERGUES PARA ANCIANOS, NIÑOS, ESTUDIANTES, ET",
+    },
+    {
+        value: "410021",
+        label: "CONSTRUCCION, REFORMA Y REPARACION DE EDIFICIOS NO RESIDENCIALES (INCLUYE CONSTRUCCION, REFORMA Y REPARACION DE RESTAURANTES, BARES, CAMPAMENTOS, BANCOS, OFICINAS, GALERIAS COMERCIALES, ESTACIONES DE SERVICIO, EDIFICIOS PARA TRAFICO Y COMUNICACIONES, GAR",
+    },
+    {
+        value: "421000",
+        label: "CONSTRUCCION, REFORMA Y REPARACION DE OBRAS DE INFRAESTRUCTURA PARA EL TRANSPORTE (INCLUYE LA CONSTRUCCION, REFORMA Y REPARACION DE CALLES, AUTOPISTAS, CARRETERAS, PUENTES, TUNELES, VIAS FERREAS Y PISTAS DE ATERRIZAJE, LA SEÑALIZACION MEDIANTE PINTURA, E",
+    },
+    {
+        value: "422100",
+        label: "PERFORACION DE POZOS DE AGUA",
+    },
+    {
+        value: "422200",
+        label: "CONSTRUCCION, REFORMA Y REPARACION DE REDES DISTRIBUCION DE ELECTRICIDAD, GAS, AGUA, TELECOMUNICACIONES Y DE OTROS SERVICIOS PUBLICOS",
+    },
+    {
+        value: "429010",
+        label: "CONSTRUCCION, REFORMA Y REPARACION DE OBRAS HIDRAULICAS (INCLUYE OBRAS FLUVIALES Y CANALES, ACUEDUCTOS, DIQUES, ETC.)",
+    },
+    {
+        value: "429090",
+        label: "CONSTRUCCION DE OBRAS DE INGENIERIA CIVIL N.C.P. (INCLUYE LOS TRABAJOS GENERALES DE CONSTRUCCION PARA LA MINERIA Y LA INDUSTRIA,  DE CENTRALES ELECTRICAS Y NUCLEARES, EXCAVACIONES DE SEPULTURAS, ETC.)",
+    },
+    {
+        value: "431100",
+        label: "DEMOLICION Y VOLADURA DE EDIFICIOS Y DE SUS PARTES (INCLUYE LOS TRABAJOS DE LIMPIEZA DE ESCOMBROS ASOCIADA A LA DEMOLICION, LOS DERRIBOS Y DEMOLICION DE EDIFICIOS Y OBRAS DE INGENIERIA CIVIL,.LOS TRABAJOS DE VOLADURA Y REMOCION DE ROCAS)",
+    },
+    {
+        value: "431210",
+        label: "MOVIMIENTO DE SUELOS Y PREPARACION DE TERRENOS PARA OBRAS (INCLUYE EL DRENAJE, EXCAVACION DE ZANJAS PARA CONSTRUCCIONES DIVERSAS, EL DESPEJE DE CAPAS SUPERFICIALES NO CONTAMINADAS, MOVIMIENTOS DE TIERRAS PARA HACER TERRAPLENES O DESMONTES PREVIOS A LA CO",
+    },
+    {
+        value: "431220",
+        label: "PERFORACION Y SONDEO, EXCEPTO PERFORACION DE POZOS DE PETROLEO, DE GAS, DE MINAS E HIDRAULICOS  Y PROSPECCION DE YACIMIENTOS DE PETROLEO (INCLUYE LOS TRABAJOS DE PERFORACION, SONDEO Y MUESTREO CON FINES DE CONSTRUCCION O PARA ESTUDIOS GEOFISICOS, GEOLOGI",
+    },
+    {
+        value: "432110",
+        label: "INSTALACION DE SISTEMAS DE ILUMINACION, CONTROL Y SEÑALIZACION ELECTRICA PARA EL TRANSPORTE",
+    },
+    {
+        value: "432190",
+        label: "INSTALACION, EJECUCION Y MANTENIMIENTO DE INSTALACIONES ELECTRICAS, ELECTROMECANICAS Y ELECTRONICAS N.C.P. (INCLUYE LA INSTALACION DE ANTENAS, PARARRAYOS, SISTEMAS DE ALARMAS CONTRA INCENDIOS Y ROBOS, SISTEMAS DE TELECOMUNICACION, ETC.)",
+    },
+    {
+        value: "432200",
+        label: "INSTALACIONES DE GAS, AGUA, SANITARIOS Y DE CLIMATIZACION, CON SUS ARTEFACTOS CONEXOS (INCLUYE LA INSTALACION DE COMPACTADORES, CALDERAS, SISTEMAS DE CALEFACCION CENTRAL, ETC.)",
+    },
+    {
+        value: "432910",
+        label: "INSTALACIONES DE ASCENSORES, MONTACARGAS Y  ESCALERAS MECANICAS",
+    },
+    {
+        value: "432920",
+        label: "AISLAMIENTO TERMICO, ACUSTICO, HIDRICO Y ANTIVIBRATORIO",
+    },
+    {
+        value: "432990",
+        label: "INSTALACIONES PARA EDIFICIOS Y OBRAS DE INGENIERIA CIVIL N.C.P. (INCLUYE INSTALACION DE PUERTAS AUTOMATICAS O GIRATORIAS)",
+    },
+    {
+        value: "433010",
+        label: "INSTALACIONES DE CARPINTERIA, HERRERIA DE OBRA Y ARTISTICA (INCLUYE INSTALACION DE PUERTAS Y VENTANAS, CARPINTERIA METALICA Y NO METALICA, ETC.)",
+    },
+    {
+        value: "433020",
+        label: "TERMINACION Y REVESTIMIENTO DE PAREDES Y PISOS (INCLUYE YESERIA, SALPICRE, EL PULIDO DE PISOS Y LA COLOCACION DE REVESTIMIENTOS DE CERAMICAS, DE PIEDRA TALLADA, DE SUELOS FLEXIBLES, PARQUE, BALDOSAS, EMPAPELADOS, ETC.)",
+    },
+    {
+        value: "433030",
+        label: "COLOCACION DE CRISTALES EN OBRA (INCLUYE LA INSTALACION Y REVESTIMIENTO DE VIDRIO, ESPEJOS Y OTROS ARTICULOS DE VIDRIO, ETC.)",
+    },
+    {
+        value: "433040",
+        label: "PINTURA Y TRABAJOS DE DECORACION",
+    },
+    {
+        value: "433090",
+        label: "TERMINACION DE EDIFICIOS N.C.P. (INCLUYE TRABAJOS DE ORNAMENTACION, LIMPIEZA EXTERIOR DE EDIFICIOS RECIEN CONSTRUIDOS, ETC.)",
+    },
+    {
+        value: "439100",
+        label: "ALQUILER DE EQUIPO DE CONSTRUCCION O DEMOLICION DOTADO DE OPERARIOS",
+    },
+    {
+        value: "439910",
+        label: "HINCADO DE PILOTES, CIMENTACION Y OTROS TRABAJOS DE HORMIGON ARMADO",
+    },
+    {
+        value: "439990",
+        label: "ACTIVIDADES ESPECIALIZADAS DE CONSTRUCCION N.C.P. (INCLUYE EL ALQUILER, MONTAJE Y DESMANTELAMIENTO DE ANDAMIOS,  LA CONSTRUCCION DE CHIMENEAS Y HORNOS INDUSTRIALES, EL ACORAZAMIENTO DE CAJAS FUERTES Y CAMARAS FRIGORIFICAS, EL ARMADO E INSTALACION DE COMP",
+    },
+    {
+        value: "451110",
+        label: "VENTA DE AUTOS, CAMIONETAS Y UTILITARIOS NUEVOS (INCLUYE TAXIS, JEEPS, 4X4 Y VEHICULOS SIMILARES)",
+    },
+    {
+        value: "451190",
+        label: "VENTA DE VEHICULOS AUTOMOTORES NUEVOS N.C.P. (INCLUYE CASAS RODANTES, TRAILERS, CAMIONES, REMOLQUES, AMBULANCIAS, OMNIBUS, MICROBUSES Y SIMILARES, CABEZAS TRACTORAS, ETC.)",
+    },
+    {
+        value: "451210",
+        label: "VENTA DE AUTOS, CAMIONETAS Y UTILITARIOS, USADOS (INCLUYE TAXIS, JEEPS, 4X4 Y VEHICULOS SIMILARES)",
+    },
+    {
+        value: "451290",
+        label: "VENTA DE VEHICULOS AUTOMOTORES USADOS N.C.P. (INCLUYE, CASAS RODANTES, TRAILERS, CAMIONES, REMOLQUES, AMBULANCIAS, OMNIBUS, MICROBUSES Y SIMILARES, CABEZAS TRACTORAS, ETC.)",
+    },
+    {
+        value: "452101",
+        label: "LAVADO AUTOMATICO Y MANUAL DE VEHICULOS AUTOMOTORES",
+    },
+    {
+        value: "452210",
+        label: "REPARACION DE CAMARAS Y CUBIERTAS (INCLUYE REPARACION DE LLANTAS)",
+    },
+    {
+        value: "452220",
+        label: "REPARACION DE AMORTIGUADORES,  ALINEACION DE DIRECCION Y BALANCEO DE RUEDAS",
+    },
+    {
+        value: "452300",
+        label: "INSTALACION Y REPARACION DE PARABRISAS, LUNETAS Y VENTANILLAS, CERRADURAS NO ELECTRICAS Y GRABADO DE CRISTALES (INCLUYE INSTALACION Y REPARACION DE ALETAS, BURLETES Y COLISAS)",
+    },
+    {
+        value: "452401",
+        label: "REPARACIONES ELECTRICAS DEL TABLERO E INSTRUMENTAL, REPARACION Y RECARGA DE BATERIAS, INSTALACION DE ALARMAS, RADIOS, SISTEMAS DE CLIMATIZACION",
+    },
+    {
+        value: "452500",
+        label: "TAPIZADO Y RETAPIZADO DE AUTOMOTORES",
+    },
+    {
+        value: "452600",
+        label: "REPARACION Y PINTURA DE CARROCERIAS, COLOCACION Y REPARACION DE GUARDABARROS Y PROTECCIONES EXTERIORES",
+    },
+    {
+        value: "452700",
+        label: "INSTALACION Y REPARACION DE CAÑOS DE ESCAPE Y RADIADORES",
+    },
+    {
+        value: "452800",
+        label: "MANTENIMIENTO Y REPARACION DE FRENOS Y EMBRAGUES",
+    },
+    {
+        value: "452910",
+        label: "INSTALACION Y REPARACION DE EQUIPOS DE GNC",
+    },
+    {
+        value: "452990",
+        label: "MANTENIMIENTO Y REPARACION DEL MOTOR N.C.P., MECANICA INTEGRAL (INCLUYE AUXILIO Y SERVICIOS DE GRUA PARA AUTOMOTORES)",
+    },
+    {
+        value: "453100",
+        label: "VENTA AL POR MAYOR DE PARTES, PIEZAS Y ACCESORIOS DE VEHICULOS AUTOMOTORES",
+    },
+    {
+        value: "453210",
+        label: "VENTA AL POR MENOR DE CAMARAS Y CUBIERTAS",
+    },
+    {
+        value: "453220",
+        label: "VENTA AL POR MENOR DE BATERIAS",
+    },
+    {
+        value: "453291",
+        label: "VENTA AL POR MENOR DE PARTES, PIEZAS Y ACCESORIOS NUEVOS N.C.P.",
+    },
+    {
+        value: "453292",
+        label: "VENTA AL POR MENOR DE PARTES, PIEZAS Y ACCESORIOS USADOS N.C.P.",
+    },
+    {
+        value: "454010",
+        label: "VENTA DE MOTOCICLETAS Y DE SUS PARTES, PIEZAS Y ACCESORIOS",
+    },
+    {
+        value: "454020",
+        label: "MANTENIMIENTO Y REPARACION DE MOTOCICLETAS",
+    },
+    {
+        value: "461011",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE CEREALES (INCLUYE ARROZ), OLEAGINOSAS Y FORRAJERAS EXCEPTO SEMILLAS",
+    },
+    {
+        value: "461012",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE SEMILLAS",
+    },
+    {
+        value: "461013",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE FRUTAS (INCLUYE ACOPIADORES Y RECEPTORAS)",
+    },
+    {
+        value: "461014",
+        label: "ACOPIO Y ACONDICIONAMIENTO EN COMISION O CONSIGNACION DE CEREALES (INCLUYE ARROZ), OLEAGINOSAS Y FORRAJERAS EXCEPTO SEMILLAS",
+    },
+    {
+        value: "461019",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE PRODUCTOS AGRICOLAS N.C.P.",
+    },
+    {
+        value: "461021",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE GANADO BOVINO EN PIE (INCLUYE CONSIGNATARIOS DE HACIENDA Y FERIEROS)",
+    },
+    {
+        value: "461022",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE GANADO EN PIE EXCEPTO BOVINO",
+    },
+    {
+        value: "461029",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE PRODUCTOS PECUARIOS N.C.P.",
+    },
+    {
+        value: "461031",
+        label: "OPERACIONES DE INTERMEDIACION DE CARNE - CONSIGNATARIO DIRECTO -",
+    },
+    {
+        value: "461032",
+        label: "OPERACIONES DE INTERMEDIACION DE CARNE EXCEPTO CONSIGNATARIO DIRECTO (INCLUYE MATARIFES ABASTECEDORES DE CARNE, ETC.)",
+    },
+    {
+        value: "461039",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE ALIMENTOS, BEBIDAS Y TABACO N.C.P.",
+    },
+    {
+        value: "461040",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE COMBUSTIBLES (NO INCLUYE ELECTRICIDAD)",
+    },
+    {
+        value: "461091",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE PRODUCTOS TEXTILES, PRENDAS DE VESTIR, CALZADO EXCEPTO EL ORTOPEDICO,  ARTICULOS DE MARROQUINERIA, PARAGUAS Y SIMILARES Y PRODUCTOS DE CUERO N.C.P.",
+    },
+    {
+        value: "461092",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE  MADERA Y MATERIALES PARA LA CONSTRUCCION",
+    },
+    {
+        value: "461093",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE MINERALES, METALES Y PRODUCTOS QUIMICOS INDUSTRIALES",
+    },
+    {
+        value: "461094",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE  MAQUINARIA, EQUIPO PROFESIONAL INDUSTRIAL Y COMERCIAL, EMBARCACIONES Y AERONAVES",
+    },
+    {
+        value: "461095",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE PAPEL, CARTON, LIBROS, REVISTAS, DIARIOS, MATERIALES DE EMBALAJE Y ARTICULOS DE LIBRERIA",
+    },
+    {
+        value: "461099",
+        label: "VENTA AL POR MAYOR EN COMISION O CONSIGNACION DE  MERCADERIAS N.C.P.",
+    },
+    {
+        value: "462110",
+        label: "ACOPIO DE ALGODON",
+    },
+    {
+        value: "462120",
+        label: "VENTA AL POR MAYOR DE SEMILLAS Y GRANOS PARA FORRAJES",
+    },
+    {
+        value: "462131",
+        label: "VENTA AL POR MAYOR DE CEREALES (INCLUYE ARROZ), OLEAGINOSAS Y FORRAJERAS EXCEPTO SEMILLAS",
+    },
+    {
+        value: "462132",
+        label: "ACOPIO Y ACONDICIONAMIENTO DE CEREALES Y SEMILLAS, EXCEPTO DE ALGODON Y SEMILLAS Y GRANOS PARA FORRAJES",
+    },
+    {
+        value: "462190",
+        label: "VENTA AL POR MAYOR DE MATERIAS PRIMAS AGRICOLAS Y DE LA SILVICULTURA N.C.P. (INCLUYE EL ACOPIO Y VENTA AL POR MAYOR DE MATERILES, DESPERDICIOS, SUBPRODUCTOS AGRICOLA USADOS COMO ALIMENTOS PARA ANIMALES)",
+    },
+    {
+        value: "462201",
+        label: "VENTA AL POR MAYOR DE LANAS, CUEROS EN BRUTO Y PRODUCTOS AFINES",
+    },
+    {
+        value: "462209",
+        label: "VENTA AL POR MAYOR DE MATERIAS PRIMAS PECUARIAS N.C.P. INCLUSO ANIMALES VIVOS (INCLUYE PIELES Y CUEROS EN BRUTO)",
+    },
+    {
+        value: "463111",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS LACTEOS",
+    },
+    {
+        value: "463112",
+        label: "VENTA AL POR MAYOR DE FIAMBRES Y QUESOS",
+    },
+    {
+        value: "463121",
+        label: "VENTA AL POR MAYOR DE CARNES ROJAS Y DERIVADOS (INCLUYE ABASTECEDORES Y DISTRIBUIDORES DE CARNE)",
+    },
+    {
+        value: "463129",
+        label: "VENTA AL POR MAYOR DE AVES, HUEVOS Y PRODUCTOS DE GRANJA Y DE LA CAZA N.C.P. (INCLUYE LA VENTA AL POR MAYOR  DE CARNE DE AVE FRESCA, CONGELADA O REFRIGERADA)",
+    },
+    {
+        value: "463130",
+        label: "VENTA AL POR MAYOR DE PESCADO",
+    },
+    {
+        value: "463140",
+        label: "VENTA AL POR MAYOR Y EMPAQUE DE FRUTAS, DE LEGUMBRES Y HORTALIZAS FRESCAS",
+    },
+    {
+        value: "463151",
+        label: "VENTA AL POR MAYOR DE PAN, PRODUCTOS DE CONFITERIA Y PASTAS FRESCAS",
+    },
+    {
+        value: "463152",
+        label: "VENTA AL POR MAYOR DE AZUCAR",
+    },
+    {
+        value: "463153",
+        label: "VENTA AL POR MAYOR DE ACEITES Y GRASAS",
+    },
+    {
+        value: "463154",
+        label: "VENTA AL POR MAYOR DE CAFE, TE, YERBA MATE Y OTRAS INFUSIONES Y ESPECIAS Y CONDIMENTOS (INCLUYE LA VENTA DE SAL)",
+    },
+    {
+        value: "463159",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS Y SUBPRODUCTOS DE MOLINERIA N.C.P.",
+    },
+    {
+        value: "463160",
+        label: "VENTA AL POR MAYOR DE CHOCOLATES, GOLOSINAS Y PRODUCTOS PARA KIOSCOS Y POLIRRUBROS N.C.P., EXCEPTO CIGARRILLOS",
+    },
+    {
+        value: "463170",
+        label: "VENTA AL POR MAYOR DE ALIMENTOS BALANCEADOS PARA ANIMALES",
+    },
+    {
+        value: "463180",
+        label: "VENTA AL POR MAYOR EN SUPERMERCADOS MAYORISTAS DE ALIMENTOS",
+    },
+    {
+        value: "463191",
+        label: "VENTA AL POR MAYOR DE FRUTAS, LEGUMBRES Y CEREALES SECOS Y EN CONSERVA",
+    },
+    {
+        value: "463199",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS ALIMENTICIOS N.C.P. (INCLUYE LA VENTA DE MIEL Y DERIVADOS, PRODUCTOS CONGELADOS,  ETC.)",
+    },
+    {
+        value: "463211",
+        label: "VENTA AL POR MAYOR DE VINO",
+    },
+    {
+        value: "463212",
+        label: "VENTA AL POR MAYOR DE BEBIDAS ESPIRITOSAS",
+    },
+    {
+        value: "463219",
+        label: "VENTA AL POR MAYOR DE BEBIDAS ALCOHOLICAS N.C.P. (INCLUYE LA VENTA DE APERITIVOS CON ALCOHOL, CERVEZA, SIDRA, ETC.)",
+    },
+    {
+        value: "463220",
+        label: "VENTA AL POR MAYOR DE BEBIDAS NO ALCOHOLICAS (INCLUYE LA VENTA DE AGUAS, SODAS, BEBIDAS REFRESCANTES, JARABES, EXTRACTOS, CONCENTRADOS, GASEOSAS, JUGOS, ETC.)",
+    },
+    {
+        value: "463300",
+        label: "VENTA AL POR MAYOR DE CIGARRILLOS Y PRODUCTOS DE TABACO",
+    },
+    {
+        value: "464111",
+        label: "VENTA AL POR MAYOR DE TEJIDOS (TELAS)",
+    },
+    {
+        value: "464112",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE MERCERIA (INCLUYE LA VENTA DE PUNTILLAS, GALONES, HOMBRERAS, AGUJAS, BOTONES, ETC.)",
+    },
+    {
+        value: "464113",
+        label: "VENTA AL POR MAYOR DE MANTELERIA, ROPA DE CAMA Y ARTICULOS TEXTILES PARA EL HOGAR",
+    },
+    {
+        value: "464114",
+        label: "VENTA AL POR MAYOR DE TAPICES Y ALFOMBRAS DE MATERIALES TEXTILES",
+    },
+    {
+        value: "464119",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS TEXTILES N.C.P.",
+    },
+    {
+        value: "464121",
+        label: "VENTA AL POR MAYOR DE PRENDAS DE VESTIR DE CUERO",
+    },
+    {
+        value: "464122",
+        label: "VENTA AL POR MAYOR DE MEDIAS Y PRENDAS DE PUNTO",
+    },
+    {
+        value: "464129",
+        label: "VENTA AL POR MAYOR DE PRENDAS Y ACCESORIOS DE VESTIR N.C.P., EXCEPTO UNIFORMES Y ROPA DE TRABAJO",
+    },
+    {
+        value: "464130",
+        label: "VENTA AL POR MAYOR DE CALZADO EXCEPTO EL ORTOPEDICO (INCLUYE VENTA DE CALZADO DE CUERO, TELA, PLASTICO, GOMA, ETC.)",
+    },
+    {
+        value: "464141",
+        label: "VENTA AL POR MAYOR DE PIELES Y CUEROS CURTIDOS Y SALADOS",
+    },
+    {
+        value: "464142",
+        label: "VENTA AL POR MAYOR DE SUELAS Y AFINES (INCLUYE TALABARTERIAS, ARTICULOS REGIONALES DE CUERO, ALMACENES DE SUELAS, ETC.)",
+    },
+    {
+        value: "464149",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE MARROQUINERIA,  PARAGUAS Y PRODUCTOS SIMILARES N.C.P.",
+    },
+    {
+        value: "464150",
+        label: "VENTA AL POR MAYOR DE UNIFORMES Y ROPA DE TRABAJO",
+    },
+    {
+        value: "464211",
+        label: "VENTA AL POR MAYOR DE LIBROS Y PUBLICACIONES",
+    },
+    {
+        value: "464212",
+        label: "VENTA AL POR MAYOR DE DIARIOS Y REVISTAS",
+    },
+    {
+        value: "464221",
+        label: "VENTA AL POR MAYOR DE PAPEL Y PRODUCTOS DE PAPEL Y CARTON EXCEPTO ENVASES",
+    },
+    {
+        value: "464222",
+        label: "VENTA AL POR MAYOR DE ENVASES DE PAPEL Y CARTON",
+    },
+    {
+        value: "464223",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE LIBRERIA Y PAPELERIA",
+    },
+    {
+        value: "464310",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS FARMACEUTICOS (INCLUYE VENTA DE MEDICAMENTOS Y KITS DE DIAGNOSTICO COMO TEST DE EMBARAZO, HEMOGLUCOTEST, VACUNAS, ETC.)",
+    },
+    {
+        value: "464320",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS COSMETICOS, DE TOCADOR Y DE PERFUMERIA (INCLUYE VENTA DE ARTICULOS PARA PELUQUERIA EXCEPTO EQUIPAMIENTO)",
+    },
+    {
+        value: "464330",
+        label: "VENTA AL POR MAYOR DE INSTRUMENTAL MEDICO Y ODONTOLOGICO Y ARTICULOS ORTOPEDICOS (INCLUYE VENTA DE VAPORIZADORES, NEBULIZADORES, MASAJEADORES, TERMOMETROS, PROTESIS, MULETAS, PLANTILLAS, CALZADO ORTOPEDICO Y OTROS ARTICULOS SIMILARES DE USO PERSONAL O DO",
+    },
+    {
+        value: "464340",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS VETERINARIOS",
+    },
+    {
+        value: "464410",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE OPTICA Y DE FOTOGRAFIA (INCLUYE VENTA DE LENTES DE CONTACTO, LIQUIDOS OFTALMOLOGICOS, ARMAZONES, CRISTALES OPTICOS, PELICULAS FOTOGRAFICAS, CAMARAS Y ACCESORIOS PARA FOTOGRAFIA, ETC.)",
+    },
+    {
+        value: "464420",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE RELOJERIA, JOYERIA Y FANTASIAS",
+    },
+    {
+        value: "464501",
+        label: "VENTA AL POR MAYOR DE ELECTRODOMESTICOS Y ARTEFACTOS PARA EL HOGAR EXCEPTO EQUIPOS DE AUDIO Y VIDEO",
+    },
+    {
+        value: "464502",
+        label: "VENTA AL POR MAYOR DE EQUIPOS DE AUDIO, VIDEO Y TELEVISION",
+    },
+    {
+        value: "464610",
+        label: "VENTA AL POR MAYOR DE MUEBLES EXCEPTO DE OFICINA, ARTICULOS DE MIMBRE Y CORCHO, COLCHONES Y SOMIERES",
+    },
+    {
+        value: "464620",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE ILUMINACION",
+    },
+    {
+        value: "464631",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE VIDRIO",
+    },
+    {
+        value: "464632",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE BAZAR Y MENAJE EXCEPTO DE VIDRIO",
+    },
+    {
+        value: "464910",
+        label: "VENTA AL POR MAYOR DE CD S Y DVD S DE AUDIO Y VIDEO GRABADOS.",
+    },
+    {
+        value: "464920",
+        label: "VENTA AL POR MAYOR DE MATERIALES Y PRODUCTOS DE LIMPIEZA",
+    },
+    {
+        value: "464930",
+        label: "VENTA AL POR MAYOR DE JUGUETES (INCLUYE ARTICULOS DE COTILLON)",
+    },
+    {
+        value: "464940",
+        label: "VENTA AL POR MAYOR DE BICICLETAS Y RODADOS SIMILARES (INCLUYE COCHECITOS Y SILLAS DE PASEO PARA BEBES, ANDADORES, TRICICLOS, ETC.)",
+    },
+    {
+        value: "464950",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE ESPARCIMIENTO Y DEPORTES (INCLUYE EMBARCACIONES DEPORTIVAS, ARMAS Y MUNICIONES, EQUIPOS DE PESCA, PILETAS DE NATACION DE LONA O PLASTICO, ETC.)",
+    },
+    {
+        value: "464991",
+        label: "VENTA AL POR MAYOR DE FLORES Y PLANTAS NATURALES Y ARTIFICIALES",
+    },
+    {
+        value: "464999",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE USO DOMESTICO O PERSONAL N.C.P (INCLUYE ARTICULOS DE PLATERIA EXCEPTO LOS INCLUIDOS EN TALABARTERIA, CUADROS Y MARCOS QUE NO SEAN OBRA DE ARTE O DE COLECCION, SAHUMERIOS Y ARTICULOS DE SANTERIA, PARRILLAS Y HOGARES, ETC",
+    },
+    {
+        value: "465100",
+        label: "VENTA AL POR MAYOR DE EQUIPOS, PERIFERICOS, ACCESORIOS Y PROGRAMAS INFORMATICOS",
+    },
+    {
+        value: "465210",
+        label: "VENTA AL POR MAYOR DE EQUIPOS DE TELEFONIA Y COMUNICACIONES",
+    },
+    {
+        value: "465220",
+        label: "VENTA AL POR MAYOR DE COMPONENTES ELECTRONICOS",
+    },
+    {
+        value: "465310",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO EN LOS SECTORES AGROPECUARIO, JARDINERIA, SILVICULTURA, PESCA Y CAZA (INCLUYE VENTA DE TRACTORES, COSECHADORAS, ENFARDADORAS, REMOLQUES DE CARGA Y DESCARGA AUTOMATICA, MOTOSIERRAS, CORTADORAS D",
+    },
+    {
+        value: "465320",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO EN LA ELABORACION DE ALIMENTOS, BEBIDAS Y TABACO (INCLUYE MAQUINAS PARA MOLER, PICAR Y COCER ALIMENTOS, FABRICADORA DE PASTAS, BATEAS, ENFRIADORAS Y ENVASADORAS DE BEBIDAS, ETC.)",
+    },
+    {
+        value: "465330",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO EN LA FABRICACION DE TEXTILES, PRENDAS Y ACCESORIOS DE VESTIR, CALZADO, ARTICULOS DE CUERO Y MARROQUINERIA (INCLUYE VENTA DE MAQUINAS DE COSER, DE CORTAR TEJIDOS, DE TEJER, EXTENDER TELAS, ROBO",
+    },
+    {
+        value: "465340",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO EN IMPRENTAS, ARTES GRAFICAS Y ACTIVIDADES CONEXAS (INCLUYE VENTA DE MAQUINAS FOTOCOPIADORAS - EXCEPTO LAS DE USO PERSONAL-, COPIADORAS DE PLANOS, MAQUINAS PARA IMPRIMIR, GUILLOTINAR, TROQUELAR",
+    },
+    {
+        value: "465350",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO MEDICO Y PARAMEDICO (INCLUYE VENTA DE EQUIPOS DE DIAGNOSTICO Y TRATAMIENTO, CAMILLAS, CAJAS DE CIRUGIA, JERINGAS Y OTROS IMPLEMENTOS DE MATERIAL DESCARTABLE, ETC.)",
+    },
+    {
+        value: "465360",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO EN LA INDUSTRIA DEL PLASTICO Y DEL CAUCHO (INCLUYE SOPLADORA DE ENVASES, LAMINADORA DE PLASTICOS, MAQUINAS EXTRUSORAS Y MOLDEADORAS, ETC.)",
+    },
+    {
+        value: "465390",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPOS E IMPLEMENTOS DE USO ESPECIAL N.C.P.  (INCLUYE MOTONIVELADORAS, EXCAVADORAS, PALAS MECANICAS, PERFORADORAS-PERCUTORAS, ETC.)",
+    },
+    {
+        value: "465400",
+        label: "VENTA AL POR MAYOR DE MAQUINAS - HERRAMIENTA DE USO GENERAL",
+    },
+    {
+        value: "465500",
+        label: "VENTA  AL  POR  MAYOR  DE  VEHICULOS,  EQUIPOS  Y  MAQUINAS  PARA  EL TRANSPORTE FERROVIARIO, AEREO Y DE NAVEGACION",
+    },
+    {
+        value: "465610",
+        label: "VENTA AL POR MAYOR DE MUEBLES E INSTALACIONES PARA OFICINAS",
+    },
+    {
+        value: "465690",
+        label: "VENTA AL POR MAYOR DE MUEBLES E INSTALACIONES PARA LA INDUSTRIA, EL COMERCIO Y LOS SERVICIOS N.C.P.",
+    },
+    {
+        value: "465910",
+        label: "VENTA AL POR MAYOR DE MAQUINAS Y EQUIPO DE CONTROL Y SEGURIDAD",
+    },
+    {
+        value: "465920",
+        label: "VENTA AL POR MAYOR DE MAQUINARIA Y EQUIPO DE OFICINA, EXCEPTO EQUIPO INFORMATICO",
+    },
+    {
+        value: "465930",
+        label: "VENTA AL POR MAYOR DE EQUIPO PROFESIONAL Y CIENTIFICO E INSTRUMENTOS DE MEDIDA Y DE CONTROL N.C.P.",
+    },
+    {
+        value: "465990",
+        label: "VENTA AL POR MAYOR DE MAQUINAS, EQUIPO Y MATERIALES CONEXOS N.C.P.",
+    },
+    {
+        value: "466110",
+        label: "VENTA AL POR MAYOR DE COMBUSTIBLES Y LUBRICANTES PARA AUTOMOTORES",
+    },
+    {
+        value: "466121",
+        label: "FRACCIONAMIENTO Y DISTRIBUCION DE GAS LICUADO",
+    },
+    {
+        value: "466129",
+        label: "VENTA AL POR MAYOR DE COMBUSTIBLES, LUBRICANTES, LEÑA Y CARBON, EXCEPTO GAS LICUADO Y COMBUSTIBLES Y LUBRICANTES PARA AUTOMOTORES",
+    },
+    {
+        value: "466200",
+        label: "VENTA AL POR MAYOR DE METALES Y MINERALES METALIFEROS",
+    },
+    {
+        value: "466310",
+        label: "VENTA AL POR MAYOR DE ABERTURAS (INCLUYE PUERTAS, VENTANAS, CORTINAS DE ENROLLAR, MADERA, ALUMINIO, PUERTAS CORREDIZAS, FRENTES DE PLACARD, ETC.)",
+    },
+    {
+        value: "466320",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS DE MADERA EXCEPTO MUEBLES (INCLUYE PLACAS, VARILLAS, PARQUE, MACHIMBRE, ETC.)",
+    },
+    {
+        value: "466330",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE FERRETERIA Y MATERIALES ELECTRICOS (INCLUYE LA VENTA  DE CLAVOS, CERRADURAS, CABLE COAXIL. ETC)",
+    },
+    {
+        value: "466340",
+        label: "VENTA AL POR MAYOR DE PINTURAS Y PRODUCTOS CONEXOS",
+    },
+    {
+        value: "466350",
+        label: "VENTA AL POR MAYOR DE CRISTALES Y ESPEJOS",
+    },
+    {
+        value: "466360",
+        label: "VENTA AL POR MAYOR DE ARTICULOS PARA PLOMERIA, INSTALACION DE GAS Y CALEFACCION",
+    },
+    {
+        value: "466370",
+        label: "VENTA AL POR MAYOR DE PAPELES PARA PARED, REVESTIMIENTO PARA PISOS DE GOMA, PLASTICO Y TEXTILES,  Y ARTICULOS SIMILARES PARA LA DECORACION",
+    },
+    {
+        value: "466391",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE LOZA, CERAMICA Y PORCELANA DE USO EN CONSTRUCCION",
+    },
+    {
+        value: "466399",
+        label: "VENTA AL POR MAYOR DE ARTICULOS PARA LA CONSTRUCCION N.C.P. (NO INCLUYE ARTICULOS Y MATERIALES DE DEMOLICION: 466990 )",
+    },
+    {
+        value: "466910",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS N.C.P., DESPERDICIOS Y DESECHOS TEXTILES",
+    },
+    {
+        value: "466920",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS N.C.P., DESPERDICIOS Y DESECHOS DE PAPEL Y CARTON",
+    },
+    {
+        value: "466931",
+        label: "VENTA AL POR MAYOR DE ARTICULOS DE PLASTICO",
+    },
+    {
+        value: "466932",
+        label: "VENTA AL POR MAYOR DE ABONOS, FERTILIZANTES Y PLAGUICIDAS",
+    },
+    {
+        value: "466939",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS, DESPERDICIOS Y DESECHOS DE VIDRIO, CAUCHO, GOMA Y QUIMICOS N.C.P.",
+    },
+    {
+        value: "466940",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS N.C.P., DESPERDICIOS Y DESECHOS METALICOS (INCLUYE CHATARRA, VIRUTA DE METALES DIVERSOS, ETC.)",
+    },
+    {
+        value: "466990",
+        label: "VENTA AL POR MAYOR DE PRODUCTOS INTERMEDIOS, DESPERDICIOS Y DESECHOS N.C.P.",
+    },
+    {
+        value: "469010",
+        label: "VENTA AL POR MAYOR DE INSUMOS AGROPECUARIOS DIVERSOS",
+    },
+    {
+        value: "469090",
+        label: "VENTA AL POR MAYOR DE MERCANCIAS N.C.P.",
+    },
+    {
+        value: "471110",
+        label: "VENTA AL POR MENOR EN HIPERMERCADOS",
+    },
+    {
+        value: "471120",
+        label: "VENTA AL POR MENOR EN SUPERMERCADOS",
+    },
+    {
+        value: "471130",
+        label: "VENTA AL POR MENOR EN MINIMERCADOS (INCLUYE MERCADITOS, AUTOSERVICIOS Y ESTABLECIMIENTOS SIMILARES QUE VENDAN CARNES, VERDURAS Y DEMAS PRODUCTOS ALIMENTICIOS EN FORMA CONJUNTA)",
+    },
+    {
+        value: "471190",
+        label: "VENTA AL POR MENOR EN KIOSCOS, POLIRRUBROS Y COMERCIOS NO ESPECIALIZADOS N.C.P.",
+    },
+    {
+        value: "471900",
+        label: "VENTA AL POR MENOR EN COMERCIOS NO ESPECIALIZADOS, SIN PREDOMINIO DE PRODUCTOS ALIMENTICIOS Y BEBIDAS",
+    },
+    {
+        value: "472111",
+        label: "VENTA AL POR MENOR DE PRODUCTOS LACTEOS",
+    },
+    {
+        value: "472112",
+        label: "VENTA AL POR MENOR DE FIAMBRES Y EMBUTIDOS",
+    },
+    {
+        value: "472120",
+        label: "VENTA AL POR MENOR DE PRODUCTOS DE ALMACEN Y DIETETICA",
+    },
+    {
+        value: "472130",
+        label: "VENTA AL POR MENOR DE CARNES ROJAS, MENUDENCIAS Y CHACINADOS FRESCOS",
+    },
+    {
+        value: "472140",
+        label: "VENTA AL POR MENOR DE HUEVOS, CARNE DE AVES Y  PRODUCTOS DE GRANJA Y DE LA CAZA",
+    },
+    {
+        value: "472150",
+        label: "VENTA AL POR MENOR DE PESCADOS Y  PRODUCTOS DE LA PESCA",
+    },
+    {
+        value: "472160",
+        label: "VENTA AL POR MENOR DE FRUTAS, LEGUMBRES Y HORTALIZAS FRESCAS",
+    },
+    {
+        value: "472171",
+        label: "VENTA AL POR MENOR DE PAN Y PRODUCTOS DE PANADERIA",
+    },
+    {
+        value: "472172",
+        label: "VENTA AL POR MENOR DE BOMBONES, GOLOSINAS Y DEMAS PRODUCTOS DE CONFITERIA",
+    },
+    {
+        value: "472190",
+        label: "VENTA AL POR MENOR DE PRODUCTOS ALIMENTICIOS N.C.P., EN COMERCIOS ESPECIALIZADOS",
+    },
+    {
+        value: "472200",
+        label: "VENTA AL POR MENOR DE BEBIDAS EN COMERCIOS ESPECIALIZADOS",
+    },
+    {
+        value: "472300",
+        label: "VENTA AL POR MENOR DE TABACO EN COMERCIOS ESPECIALIZADOS",
+    },
+    {
+        value: "473000",
+        label: "VENTA AL POR MENOR DE COMBUSTIBLE PARA VEHICULOS AUTOMOTORES Y MOTOCICLETAS (INCLUYE LA VENTA AL POR MENOR DE PRODUCTOS LUBRICANTES Y REFRIGERANTES)",
+    },
+    {
+        value: "474010",
+        label: "VENTA AL POR MENOR DE EQUIPOS, PERIFERICOS,  ACCESORIOS Y PROGRAMAS INFORMATICOS",
+    },
+    {
+        value: "474020",
+        label: "VENTA AL POR MENOR DE APARATOS DE TELEFONIA Y COMUNICACION (INCLUYE TELEFONOS, CELULARES, FAX, ETC)",
+    },
+    {
+        value: "475110",
+        label: "VENTA AL POR MENOR DE HILADOS, TEJIDOS Y ARTICULOS DE MERCERIA (INCLUYE MERCERIAS, SEDERIAS, COMERCIOS DE VENTA DE LANAS Y OTROS HILADOS, ETC.)",
+    },
+    {
+        value: "475120",
+        label: "VENTA AL POR MENOR DE CONFECCIONES PARA EL HOGAR (INCLUYE LA VENTA AL POR MENOR DE SABANAS, TOALLAS, MANTELERIA, CORTINAS CONFECCIONADAS, COLCHAS, CUBRECAMAS, ETC.)",
+    },
+    {
+        value: "475190",
+        label: "VENTA AL POR MENOR DE ARTICULOS TEXTILES N.C.P. EXCEPTO PRENDAS DE VESTIR (INCLUYE LA VENTA AL POR MENOR DE TAPICES, ALFOMBRAS,  ETC.)",
+    },
+    {
+        value: "475210",
+        label: "VENTA AL POR MENOR DE ABERTURAS (INCLUYE PUERTAS, VENTANAS, CORTINAS DE ENROLLAR DE PVC, MADERA, ALUMINIO, PUERTAS CORREDIZAS, FRENTES DE PLACARDS, ETC.)",
+    },
+    {
+        value: "475220",
+        label: "VENTA AL POR MENOR DE MADERAS Y ARTICULOS DE MADERA  Y CORCHO, EXCEPTO MUEBLES",
+    },
+    {
+        value: "475230",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE FERRETERIA Y MATERIALES ELECTRICOS",
+    },
+    {
+        value: "475240",
+        label: "VENTA AL POR MENOR DE PINTURAS Y PRODUCTOS CONEXOS",
+    },
+    {
+        value: "475250",
+        label: "VENTA AL POR MENOR DE ARTICULOS PARA PLOMERIA E INSTALACION DE GAS",
+    },
+    {
+        value: "475260",
+        label: "VENTA AL POR MENOR DE CRISTALES, ESPEJOS, MAMPARAS Y CERRAMIENTOS",
+    },
+    {
+        value: "475270",
+        label: "VENTA AL POR MENOR DE PAPELES PARA PARED, REVESTIMIENTOS PARA PISOS Y ARTICULOS SIMILARES PARA LA DECORACION",
+    },
+    {
+        value: "475290",
+        label: "VENTA AL POR MENOR DE MATERIALES DE CONSTRUCCION N.C.P.",
+    },
+    {
+        value: "475300",
+        label: "VENTA AL POR MENOR  DE ELECTRODOMESTICOS, ARTEFACTOS PARA EL HOGAR Y EQUIPOS DE AUDIO Y VIDEO",
+    },
+    {
+        value: "475410",
+        label: "VENTA AL POR MENOR DE MUEBLES PARA EL HOGAR, ARTICULOS DE MIMBRE Y CORCHO",
+    },
+    {
+        value: "475420",
+        label: "VENTA AL POR MENOR DE COLCHONES Y SOMIERES",
+    },
+    {
+        value: "475430",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE ILUMINACION",
+    },
+    {
+        value: "475440",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE BAZAR Y MENAJE (INCLUYE VENTA AL POR MENOR DE VAJILLA, CUBIERTOS, ETC.)",
+    },
+    {
+        value: "475490",
+        label: "VENTA AL POR MENOR DE ARTICULOS PARA EL HOGAR N.C.P. (INCLUYE PERCHAS, MARCOS, CUADROS, ETC.)",
+    },
+    {
+        value: "476110",
+        label: "VENTA AL POR MENOR DE LIBROS",
+    },
+    {
+        value: "476120",
+        label: "VENTA AL POR MENOR DE DIARIOS Y REVISTAS",
+    },
+    {
+        value: "476130",
+        label: "VENTA AL POR MENOR DE PAPEL, CARTON, MATERIALES DE EMBALAJE Y ARTICULOS DE LIBRERIA",
+    },
+    {
+        value: "476200",
+        label: "VENTA AL POR MENOR DE CD S Y DVD S DE AUDIO Y VIDEO GRABADOS (INCLUYE CD S Y DVD S VIRGENES)",
+    },
+    {
+        value: "476310",
+        label: "VENTA AL POR MENOR DE EQUIPOS  Y ARTICULOS DEPORTIVOS (INCLUYE LA VENTA Y REPARACION  DE BICICLETAS, LA VENTA  DE APARATOS DE GIMNASIA Y DE EQUIPOS DE CAMPING, ETC.)",
+    },
+    {
+        value: "476320",
+        label: "VENTA AL POR MENOR DE ARMAS, ARTICULOS PARA LA CAZA Y PESCA",
+    },
+    {
+        value: "476400",
+        label: "VENTA AL POR MENOR DE JUGUETES, ARTICULOS DE COTILLON Y JUEGOS DE MESA",
+    },
+    {
+        value: "477110",
+        label: "VENTA AL POR MENOR DE ROPA INTERIOR, MEDIAS, PRENDAS PARA DORMIR Y PARA LA PLAYA (INCLUYE CORSETERIA, LENCERIA, CAMISETAS, MEDIAS EXCEPTO ORTOPEDICAS, PIJAMAS, CAMISONES Y SALTOS DE CAMA, SALIDAS DE BAÑO, TRAJES DE BAÑO, ETC.)",
+    },
+    {
+        value: "477120",
+        label: "VENTA AL POR MENOR DE UNIFORMES ESCOLARES Y GUARDAPOLVOS",
+    },
+    {
+        value: "477130",
+        label: "VENTA AL POR MENOR DE INDUMENTARIA PARA BEBES Y NIÑOS",
+    },
+    {
+        value: "477140",
+        label: "VENTA AL POR MENOR DE INDUMENTARIA DEPORTIVA",
+    },
+    {
+        value: "477150",
+        label: "VENTA AL POR MENOR DE PRENDAS DE CUERO",
+    },
+    {
+        value: "477190",
+        label: "VENTA AL POR MENOR DE PRENDAS Y ACCESORIOS DE VESTIR N.C.P.",
+    },
+    {
+        value: "477210",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE TALABARTERIA Y ARTICULOS REGIONALES (INCLUYE VENTA DE ARTICULOS REGIONALES DE CUERO, PLATA, ALPACA Y SIMILARES)",
+    },
+    {
+        value: "477220",
+        label: "VENTA AL POR MENOR DE CALZADO, EXCEPTO EL ORTOPEDICO Y EL DEPORTIVO (NO INCLUYE ALMACENES DE SUELAS 464142)",
+    },
+    {
+        value: "477230",
+        label: "VENTA AL POR MENOR DE CALZADO DEPORTIVO",
+    },
+    {
+        value: "477290",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE MARROQUINERIA, PARAGUAS Y SIMILARES N.C.P.",
+    },
+    {
+        value: "477310",
+        label: "VENTA AL POR MENOR DE PRODUCTOS FARMACEUTICOS Y DE HERBORISTERIA",
+    },
+    {
+        value: "477320",
+        label: "VENTA AL POR MENOR DE PRODUCTOS COSMETICOS, DE TOCADOR Y DE PERFUMERIA",
+    },
+    {
+        value: "477330",
+        label: "VENTA AL POR MENOR DE INSTRUMENTAL MEDICO Y ODONTOLOGICO Y ARTICULOS ORTOPEDICOS (INCLUYE VENTA DE VAPORIZADORES, NEBULIZADORES, MASAJEADORES, TERMOMETROS, PROTESIS, MULETAS, PLANTILLAS, CALZADO ORTOPEDICO Y OTROS ARTICULOS SIMILARES DE USO PERSONAL O DO",
+    },
+    {
+        value: "477410",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE OPTICA Y FOTOGRAFIA",
+    },
+    {
+        value: "477420",
+        label: "VENTA AL POR MENOR DE ARTICULOS DE RELOJERIA Y JOYERIA",
+    },
+    {
+        value: "477430",
+        label: "VENTA AL POR MENOR DE BIJOUTERIE Y FANTASIA",
+    },
+    {
+        value: "477440",
+        label: "VENTA AL POR MENOR DE FLORES, PLANTAS, S",
+    },
+    {
+        value: "477450",
+        label: "VENTA AL POR MENOR DE MATERIALES Y PRODUCTOS DE LIMPIEZA",
+    },
+    {
+        value: "477460",
+        label: "VENTA AL POR MENOR DE FUEL OIL, GAS EN GARRAFAS, CARBON Y LEÑA (NO INCLUYE LAS ESTACIONES DE SERVICIOS QUE SE CLASIFICAN EN 473000)",
+    },
+    {
+        value: "477470",
+        label: "VENTA AL POR MENOR DE PRODUCTOS VETERINARIOS, ANIMALES DOMESTICOS Y ALIMENTO BALANCEADO PARA MASCOTAS",
+    },
+    {
+        value: "477480",
+        label: "VENTA AL POR MENOR DE OBRAS DE ARTE",
+    },
+    {
+        value: "477490",
+        label: "VENTA AL POR MENOR DE ARTICULOS NUEVOS N.C.P. (INCLUYE LA VENTA REALIZADA EN CASAS DE REGALOS, DE ARTESANIAS, PELUCAS,  DE ARTICULOS RELIGIOSOS -SANTERIAS-, RECARGA DE MATAFUEGOS,  ETC.)",
+    },
+    {
+        value: "477810",
+        label: "VENTA AL POR MENOR DE MUEBLES USADOS",
+    },
+    {
+        value: "477820",
+        label: "VENTA AL POR MENOR DE LIBROS, REVISTAS Y SIMILARES USADOS",
+    },
+    {
+        value: "477830",
+        label: "VENTA AL POR MENOR DE ANTIGÜEDADES (INCLUYE VENTA DE ANTIGÜEDADES EN REMATES)",
+    },
+    {
+        value: "477840",
+        label: "VENTA AL POR MENOR DE ORO, MONEDAS, SELLOS Y SIMILARES (INCLUYE LA  VENTA DE MONEDAS DE COLECCION, ESTAMPILLAS, ETC.)",
+    },
+    {
+        value: "477890",
+        label: "VENTA AL POR MENOR DE ARTICULOS USADOS N.C.P. EXCEPTO+E1155 AUTOMOTORES Y MOTOCICLETAS",
+    },
+    {
+        value: "478010",
+        label: "VENTA AL POR MENOR DE ALIMENTOS, BEBIDAS Y TABACO EN PUESTOS MOVILES Y MERCADOS",
+    },
+    {
+        value: "478090",
+        label: "VENTA AL POR MENOR DE PRODUCTOS N.C.P. EN PUESTOS MOVILES Y MERCADOS",
+    },
+    {
+        value: "479101",
+        label: "VENTA AL POR MENOR POR INTERNET",
+    },
+    {
+        value: "479109",
+        label: "VENTA AL POR MENOR POR CORREO, TELEVISION Y OTROS MEDIOS DE COMUNICACION N.C.P.",
+    },
+    {
+        value: "479900",
+        label: "VENTA AL POR MENOR NO REALIZADA EN ESTABLECIMIENTOS  N.C.P. (INCLUYE VENTA MEDIANTE MAQUINAS EXPENDEDORAS, VENDEDORES AMBULANTES Y VENDEDORES A DOMICILIO)",
+    },
+    {
+        value: "491110",
+        label: "SERVICIO DE TRANSPORTE FERROVIARIO URBANO Y SUBURBANO DE PASAJEROS (INCLUYE EL SERVICIO DE SUBTERRANEO Y DE PREMETRO)",
+    },
+    {
+        value: "491120",
+        label: "SERVICIO DE TRANSPORTE FERROVIARIO INTERURBANO DE PASAJEROS",
+    },
+    {
+        value: "491200",
+        label: "SERVICIO DE TRANSPORTE FERROVIARIO DE CARGAS",
+    },
+    {
+        value: "492110",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR URBANO Y SUBURBANO REGULAR DE PASAJEROS",
+    },
+    {
+        value: "492120",
+        label: "SERVICIOS DE TRANSPORTE AUTOMOTOR DE PASAJEROS MEDIANTE TAXIS Y REMISES, ALQUILER DE AUTOS CON CHOFER (INCLUYE LOS RADIOTAXIS)",
+    },
+    {
+        value: "492130",
+        label: "SERVICIO DE TRANSPORTE ESCOLAR (INCLUYE EL SERVICIO DE TRANSPORTE PARA COLONIAS DE VACACIONES Y CLUBES)",
+    },
+    {
+        value: "492140",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR URBANO Y SUBURBANO NO REGULAR DE PASAJEROS DE OFERTA LIBRE,  EXCEPTO MEDIANTE TAXIS Y REMISES, ALQUILER DE AUTOS CON CHOFER Y TRANSPORTE ESCOLAR (INCLUYE SERVICIOS URBANOS ESPECIALES COMO CHARTERS, SERVICIOS CONTRATADOS,",
+    },
+    {
+        value: "492150",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR INTERURBANO REGULAR DE PASAJEROS, E1203EXCEPTO TRANSPORTE INTERNACIONAL (INCLUYE LOS LLAMADOS SERVICIOS DE LARGA DISTANCIA)",
+    },
+    {
+        value: "492160",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR INTERURBANO NO REGULAR DE PASAJEROS",
+    },
+    {
+        value: "492170",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR INTERNACIONAL DE PASAJEROS",
+    },
+    {
+        value: "492180",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR TURISTICO DE PASAJEROS",
+    },
+    {
+        value: "492190",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE PASAJEROS N.C.P.",
+    },
+    {
+        value: "492210",
+        label: "SERVICIOS DE MUDANZA (INCLUYE SERVICIOS DE GUARDAMUEBLES)",
+    },
+    {
+        value: "492221",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE CEREALES",
+    },
+    {
+        value: "492229",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE MERCADERIAS A GRANEL N.C.P.",
+    },
+    {
+        value: "492230",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE ANIMALES",
+    },
+    {
+        value: "492240",
+        label: "SERVICIO DE TRANSPORTE POR CAMION CISTERNA",
+    },
+    {
+        value: "492250",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE MERCADERIAS Y SUSTANCIAS PELIGROSAS",
+    },
+    {
+        value: "492280",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR URBANO DE CARGA N.C.P. (INCLUYE EL TRANSPORTE REALIZADO POR FLETEROS Y DISTRIBUIDORES DENTRO DEL EGIDO URBANO)",
+    },
+    {
+        value: "492290",
+        label: "SERVICIO DE TRANSPORTE AUTOMOTOR DE CARGAS N.C.P. (INCLUYE  SERVICIOS DE TRANSPORTE DE CARGA REFRIGERADA Y TRANSPORTE PESADO)",
+    },
+    {
+        value: "493110",
+        label: "SERVICIO DE TRANSPORTE POR OLEODUCTOS (INCLUYE ESTACIONES DE BOMBEO Y COMPRESION)",
+    },
+    {
+        value: "493120",
+        label: "SERVICIO DE TRANSPORTE POR POLIDUCTOS Y FUELODUCTOS",
+    },
+    {
+        value: "493200",
+        label: "SERVICIO DE TRANSPORTE POR GASODUCTOS (INCLUYE ESTACIONES DE BOMBEO Y COMPRESION)",
+    },
+    {
+        value: "501100",
+        label: "SERVICIO DE TRANSPORTE MARITIMO DE PASAJEROS",
+    },
+    {
+        value: "501200",
+        label: "SERVICIO DE TRANSPORTE MARITIMO DE CARGA",
+    },
+    {
+        value: "502101",
+        label: "SERVICIO DE TRANSPORTE FLUVIAL Y LACUSTRE DE PASAJEROS",
+    },
+    {
+        value: "502200",
+        label: "SERVICIO DE TRANSPORTE FLUVIAL Y LACUSTRE DE CARGA",
+    },
+    {
+        value: "51000",
+        label: "EXTRACCION Y AGLOMERACION DE CARBON (INCLUYE LA PRODUCCION DE HULLA NO AGLOMERADA, ANTRACITA, CARBON BITUMINOSO NO AGLOMERADO, OVOIDES Y COMBUSTIBLES SOLIDOS ANALOGOS A BASE DE HULLA, ETC.)",
+    },
+    {
+        value: "511000",
+        label: "SERVICIO DE TRANSPORTE AEREO DE PASAJEROS",
+    },
+    {
+        value: "512000",
+        label: "SERVICIO DE TRANSPORTE AEREO DE CARGAS",
+    },
+    {
+        value: "52000",
+        label: "EXTRACCION Y AGLOMERACION DE LIGNITO (INCLUYE LA PRODUCCION DE LIGNITO AGLOMERADO Y NO AGLOMERADO)",
+    },
+    {
+        value: "521010",
+        label: "SERVICIOS DE MANIPULACION DE CARGA EN EL AMBITO TERRESTRE",
+    },
+    {
+        value: "521020",
+        label: "SERVICIOS DE MANIPULACION DE CARGA EN EL AMBITO PORTUARIO",
+    },
+    {
+        value: "521030",
+        label: "SERVICIOS DE MANIPULACION DE CARGA EN EL AMBITO AEREO",
+    },
+    {
+        value: "522010",
+        label: "SERVICIOS DE ALMACENAMIENTO Y DEPOSITO EN SILOS",
+    },
+    {
+        value: "522020",
+        label: "SERVICIOS DE ALMACENAMIENTO Y DEPOSITO EN CAMARAS FRIGORIFICAS",
+    },
+    {
+        value: "522091",
+        label: "SERVICIOS DE USUARIOS DIRECTOS DE ZONA FRANCA",
+    },
+    {
+        value: "522092",
+        label: "SERVICIOS DE GESTION DE DEPOSITOS FISCALES",
+    },
+    {
+        value: "522099",
+        label: "SERVICIOS DE ALMACENAMIENTO Y DEPOSITO N.C.P.",
+    },
+    {
+        value: "523011",
+        label: "SERVICIOS DE GESTION ADUANERA REALIZADOS POR DESPACHANTES DE ADUANA",
+    },
+    {
+        value: "523019",
+        label: "SERVICIOS DE GESTION ADUANERA PARA EL TRANSPORTE DE MERCADERIAS N.C.P.",
+    },
+    {
+        value: "523020",
+        label: "SERVICIOS DE AGENCIAS MARITIMAS PARA EL TRANSPORTE DE MERCADERIAS",
+    },
+    {
+        value: "523031",
+        label: "SERVICIOS DE GESTION DE AGENTES DE TRANSPORTE ADUANERO EXCEPTO AGENCIAS MARITIMAS",
+    },
+    {
+        value: "523032",
+        label: "SERVICIOS DE OPERADORES LOGISTICOS SEGUROS (OLS) EN EL AMBITO ADUANERO",
+    },
+    {
+        value: "523039",
+        label: "SERVICIOS DE OPERADORES LOGISTICOS N.C.P.",
+    },
+    {
+        value: "523090",
+        label: "SERVICIOS DE GESTION Y LOGISTICA PARA EL TRANSPORTE DE MERCADERIAS N.C.P. (INCLUYE LAS ACTIVIDADES DE EMPRESAS EMPAQUETADORAS PARA COMERCIO EXTERIOR, ALQUILER DE CONTENEDORES, ETC.)",
+    },
+    {
+        value: "524110",
+        label: "SERVICIOS DE EXPLOTACION DE INFRAESTRUCTURA PARA EL TRANSPORTE TERRESTRE, PEAJES Y OTROS DERECHOS",
+    },
+    {
+        value: "524120",
+        label: "SERVICIOS  DE PLAYAS DE ESTACIONAMIENTO Y GARAJES",
+    },
+    {
+        value: "524130",
+        label: "SERVICIOS DE ESTACIONES TERMINALES DE OMNIBUS Y FERROVIARIAS",
+    },
+    {
+        value: "524190",
+        label: "SERVICIOS COMPLEMENTARIOS PARA EL TRANSPORTE TERRESTRE N.C.P. (INCLUYE SERVICIOS DE MANTENIMIENTO DE MATERIAL FERROVIARIO)",
+    },
+    {
+        value: "524210",
+        label: "SERVICIOS DE EXPLOTACION DE INFRAESTRUCTURA PARA EL TRANSPORTE MARITIMO, DERECHOS DE PUERTO",
+    },
+    {
+        value: "524220",
+        label: "SERVICIOS DE GUARDERIAS NAUTICAS",
+    },
+    {
+        value: "524230",
+        label: "SERVICIOS PARA LA NAVEGACION (INCLUYE SERVICIOS DE PRACTICAJE Y PILOTAJE, ATRAQUE Y SALVAMENTO)",
+    },
+    {
+        value: "524290",
+        label: "SERVICIOS COMPLEMENTARIOS PARA EL TRANSPORTE MARITIMO N.C.P. (INCLUYE EXPLOTACION DE SERVICIOS DE TERMINALES COMO PUERTOS Y MUELLES)",
+    },
+    {
+        value: "524310",
+        label: "SERVICIOS DE EXPLOTACION DE INFRAESTRUCTURA PARA EL TRANSPORTE AEREO, DERECHOS DE AEROPUERTO",
+    },
+    {
+        value: "524320",
+        label: "SERVICIOS DE HANGARES Y ESTACIONAMIENTO DE AERONAVES",
+    },
+    {
+        value: "524330",
+        label: "SERVICIOS PARA LA AERONAVEGACION (INCLUYE REMOLQUE DE AERONAVES Y ACTIVIDADES DE CONTROL DE TRAFICO AEREO, ETC.)",
+    },
+    {
+        value: "524390",
+        label: "SERVICIOS COMPLEMENTARIOS PARA EL TRANSPORTE AEREO N.C.P. (INCLUYE SERVICIOS DE PREVENCION Y EXTINCION DE INCENDIOS)",
+    },
+    {
+        value: "530010",
+        label: "SERVICIO DE CORREO POSTAL (INCLUYE LAS ACTIVIDADES DE CORREO POSTAL SUJETAS A LA OBLIGACION DE SERVICIO UNIVERSAL)",
+    },
+    {
+        value: "530090",
+        label: "SERVICIOS DE MENSAJERIAS (INCLUYE SERVICIOS PUERTA A PUERTA DE CORREO Y MENSAJERIA, COMISIONISTAS DE ENCOMIENDAS, TRANSPORTE DE DOCUMENTOS  REALIZADOS POR EMPRESAS NO SUJETAS A LA OBLIGACION DE SERVICIO UNIVERSAL)",
+    },
+    {
+        value: "551010",
+        label: "SERVICIOS DE ALOJAMIENTO POR HORA",
+    },
+    {
+        value: "551021",
+        label: "SERVICIOS DE ALOJAMIENTO EN PENSIONES",
+    },
+    {
+        value: "551022",
+        label: "SERVICIOS DE ALOJAMIENTO EN HOTELES, HOSTERIAS Y RESIDENCIALES SIMILARES, EXCEPTO POR HORA, QUE INCLUYEN SERVICIO DE RESTAURANTE AL PUBLICO",
+    },
+    {
+        value: "551023",
+        label: "SERVICIOS DE ALOJAMIENTO EN HOTELES, HOSTERIAS Y RESIDENCIALES SIMILARES, EXCEPTO POR HORA, QUE NO INCLUYEN SERVICIO DE RESTAURANTE AL PUBLICO",
+    },
+    {
+        value: "551090",
+        label: "SERVICIOS DE HOSPEDAJE TEMPORAL N.C.P. (INCLUYE HOSPEDAJE EN ESTANCIAS, RESIDENCIAS PARA ESTUDIANTES Y ALBERGUES JUVENILES, APARTAMENTOS TURISTICOS, ETC.)",
+    },
+    {
+        value: "552000",
+        label: "SERVICIOS DE ALOJAMIENTO EN CAMPINGS (INCLUYE REFUGIOS DE MONTAÑA)",
+    },
+    {
+        value: "561011",
+        label: "SERVICIOS DE RESTAURANTES Y CANTINAS SIN ESPECTACULO",
+    },
+    {
+        value: "561012",
+        label: "SERVICIOS DE RESTAURANTES Y CANTINAS CON ESPECTACULO",
+    },
+    {
+        value: "561013",
+        label: "SERVICIOS DE FAST FOOD Y LOCALES DE VENTA DE COMIDAS Y BEBIDAS AL PASO (INCLUYE EL EXPENDIO DE HAMBURGUESAS, PRODUCTOS LACTEOS EXCEPTO HELADOS, ETC.)",
+    },
+    {
+        value: "561014",
+        label: "SERVICIOS DE EXPENDIO DE BEBIDAS EN BARES (INCLUYE: BARES, CERVECERIAS, PUBS, CAFETERIAS)",
+    },
+    {
+        value: "561019",
+        label: "SERVICIOS DE EXPENDIO DE COMIDAS Y BEBIDAS EN ESTABLECIMIENTOS CON SERVICIO DE MESA Y/O EN MOSTRADOR N.C.P.",
+    },
+    {
+        value: "561020",
+        label: "SERVICIOS DE PREPARACION DE COMIDAS PARA LLEVAR (INCLUYE ROTISERIAS, CASAS DE EMPANADAS, PIZZERIAS SIN CONSUMO EN EL LOCAL)",
+    },
+    {
+        value: "561030",
+        label: "SERVICIO DE EXPENDIO DE HELADOS",
+    },
+    {
+        value: "561040",
+        label: "SERVICIOS DE PREPARACION DE COMIDAS REALIZADAS POR/PARA VENDEDORES AMBULANTES.",
+    },
+    {
+        value: "562010",
+        label: "SERVICIOS DE PREPARACION DE COMIDAS PARA EMPRESAS Y EVENTOS (INCLUYE EL SERVICIO DE CATERING, EL SUMINISTRO DE COMIDAS PARA BANQUETES, BODAS, FIESTAS Y OTRAS CELEBRACIONES, COMIDAS PARA HOSPITAL, ETC.)",
+    },
+    {
+        value: "562091",
+        label: "SERVICIOS DE CANTINAS CON ATENCION EXCLUSIVA  A LOS EMPLEADOS O ESTUDIANTES DENTRO DE EMPRESAS O ESTABLECIMIENTOS EDUCATIVOS (INCLUYE CANTINAS DEPORTIVAS)",
+    },
+    {
+        value: "562099",
+        label: "SERVICIOS DE COMIDAS N.C.P.",
+    },
+    {
+        value: "581100",
+        label: "EDICION DE LIBROS, FOLLETOS, Y OTRAS PUBLICACIONES",
+    },
+    {
+        value: "581200",
+        label: "EDICION DE DIRECTORIOS Y LISTAS DE CORREOS",
+    },
+    {
+        value: "581300",
+        label: "EDICION DE PERIODICOS, REVISTAS Y PUBLICACIONES PERIODICAS",
+    },
+    {
+        value: "581900",
+        label: "EDICION N.C.P.",
+    },
+    {
+        value: "591110",
+        label: "PRODUCCION DE FILMES Y VIDEOCINTAS",
+    },
+    {
+        value: "591120",
+        label: "POSTPRODUCCION DE FILMES Y VIDEOCINTAS",
+    },
+    {
+        value: "591200",
+        label: "DISTRIBUCION DE FILMES Y VIDEOCINTAS",
+    },
+    {
+        value: "591300",
+        label: "EXHIBICION DE FILMES Y VIDEOCINTAS",
+    },
+    {
+        value: "592000",
+        label: "SERVICIOS DE GRABACION DE SONIDO Y EDICION DE MUSICA",
+    },
+    {
+        value: "601000",
+        label: "EMISION Y RETRANSMISION DE RADIO",
+    },
+    {
+        value: "602100",
+        label: "EMISION Y RETRANSMISION  DE TELEVISION ABIERTA",
+    },
+    {
+        value: "602200",
+        label: "OPERADORES DE TELEVISION POR SUSCRIPCION.",
+    },
+    {
+        value: "602310",
+        label: "EMISION DE SEÑALES DE TELEVISION POR SUSCRIPCION",
+    },
+    {
+        value: "602320",
+        label: "PRODUCCION DE PROGRAMAS DE TELEVISION",
+    },
+    {
+        value: "602900",
+        label: "SERVICIOS DE TELEVISION N.C.P",
+    },
+    {
+        value: "61000",
+        label: "EXTRACCION DE PETROLEO CRUDO (INCLUYE ARENAS ALQUITRANIFERAS, ESQUISTOS BITUMINOSOS O LUTITAS, ACEITES DE PETROLEO Y DE MINERALES BITUMINOSOS, PETROLEO, ETC.)",
+    },
+    {
+        value: "611010",
+        label: "SERVICIOS DE LOCUTORIOS",
+    },
+    {
+        value: "611090",
+        label: "SERVICIOS DE TELEFONIA FIJA, EXCEPTO LOCUTORIOS",
+    },
+    {
+        value: "612000",
+        label: "SERVICIOS DE TELEFONIA MOVIL",
+    },
+    {
+        value: "613000",
+        label: "SERVICIOS DE TELECOMUNICACIONES VIA SATELITE, EXCEPTO SERVICIOS DE TRANSMISION DE TELEVISION",
+    },
+    {
+        value: "614010",
+        label: "SERVICIOS DE PROVEEDORES DE ACCESO A INTERNET",
+    },
+    {
+        value: "614090",
+        label: "SERVICIOS DE TELECOMUNICACION VIA INTERNET N.C.P.",
+    },
+    {
+        value: "619000",
+        label: "SERVICIOS DE TELECOMUNICACIONES N.C.P. (INCLUYE EL SERVICIO DE PAGERS)",
+    },
+    {
+        value: "62000",
+        label: "EXTRACCION DE GAS NATURAL (INCLUYE GAS NATURAL LICUADO Y GASEOSO)",
+    },
+    {
+        value: "620100",
+        label: "SERVICIOS DE CONSULTORES EN INFORMATICA Y SUMINISTROS DE PROGRAMAS DE INFORMATICA",
+    },
+    {
+        value: "620200",
+        label: "SERVICIOS DE CONSULTORES EN EQUIPO DE INFORMATICA",
+    },
+    {
+        value: "620300",
+        label: "SERVICIOS DE CONSULTORES EN TECNOLOGIA DE LA INFORMACION",
+    },
+    {
+        value: "620900",
+        label: "SERVICIOS DE INFORMATICA N.C.P.",
+    },
+    {
+        value: "631110",
+        label: "PROCESAMIENTO DE DATOS",
+    },
+    {
+        value: "631120",
+        label: "HOSPEDAJE DE DATOS",
+    },
+    {
+        value: "631190",
+        label: "ACTIVIDADES CONEXAS AL PROCESAMIENTO Y HOSPEDAJE DE DATOS N.C.P.",
+    },
+    {
+        value: "631200",
+        label: "PORTALES WEB",
+    },
+    {
+        value: "639100",
+        label: "AGENCIAS DE NOTICIAS",
+    },
+    {
+        value: "639900",
+        label: "SERVICIOS DE INFORMACION N.C.P.",
+    },
+    {
+        value: "641100",
+        label: "SERVICIOS DE LA BANCA CENTRAL (INCLUYE LAS ACTIVIDADES DEL BANCO CENTRAL DE LA REPUBLICA ARGENTINA)",
+    },
+    {
+        value: "641910",
+        label: "SERVICIOS DE LA BANCA MAYORISTA",
+    },
+    {
+        value: "641920",
+        label: "SERVICIOS DE LA BANCA DE INVERSION",
+    },
+    {
+        value: "641930",
+        label: "SERVICIOS DE LA BANCA MINORISTA",
+    },
+    {
+        value: "641941",
+        label: "SERVICIOS DE INTERMEDIACION FINANCIERA REALIZADA POR LAS COMPAÑIAS FINANCIERAS",
+    },
+    {
+        value: "641942",
+        label: "SERVICIOS DE INTERMEDIACION FINANCIERA REALIZADA POR SOCIEDADES DE AHORRO Y PRESTAMO PARA LA VIVIENDA Y OTROS INMUEBLES",
+    },
+    {
+        value: "641943",
+        label: "SERVICIOS DE INTERMEDIACION FINANCIERA REALIZADA POR CAJAS DE CREDITO",
+    },
+    {
+        value: "642000",
+        label: "SERVICIOS DE SOCIEDADES DE CARTERA",
+    },
+    {
+        value: "643001",
+        label: "SERVICIOS DE FIDEICOMISOS",
+    },
+    {
+        value: "643009",
+        label: "FONDOS Y SOCIEDADES DE INVERSION Y ENTIDADES FINANCIERAS SIMILARES N.C.P.",
+    },
+    {
+        value: "649100",
+        label: "ARRENDAMIENTO FINANCIERO, LEASING",
+    },
+    {
+        value: "649210",
+        label: "ACTIVIDADES DE CREDITO PARA FINANCIAR OTRAS ACTIVIDADES ECONOMICAS",
+    },
+    {
+        value: "649220",
+        label: "SERVICIOS DE ENTIDADES DE TARJETA DE COMPRA Y/O CREDITO",
+    },
+    {
+        value: "649290",
+        label: "SERVICIOS DE CREDITO N.C.P. (INCLUYE EL OTORGAMIENTO DE PRESTAMOS POR ENTIDADES QUE NO RECIBEN DEPOSITOS Y QUE ESTAN FUERA DEL SISTEMA BANCARIO Y CUYO DESTINO ES FINANCIAR EL CONSUMO, LA VIVIENDA U OTROS BIENES)",
+    },
+    {
+        value: "649910",
+        label: "SERVICIOS DE AGENTES DE MERCADO ABIERTO PUROS (INCLUYE LAS TRANSACCIONES EXTRABURSATILES - POR CUENTA PROPIA -)",
+    },
+    {
+        value: "649991",
+        label: "SERVICIOS DE SOCIOS INVERSORES EN SOCIEDADES REGULARES SEGUN LEY 19.550 - S.R.L., S.C.A, ETC, EXCEPTO SOCIOS INVERSORES EN SOCIEDADES ANONIMAS INCLUIDOS EN 649999 (NO INCLUYE LOS SERVICIOS DE SOCIOS MIEMBROS  QUE DESARROLLAN ACTIVIDADES DE ASESORAMIENTO,",
+    },
+    {
+        value: "649999",
+        label: "SERVICIOS DE FINANCIACION Y ACTIVIDADES FINANCIERAS N.C.P. (INCLUYE ACTIVIDADES DE INVERSION EN ACCIONES, TITULOS, LA ACTIVIDAD DE CORREDORES DE BOLSA, SECURITIZACION, MUTUALES FINANCIERAS, ETC.), (NO INCLUYE ACTIVIDADES FINANCIERAS RELACIONADAS CON EL O",
+    },
+    {
+        value: "651110",
+        label: "SERVICIOS DE SEGUROS DE SALUD (INCLUYE MEDICINA PREPAGA Y MUTUALES DE SALUD)",
+    },
+    {
+        value: "651120",
+        label: "SERVICIOS DE SEGUROS DE VIDA (INCLUYE LOS SEGUROS DE VIDA, RETIRO Y SEPELIO)",
+    },
+    {
+        value: "651130",
+        label: "SERVICIOS DE SEGUROS PERSONALES EXCEPTO  LOS DE SALUD Y DE VIDA (INCLUYE LOS SEGUROS PARA VIAJES)",
+    },
+    {
+        value: "651210",
+        label: "SERVICIOS DE ASEGURADORAS DE RIESGO DE TRABAJO (ART)",
+    },
+    {
+        value: "651220",
+        label: "SERVICIOS DE SEGUROS PATRIMONIALES EXCEPTO LOS DE LAS ASEGURADORAS DE RIESGO DE TRABAJO (ART)",
+    },
+    {
+        value: "651310",
+        label: "OBRAS SOCIALES",
+    },
+    {
+        value: "651320",
+        label: "SERVICIOS DE CAJAS DE PREVISION SOCIAL PERTENECIENTES A ASOCIACIONES PROFESIONALES",
+    },
+    {
+        value: "652000",
+        label: "REASEGUROS",
+    },
+    {
+        value: "653000",
+        label: "ADMINISTRACION DE FONDOS DE PENSIONES, EXCEPTO LA SEGURIDAD SOCIAL OBLIGATORIA",
+    },
+    {
+        value: "661111",
+        label: "SERVICIOS DE MERCADOS Y CAJAS DE VALORES",
+    },
+    {
+        value: "661121",
+        label: "SERVICIOS DE MERCADOS A TERMINO",
+    },
+    {
+        value: "661131",
+        label: "SERVICIOS DE BOLSAS DE COMERCIO",
+    },
+    {
+        value: "661910",
+        label: "SERVICIOS BURSATILES DE MEDIACION O POR CUENTA DE TERCEROS (INCLUYE LA ACTIVIDAD DE AGENTES Y SOCIEDADES DE BOLSA)",
+    },
+    {
+        value: "661920",
+        label: "SERVICIOS DE CASAS Y AGENCIAS DE CAMBIO",
+    },
+    {
+        value: "661930",
+        label: "SERVICIOS DE SOCIEDADES CALIFICADORAS DE RIESGOS FINANCIEROS",
+    },
+    {
+        value: "661991",
+        label: "SERVICIOS DE ENVIO Y RECEPCION DE FONDOS DESDE Y HACIA EL EXTERIOR",
+    },
+    {
+        value: "661992",
+        label: "SERVICIOS DE ADMINISTRADORAS DE VALES Y TICKETS",
+    },
+    {
+        value: "661999",
+        label: "SERVICIOS AUXILIARES A LA INTERMEDIACION FINANCIERA N.C.P. (INCLUYE ASESORIA FINANCIERA)",
+    },
+    {
+        value: "662010",
+        label: "SERVICIOS DE EVALUACION DE RIESGOS Y DAÑOS",
+    },
+    {
+        value: "662020",
+        label: "SERVICIOS DE PRODUCTORES  Y ASESORES DE SEGUROS",
+    },
+    {
+        value: "662090",
+        label: "SERVICIOS AUXILIARES A LOS SERVICIOS DE SEGUROS N.C.P.",
+    },
+    {
+        value: "663000",
+        label: "SERVICIOS DE GESTION DE FONDOS A CAMBIO DE UNA RETRIBUCION O POR CONTRATA",
+    },
+    {
+        value: "681010",
+        label: "SERVICIOS DE ALQUILER Y EXPLOTACION DE INMUEBLES PARA FIESTAS, CONVENCIONES Y OTROS EVENTOS SIMILARES",
+    },
+    {
+        value: "681020",
+        label: "SERVICIOS DE ALQUILER  DE CONSULTORIOS MEDICOS",
+    },
+    {
+        value: "681098",
+        label: "SERVICIOS INMOBILIARIOS REALIZADOS POR CUENTA PROPIA, CON BIENES URBANOS PROPIOS O ARRENDADOS N.C.P.",
+    },
+    {
+        value: "681099",
+        label: "SERVICIOS INMOBILIARIOS REALIZADOS POR CUENTA PROPIA, CON BIENES RURALES PROPIOS O ARRENDADOS N.C.P.",
+    },
+    {
+        value: "682010",
+        label: "SERVICIOS DE ADMINISTRACION DE CONSORCIOS DE EDIFICIOS",
+    },
+    {
+        value: "682091",
+        label: "SERVICIOS PRESTADOS POR INMOBILIARIAS",
+    },
+    {
+        value: "682099",
+        label: "SERVICIOS INMOBILIARIOS REALIZADOS A CAMBIO DE UNA RETRIBUCION O POR CONTRATA N.C.P. (INCLUYE COMPRA, VENTA, ALQUILER, REMATE, TASACION, ADMINISTRACION DE BIENES, ETC., REALIZADOS A CAMBIO DE UNA RETRIBUCION O POR CONTRATA, Y LA ACTIVIDAD DE ADMINISTRADO",
+    },
+    {
+        value: "691001",
+        label: "SERVICIOS JURIDICOS",
+    },
+    {
+        value: "691002",
+        label: "SERVICIOS  NOTARIALES",
+    },
+    {
+        value: "692000",
+        label: "SERVICIOS DE CONTABILIDAD, AUDITORIA Y ASESORIA FISCAL",
+    },
+    {
+        value: "702010",
+        label: "SERVICIOS DE GERENCIAMIENTO DE EMPRESAS E INSTITUCIONES DE SALUD, SERVICIOS DE AUDITORIA Y MEDICINA LEGAL, SERVICIO DE ASESORAMIENTO FARMACEUTICO",
+    },
+    {
+        value: "702091",
+        label: "SERVICIOS DE ASESORAMIENTO, DIRECCION Y GESTION EMPRESARIAL REALIZADOS POR INTEGRANTES DE LOS ORGANOS DE ADMINISTRACION Y/O FISCALIZACION EN SOCIEDADES ANONIMAS",
+    },
+    {
+        value: "702092",
+        label: "SERVICIOS DE ASESORAMIENTO, DIRECCION Y GESTION EMPRESARIAL REALIZADOS POR INTEGRANTES DE CUERPOS DE DIRECCION EN SOCIEDADES EXCEPTO LAS ANONIMAS",
+    },
+    {
+        value: "702099",
+        label: "SERVICIOS DE ASESORAMIENTO, DIRECCION Y GESTION EMPRESARIAL N.C.P.",
+    },
+    {
+        value: "71000",
+        label: "EXTRACCION DE MINERALES DE HIERRO (INCLUYE HEMATITAS, LIMONITAS, MAGNETITAS, SIDERITA, ETC.)",
+    },
+    {
+        value: "711001",
+        label: "SERVICIOS RELACIONADOS CON LA CONSTRUCCION (INCLUYE LOS SERVICIOS PRESTADOS POR INGENIEROS, ARQUITECTOS Y TECNICOS)",
+    },
+    {
+        value: "711002",
+        label: "SERVICIOS GEOLOGICOS Y DE PROSPECCION",
+    },
+    {
+        value: "711003",
+        label: "SERVICIOS RELACIONADOS CON LA ELECTRONICA Y LAS COMUNICACIONES",
+    },
+    {
+        value: "711009",
+        label: "SERVICIOS DE ARQUITECTURA E INGENIERIA Y SERVICIOS CONEXOS DE ASESORAMIENTO TECNICO N.C.P.",
+    },
+    {
+        value: "712000",
+        label: "ENSAYOS Y ANALISIS TECNICOS (INCLUYE INSPECCION TECNICA DE VEHICULOS, LABORATORIOS DE CONTROL DE CALIDAD, SERVICIOS DE PERITOS CALIGRAFOS, SERVICIOS DE BROMATOLOGIA)",
+    },
+    {
+        value: "72100",
+        label: "EXTRACCION DE MINERALES Y CONCENTRADOS DE URANIO Y TORIO",
+    },
+    {
+        value: "721010",
+        label: "INVESTIGACION  Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LA INGENIERIA Y LA TECNOLOGIA",
+    },
+    {
+        value: "721020",
+        label: "INVESTIGACION  Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS MEDICAS",
+    },
+    {
+        value: "721030",
+        label: "INVESTIGACION  Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS AGROPECUARIAS",
+    },
+    {
+        value: "721090",
+        label: "INVESTIGACION Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS EXACTAS Y NATURALES N.C.P.",
+    },
+    {
+        value: "722010",
+        label: "INVESTIGACION  Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS SOCIALES",
+    },
+    {
+        value: "722020",
+        label: "INVESTIGACION  Y DESARROLLO EXPERIMENTAL EN EL CAMPO DE LAS CIENCIAS HUMANAS",
+    },
+    {
+        value: "72910",
+        label: "EXTRACCION DE METALES PRECIOSOS",
+    },
+    {
+        value: "72990",
+        label: "EXTRACCION DE MINERALES METALIFEROS NO FERROSOS N.C.P., EXCEPTO MINERALES DE URANIO Y TORIO (INCLUYE ALUMINIO, COBRE, ESTAÑO, MANGANESO, NIQUEL, PLOMO, VOLFRAMIO, ANTIMONIO, BISMUTO, CINC, MOLIBDENO, TITANIO, CIRCONIO, NIOBIO, TANTALO, VANADIO, CROMO, CO",
+    },
+    {
+        value: "731001",
+        label: "SERVICIOS DE COMERCIALIZACION DE TIEMPO Y ESPACIO PUBLICITARIO",
+    },
+    {
+        value: "731009",
+        label: "SERVICIOS DE PUBLICIDAD N.C.P.",
+    },
+    {
+        value: "732000",
+        label: "ESTUDIO DE MERCADO, REALIZACION DE ENCUESTAS DE OPINION PUBLICA",
+    },
+    {
+        value: "741000",
+        label: "SERVICIOS DE DISEÑO ESPECIALIZADO (INCLUYE DISEÑO DE INDUMENTARIA, DISEÑO GRAFICO, ACTIVIDADES DE DECORADORES, ETC.)",
+    },
+    {
+        value: "742000",
+        label: "SERVICIOS DE FOTOGRAFIA",
+    },
+    {
+        value: "749001",
+        label: "SERVICIOS DE TRADUCCION E INTERPRETACION",
+    },
+    {
+        value: "749002",
+        label: "SERVICIOS DE REPRESENTACION E INTERMEDIACION DE ARTISTAS Y MODELOS",
+    },
+    {
+        value: "749003",
+        label: "SERVICIOS DE REPRESENTACION E INTERMEDIACION DE DEPORTISTAS PROFESIONALES",
+    },
+    {
+        value: "749009",
+        label: "ACTIVIDADES PROFESIONALES, CIENTIFICAS Y TECNICAS N.C.P.",
+    },
+    {
+        value: "750000",
+        label: "SERVICIOS VETERINARIOS",
+    },
+    {
+        value: "771110",
+        label: "ALQUILER DE AUTOMOVILES SIN CONDUCTOR",
+    },
+    {
+        value: "771190",
+        label: "ALQUILER DE VEHICULOS AUTOMOTORES N.C.P., SIN CONDUCTOR NI OPERARIOS (INCLUYE: CAMIONES, REMOLQUES, ETC.)",
+    },
+    {
+        value: "771210",
+        label: "ALQUILER DE EQUIPO DE TRANSPORTE PARA VIA ACUATICA, SIN OPERARIOS NI TRIPULACION",
+    },
+    {
+        value: "771220",
+        label: "ALQUILER DE EQUIPO DE TRANSPORTE PARA VIA AEREA, SIN OPERARIOS NI TRIPULACION",
+    },
+    {
+        value: "771290",
+        label: "ALQUILER DE EQUIPO DE TRANSPORTE N.C.P. SIN CONDUCTOR NI OPERARIOS (INCLUYE: EQUIPO FERROVIARIO, MOTOCICLETAS)",
+    },
+    {
+        value: "772010",
+        label: "ALQUILER DE VIDEOS Y VIDEO JUEGOS (INCLUYE LA ACTIVIDAD DE LOS VIDEOCLUBES)",
+    },
+    {
+        value: "772091",
+        label: "ALQUILER DE PRENDAS DE VESTIR",
+    },
+    {
+        value: "772099",
+        label: "ALQUILER DE EFECTOS PERSONALES Y ENSERES DOMESTICOS N.C.P. (INCLUYE ALQUILER DE ARTICULOS DEPORTIVOS)",
+    },
+    {
+        value: "773010",
+        label: "ALQUILER DE MAQUINARIA Y EQUIPO AGROPECUARIO Y FORESTAL, SIN OPERARIOS",
+    },
+    {
+        value: "773020",
+        label: "ALQUILER DE MAQUINARIA Y EQUIPO PARA LA MINERIA, SIN OPERARIOS",
+    },
+    {
+        value: "773030",
+        label: "ALQUILER DE MAQUINARIA Y EQUIPO DE CONSTRUCCION E INGENIERIA CIVIL, SIN OPERARIOS (INCLUYE EL ALQUILER DE ANDAMIOS SIN MONTAJE NI DESMANTELAMIENTO)",
+    },
+    {
+        value: "773040",
+        label: "ALQUILER DE MAQUINARIA Y EQUIPO DE OFICINA, INCLUSO COMPUTADORAS",
+    },
+    {
+        value: "773090",
+        label: "ALQUILER DE MAQUINARIA Y EQUIPO N.C.P.,",
+    },
+    {
+        value: "774000",
+        label: "ARRENDAMIENTO Y GESTION DE BIENES INTANGIBLES NO FINANCIEROS",
+    },
+    {
+        value: "780000",
+        label: "OBTENCION Y DOTACION DE PERSONAL (INCLUYE LAS ACTIVIDADES VINCULADAS CON LA BUSQUEDA, SELECCION Y COLOCACION DE PERSONAL, LA ACTIVIDAD DE CASTING DE ACTORES, ETC.)",
+    },
+    {
+        value: "791100",
+        label: "SERVICIOS MINORISTAS DE AGENCIAS DE VIAJES",
+    },
+    {
+        value: "791200",
+        label: "SERVICIOS MAYORISTAS DE AGENCIAS DE VIAJES",
+    },
+    {
+        value: "791901",
+        label: "SERVICIOS DE TURISMO AVENTURA",
+    },
+    {
+        value: "791909",
+        label: "SERVICIOS COMPLEMENTARIOS DE APOYO TURISTICO N.C.P.",
+    },
+    {
+        value: "801010",
+        label: "SERVICIOS DE TRANSPORTE DE CAUDALES Y OBJETOS DE VALOR",
+    },
+    {
+        value: "801020",
+        label: "SERVICIOS DE SISTEMAS DE SEGURIDAD",
+    },
+    {
+        value: "801090",
+        label: "SERVICIOS DE SEGURIDAD E INVESTIGACION N.C.P.",
+    },
+    {
+        value: "81100",
+        label: "EXTRACCION DE ROCAS ORNAMENTALES (INCLUYE ARENISCAS, CUARCITA, DOLOMITA, GRANITO, MARMOL, PIEDRA LAJA, PIZARRA, SERPENTINA, ETC.)",
+    },
+    {
+        value: "811000",
+        label: "SERVICIO COMBINADO DE APOYO A EDIFICIOS",
+    },
+    {
+        value: "81200",
+        label: "EXTRACCION DE PIEDRA CALIZA Y YESO (INCLUYE CALIZA, CASTINA, CONCHILLA, RIOLITA, YESO NATURAL, ANHIDRITA, ETC.)",
+    },
+    {
+        value: "812010",
+        label: "SERVICIOS DE LIMPIEZA GENERAL DE EDIFICIOS",
+    },
+    {
+        value: "812020",
+        label: "SERVICIOS DE DESINFECCION Y EXTERMINIO DE PLAGAS EN EL AMBITO URBANO",
+    },
+    {
+        value: "812090",
+        label: "SERVICIOS DE LIMPIEZA N.C.P.",
+    },
+    {
+        value: "81300",
+        label: "EXTRACCION DE ARENAS, CANTO RODADO Y TRITURADOS PETREOS (INCLUYE ARENA PARA CONSTRUCCION, ARENA SILICEA, OTRAS ARENAS NATURALES, CANTO RODADO, DOLOMITA TRITURADA, SALTO TRITURADO, PIEDRA PARTIDA  Y  OTROS TRITURADOS PETREOS, ETC.)",
+    },
+    {
+        value: "813000",
+        label: "SERVICIOS DE JARDINERIA Y MANTENIMIENTO DE ESPACIOS VERDES",
+    },
+    {
+        value: "81400",
+        label: "EXTRACCION DE ARCILLA Y CAOLIN (INCLUYE ANDALUCITA, ARCILLAS, BENTONITA, CAOLIN, PIROFILITA, SILIMANITA, MULLITA, TIERRA DE CHAMOTA O DE DINAS, ETC.)",
+    },
+    {
+        value: "821100",
+        label: "SERVICIOS COMBINADOS DE GESTION ADMINISTRATIVA DE OFICINAS",
+    },
+    {
+        value: "821900",
+        label: "SERVICIOS DE FOTOCOPIADO, PREPARACION DE DOCUMENTOS Y OTROS SERVICIOS DE APOYO DE OFICINA",
+    },
+    {
+        value: "822000",
+        label: "SERVICIOS DE CALL CENTER",
+    },
+    {
+        value: "823000",
+        label: "SERVICIOS DE ORGANIZACION DE CONVENCIONES Y EXPOSICIONES COMERCIALES, EXCEPTO CULTURALES Y DEPORTIVOS",
+    },
+    {
+        value: "829100",
+        label: "SERVICIOS DE AGENCIAS DE COBRO Y CALIFICACION CREDITICIA",
+    },
+    {
+        value: "829200",
+        label: "SERVICIOS DE ENVASE Y EMPAQUE",
+    },
+    {
+        value: "829900",
+        label: "SERVICIOS EMPRESARIALES N.C.P.",
+    },
+    {
+        value: "841100",
+        label: "SERVICIOS GENERALES DE LA ADMINISTRACION PUBLICA (INCLUYE EL DESEMPEÑO DE FUNCIONES EJECUTIVAS Y LEGISLATIVAS DE ADMINISTRACION POR PARTE DE LAS ENTIDADES DE LA ADMINISTRACION CENTRAL, REGIONAL Y LOCAL, LA ADMINISTRACION Y SUPERVISION DE ASUNTOS FISCALES",
+    },
+    {
+        value: "841200",
+        label: "SERVICIOS PARA LA REGULACION DE LAS ACTIVIDADES SANITARIAS, EDUCATIVAS, CULTURALES, Y RESTANTES SERVICIOS SOCIALES, EXCEPTO SEGURIDAD SOCIAL OBLIGATORIA (INCLUYE  LA GESTION ADMINISTRATIVA DE PROGRAMAS DESTINADOS A MEJORAR EL BIENESTAR DE LOS CIUDADANOS)",
+    },
+    {
+        value: "841300",
+        label: "SERVICIOS PARA LA REGULACION DE LA ACTIVIDAD ECONOMICA (INCLUYE LA ADMINISTRACION PUBLICA Y LA REGULACION DE VARIOS SECTORES ECONOMICOS, LA GESTION ADMINISTRATIVA DE ACTIVIDADES DE CARACTER LABORAL, LA APLICACION DE POLITICAS DE DESARROLLO REGIONAL)",
+    },
+    {
+        value: "841900",
+        label: "SERVICIOS AUXILIARES PARA LOS SERVICIOS GENERALES DE LA ADMINISTRACION PUBLICA (INCLUYE LAS ACTIVIDADES DE SERVICIOS GENERALES Y DE PERSONAL, LA ADMINISTRACION, DIRECCION Y APOYO DE SERVICIOS GENERALES, COMPRAS Y SUMINISTROS, ETC. )",
+    },
+    {
+        value: "842100",
+        label: "SERVICIOS DE ASUNTOS EXTERIORES",
+    },
+    {
+        value: "842200",
+        label: "SERVICIOS DE DEFENSA",
+    },
+    {
+        value: "842300",
+        label: "SERVICIOS PARA EL ORDEN PUBLICO Y LA SEGURIDAD",
+    },
+    {
+        value: "842400",
+        label: "SERVICIOS DE JUSTICIA",
+    },
+    {
+        value: "842500",
+        label: "SERVICIOS DE PROTECCION CIVIL",
+    },
+    {
+        value: "843000",
+        label: "SERVICIOS DE LA SEGURIDAD SOCIAL OBLIGATORIA, EXCEPTO OBRAS SOCIALES (INCLUYE PAMI Y ANSES)",
+    },
+    {
+        value: "851010",
+        label: "GUARDERIAS Y JARDINES MATERNALES",
+    },
+    {
+        value: "851020",
+        label: "ENSEÑANZA INICIAL, JARDIN DE INFANTES Y PRIMARIA",
+    },
+    {
+        value: "852100",
+        label: "ENSEÑANZA SECUNDARIA DE FORMACION GENERAL",
+    },
+    {
+        value: "852200",
+        label: "ENSEÑANZA SECUNDARIA DE FORMACION TECNICA Y PROFESIONAL",
+    },
+    {
+        value: "853100",
+        label: "ENSEÑANZA  TERCIARIA",
+    },
+    {
+        value: "853201",
+        label: "ENSEÑANZA UNIVERSITARIA EXCEPTO FORMACION DE POSGRADO",
+    },
+    {
+        value: "853300",
+        label: "FORMACION DE POSGRADO",
+    },
+    {
+        value: "854910",
+        label: "ENSEÑANZA DE IDIOMAS",
+    },
+    {
+        value: "854920",
+        label: "ENSEÑANZA DE CURSOS RELACIONADOS CON INFORMATICA",
+    },
+    {
+        value: "854930",
+        label: "ENSEÑANZA PARA ADULTOS, EXCEPTO DISCAPACITADOS",
+    },
+    {
+        value: "854940",
+        label: "ENSEÑANZA ESPECIAL Y PARA DISCAPACITADOS",
+    },
+    {
+        value: "854950",
+        label: "ENSEÑANZA DE GIMNASIA, DEPORTES Y ACTIVIDADES FISICAS",
+    },
+    {
+        value: "854960",
+        label: "ENSEÑANZA ARTISTICA",
+    },
+    {
+        value: "854990",
+        label: "SERVICIOS DE ENSEÑANZA N.C.P. (INCLUYE INSTRUCCION IMPARTIDA MEDIANTE PROGRAMAS DE RADIO, TELEVISION, CORRESPONDENCIA Y OTROS MEDIOS DE COMUNICACION, ESCUELAS DE MANEJO, ACTIVIDADES DE ENSEÑANZA A DOMICILIO Y/O PARTICULARES, ETC.)",
+    },
+    {
+        value: "855000",
+        label: "SERVICIOS DE APOYO A LA EDUCACION",
+    },
+    {
+        value: "861010",
+        label: "SERVICIOS DE INTERNACION EXCEPTO INSTITUCIONES RELACIONADAS CON LA SALUD MENTAL",
+    },
+    {
+        value: "861020",
+        label: "SERVICIOS DE INTERNACION EN INSTITUCIONES RELACIONADAS CON LA SALUD MENTAL",
+    },
+    {
+        value: "862110",
+        label: "SERVICIOS DE  CONSULTA MEDICA (INCLUYE LAS ACTIVIDADES DE ESTABLECIMIENTOS SIN INTERNACION O CUYOS SERVICIOS SE DESARROLLEN EN UNIDADES INDEPENDIENTES A LAS DE INTERNACION: CONSULTORIOS MEDICOS, SERVICIOS DE MEDICINA LABORAL)",
+    },
+    {
+        value: "862120",
+        label: "SERVICIOS DE PROVEEDORES DE ATENCION MEDICA DOMICILIARIA (INCLUYE LAS ACTIVIDADES LLEVADAS A CABO EN DOMICILIOS DE PACIENTES CON ALTA PRECOZ, Y QUE OFRECEN ATENCION POR MODULO)",
+    },
+    {
+        value: "862130",
+        label: "SERVICIOS DE ATENCION MEDICA EN DISPENSARIOS, SALITAS, VACUNATORIOS Y OTROS LOCALES DE ATENCION PRIMARIA DE LA SALUD",
+    },
+    {
+        value: "862200",
+        label: "SERVICIOS ODONTOLOGICOS",
+    },
+    {
+        value: "863110",
+        label: "SERVICIOS DE PRACTICAS DE DIAGNOSTICO EN LABORATORIOS (INCLUYE ANALISIS CLINICOS, BIOQUIMICA, ANATOMIA PATOLOGICA, LABORATORIO HEMATOLOGICO, ETC.)",
+    },
+    {
+        value: "863120",
+        label: "SERVICIOS DE PRACTICAS DE DIAGNOSTICO POR IMAGENES (INCLUYE RADIOLOGIA, ECOGRAFIA, RESONANCIA MAGNETICA, ETC.)",
+    },
+    {
+        value: "863190",
+        label: "SERVICIOS DE PRACTICAS DE DIAGNOSTICO N.C.P.",
+    },
+    {
+        value: "863200",
+        label: "SERVICIOS DE TRATAMIENTO (INCLUYE HEMODIALISIS, COBALTOTERAPIA, ETC)",
+    },
+    {
+        value: "863300",
+        label: "SERVICIO MEDICO INTEGRADO DE CONSULTA, DIAGNOSTICO Y TRATAMIENTO",
+    },
+    {
+        value: "864000",
+        label: "SERVICIOS DE EMERGENCIAS Y TRASLADOS",
+    },
+    {
+        value: "869010",
+        label: "SERVICIOS DE REHABILITACION FISICA (INCLUYE ACTIVIDADES DE PROFESIONALES EXCEPTO MEDICOS: KINESIOLOGOS, FISIATRAS, ETC.)",
+    },
+    {
+        value: "869090",
+        label: "SERVICIOS RELACIONADOS CON LA SALUD HUMANA N.C.P. (INCLUYE SERVICIOS DE PSICOLOGOS, FONOAUDIOLOGOS, SERVICIOS DE ENFERMERIA, TERAPIA OCUPACIONAL, BANCOS DE SANGRE, DE SEMEN,ETC.)",
+    },
+    {
+        value: "870100",
+        label: "SERVICIOS DE ATENCION A PERSONAS CON PROBLEMAS DE SALUD MENTAL O DE ADICCIONES, CON ALOJAMIENTO",
+    },
+    {
+        value: "870210",
+        label: "SERVICIOS DE ATENCION A ANCIANOS CON ALOJAMIENTO",
+    },
+    {
+        value: "870220",
+        label: "SERVICIOS DE ATENCION A PERSONAS MINUSVALIDAS CON ALOJAMIENTO",
+    },
+    {
+        value: "870910",
+        label: "SERVICIOS DE ATENCION A NIÑOS Y ADOLESCENTES CARENCIADOS CON ALOJAMIENTO",
+    },
+    {
+        value: "870920",
+        label: "SERVICIOS DE ATENCION A MUJERES CON ALOJAMIENTO",
+    },
+    {
+        value: "870990",
+        label: "SERVICIOS SOCIALES CON ALOJAMIENTO N.C.P.",
+    },
+    {
+        value: "880000",
+        label: "SERVICIOS SOCIALES SIN ALOJAMIENTO",
+    },
+    {
+        value: "89110",
+        label: "EXTRACCION DE MINERALES PARA LA FABRICACION DE ABONOS EXCEPTO TURBA (INCLUYE GUANO, SILVITA, SILVINITA Y OTRAS SALES DE POTASIO NATURALES, ETC.)",
+    },
+    {
+        value: "89120",
+        label: "EXTRACCION DE MINERALES PARA LA FABRICACION DE PRODUCTOS QUIMICOS (INCLUYE AZUFRE, BORACITA E HIDROBORACITA, CALCITA, CELESTINA, COLEMANITA, FLUORITA, LITIO Y SALES DE LITIO NATURALES, SULFATO DE ALUMINIO, SULFATO DE HIERRO, SULFATO DE MAGNESIO, SULFATO",
+    },
+    {
+        value: "89200",
+        label: "EXTRACCION Y AGLOMERACION DE TURBA (INCLUYE LA PRODUCCION DE TURBA UTILIZADA COMO CORRECTOR DE SUELOS)",
+    },
+    {
+        value: "89300",
+        label: "EXTRACCION DE SAL",
+    },
+    {
+        value: "89900",
+        label: "EXPLOTACION DE MINAS Y CANTERAS N.C.P. (INCLUYE AMIANTO, CUARZO, DIATOMITA, PIEDRA POMEZ, AGATA, AGUA MARINA, AMATISTA, CRISTAL DE ROCA, RODOCROSITA, TOPACIO, CORINDON, FELDESPATO, MICA, ZEOLITA, PERLITA, GRANULADO VOLCANICO, PUZOLANA, TOBA, TALCO, VERMI",
+    },
+    {
+        value: "900011",
+        label: "PRODUCCION DE ESPECTACULOS TEATRALES Y MUSICALES",
+    },
+    {
+        value: "900021",
+        label: "COMPOSICION Y REPRESENTACION DE OBRAS TEATRALES, MUSICALES Y ARTISTICAS (INCLUYE A COMPOSITORES, ACTORES, MUSICOS, CONFERENCISTAS, PINTORES, ARTISTAS PLASTICOS ETC.)",
+    },
+    {
+        value: "900030",
+        label: "SERVICIOS CONEXOS A LA PRODUCCION DE ESPECTACULOS TEATRALES Y MUSICALES  (INCLUYE DISEÑO Y MANEJO DE ESCENOGRAFIA, MONTAJE DE ILUMINACION Y SONIDO, ETC.)",
+    },
+    {
+        value: "900040",
+        label: "SERVICIOS DE AGENCIAS DE VENTAS DE ENTRADAS",
+    },
+    {
+        value: "900091",
+        label: "SERVICIOS DE ESPECTACULOS ARTISTICOS N.C.P. (INCLUYE ESPECTACULOS CIRCENSES, DE TITERES, MIMOS, ETC.)",
+    },
+    {
+        value: "91000",
+        label: "SERVICIOS DE APOYO PARA LA EXTRACCION DE PETROLEO Y GAS NATURAL",
+    },
+    {
+        value: "910100",
+        label: "SERVICIOS DE BIBLIOTECAS Y ARCHIVOS",
+    },
+    {
+        value: "910200",
+        label: "SERVICIOS DE MUSEOS Y PRESERVACION DE LUGARES Y EDIFICIOS HISTORICOS",
+    },
+    {
+        value: "910300",
+        label: "SERVICIOS DE JARDINES BOTANICOS, ZOOLOGICOS Y DE PARQUES NACIONALES",
+    },
+    {
+        value: "910900",
+        label: "SERVICIOS CULTURALES N.C.P. (INCLUYE ACTIVIDADES SOCIALES, CULTURALES, RECREATIVAS Y DE INTERES LOCAL DESARROLLADO POR CENTROS VECINALES, BARRIALES, SOCIEDADES DE FOMENTO, CLUBES NO DEPORTIVOS, ETC.)",
+    },
+    {
+        value: "920001",
+        label: "SERVICIOS DE RECEPCION DE APUESTAS DE QUINIELA, LOTERIA Y SIMILARES",
+    },
+    {
+        value: "920009",
+        label: "SERVICIOS RELACIONADOS CON JUEGOS DE AZAR Y APUESTAS N.C.P.",
+    },
+    {
+        value: "931010",
+        label: "SERVICIOS DE ORGANIZACION, DIRECCION Y GESTION DE PRACTICAS DEPORTIVAS EN CLUBES (INCLUYE CLUBES DE FUTBOL, GOLF, TIRO, BOXEO, ETC.)",
+    },
+    {
+        value: "931020",
+        label: "EXPLOTACION DE INSTALACIONES DEPORTIVAS, EXCEPTO CLUBES",
+    },
+    {
+        value: "931030",
+        label: "PROMOCION Y PRODUCCION DE ESPECTACULOS DEPORTIVOS",
+    },
+    {
+        value: "931041",
+        label: "SERVICIOS PRESTADOS POR DEPORTISTAS Y ATLETAS PARA LA REALIZACION DE PRACTICAS DEPORTIVAS",
+    },
+    {
+        value: "931042",
+        label: "SERVICIOS PRESTADOS POR PROFESIONALES Y TECNICOS PARA LA REALIZACION DE PRACTICAS DEPORTIVAS (INCLUYE LA ACTIVIDAD REALIZADA POR ENTRENADORES, INSTRUCTORES, JUECES ARBITROS, CRONOMETRADORES, ETC.)",
+    },
+    {
+        value: "931050",
+        label: "SERVICIOS DE ACONDICIONAMIENTO FISICO (INCLUYE GIMNASIOS DE MUSCULACION, PILATES, YOGA, PERSONAL TRAINNER, ETC.)",
+    },
+    {
+        value: "931090",
+        label: "SERVICIOS PARA LA PRACTICA DEPORTIVA N.C.P.",
+    },
+    {
+        value: "939010",
+        label: "SERVICIOS DE PARQUES DE DIVERSIONES Y PARQUES TEMATICOS",
+    },
+    {
+        value: "939020",
+        label: "SERVICIOS DE SALONES DE JUEGOS (INCLUYE SALONES DE BILLAR, POOL, BOWLING, JUEGOS ELECTRONICOS, ETC.)",
+    },
+    {
+        value: "939030",
+        label: "SERVICIOS DE SALONES DE BAILE, DISCOTECAS Y SIMILARES",
+    },
+    {
+        value: "939090",
+        label: "SERVICIOS DE ENTRETENIMIENTO N.C.P.",
+    },
+    {
+        value: "941100",
+        label: "SERVICIOS DE ORGANIZACIONES EMPRESARIALES Y DE EMPLEADORES",
+    },
+    {
+        value: "941200",
+        label: "SERVICIOS DE ORGANIZACIONES PROFESIONALES",
+    },
+    {
+        value: "942000",
+        label: "SERVICIOS DE SINDICATOS",
+    },
+    {
+        value: "949100",
+        label: "SERVICIOS DE ORGANIZACIONES RELIGIOSAS",
+    },
+    {
+        value: "949200",
+        label: "SERVICIOS DE ORGANIZACIONES POLITICAS",
+    },
+    {
+        value: "949910",
+        label: "SERVICIOS DE MUTUALES, EXCEPTO MUTUALES DE SALUD Y FINANCIERAS",
+    },
+    {
+        value: "949920",
+        label: "SERVICIOS DE CONSORCIOS DE EDIFICIOS",
+    },
+    {
+        value: "949930",
+        label: "SERVICIOS DE COOPERATIVAS CUANDO REALIZAN VARIAS ACTIVIDADES",
+    },
+    {
+        value: "949990",
+        label: "SERVICIOS DE ASOCIACIONES N.C.P.",
+    },
+    {
+        value: "951100",
+        label: "REPARACION Y MANTENIMIENTO DE EQUIPOS INFORMATICOS",
+    },
+    {
+        value: "951200",
+        label: "REPARACION Y MANTENIMIENTO DE EQUIPOS DE TELEFONIA Y DE COMUNICACION",
+    },
+    {
+        value: "952100",
+        label: "REPARACION DE ARTICULOS ELECTRICOS Y ELECTRONICOS DE USO DOMESTICO (INCLUYE  TV, RADIOS, REPRODUCTORES CD S Y DVD S, CAMARAS DE VIDEO DE USO FAMILIAR, HELADERAS, LAVARROPAS, SECARROPAS, AIRE ACONDICIONADO DE MENOS DE 6000 FRIGORIAS)",
+    },
+    {
+        value: "952200",
+        label: "REPARACION DE CALZADO Y ARTICULOS DE MARROQUINERIA",
+    },
+    {
+        value: "952300",
+        label: "REPARACION DE TAPIZADOS Y MUEBLES (INCLUYE LA RESTAURACION DE MUEBLES)",
+    },
+    {
+        value: "952910",
+        label: "REFORMA Y REPARACION DE CERRADURAS, DUPLICACION DE LLAVES. CERRAJERIAS",
+    },
+    {
+        value: "952920",
+        label: "REPARACION DE RELOJES Y JOYAS. RELOJERIAS",
+    },
+    {
+        value: "952990",
+        label: "REPARACION DE EFECTOS PERSONALES Y ENSERES DOMESTICOS N.C.P. (INCLUYE LA ACTIVIDAD DE ARREGLOS DE PRENDAS REALIZADAS POR MODISTAS), (NO INCLUYE LA ACTIVIDAD DE SASTRES Y MODISTAS QUE CONFECCIONAN PRENDAS: GRUPO 141)",
+    },
+    {
+        value: "960101",
+        label: "SERVICIOS DE LIMPIEZA DE PRENDAS PRESTADO POR TINTORERIAS RAPIDAS",
+    },
+    {
+        value: "960102",
+        label: "LAVADO Y LIMPIEZA DE ARTICULOS DE TELA, CUERO Y/O DE PIEL, INCLUSO LA LIMPIEZA EN SECO",
+    },
+    {
+        value: "960201",
+        label: "SERVICIOS DE PELUQUERIA",
+    },
+    {
+        value: "960202",
+        label: "SERVICIOS DE TRATAMIENTO DE BELLEZA, EXCEPTO LOS DE PELUQUERIA",
+    },
+    {
+        value: "960300",
+        label: "POMPAS FUNEBRES Y SERVICIOS CONEXOS",
+    },
+    {
+        value: "960910",
+        label: "SERVICIOS DE CENTROS DE ESTETICA, SPA Y SIMILARES (INCLUYE BAÑOS TURCOS, SAUNAS, SOLARIOS, CENTROS DE MASAJES Y ADELGAZAMIENTO, ETC.)",
+    },
+    {
+        value: "960990",
+        label: "SERVICIOS PERSONALES N.C.P. (INCLUYE ACTIVIDADES DE ASTROLOGIA Y ESPIRITISMO, LAS REALIZADAS CON FINES SOCIALES COMO AGENCIAS MATRIMONIALES, DE INVESTIGACIONES GENEALOGICAS, DE CONTRATACION DE ACOMPAÑANTES, LA ACTIVIDAD DE LUSTRABOTAS, ACOMODADORES DE AU",
+    },
+    {
+        value: "970000",
+        label: "SERVICIOS DE HOGARES PRIVADOS QUE CONTRATAN SERVICIO DOMESTICO",
+    },
+    {
+        value: "99000",
+        label: "SERVICIOS DE APOYO PARA LA MINERIA, EXCEPTO PARA LA EXTRACCION DE PETROLEO Y GAS NATUAL",
+    },
+    {
+        value: "990000",
+        label: "SERVICIOS DE ORGANIZACIONES Y ORGANOS EXTRATERRITORIALES",
+    },
+];
+
+export const JobActivityCodes: FilterOption[] = [
+    {
+        value: "0110",
+        label: "Fuerzas armadas",
+    },
+    {
+        value: "1110",
+        label: "Miembros del poder ejecutivo y de los cuerpos legislativos",
+    },
+    {
+        value: "1120",
+        label: "Personal directivo de la administración pública",
+    },
+    {
+        value: "1130",
+        label: "Jefes de pequeñas poblaciones",
+    },
+    {
+        value: "1141",
+        label: "Dirigentes y administradores de partidos políticos",
+    },
+    {
+        value: "1142",
+        label: "Dirigentes y administradores de organizaciones de empleadores, de trabajadores y de otras de interés socioeconómico",
+    },
+    {
+        value: "1143",
+        label: "Dirigentes y administradores de organizaciones humanitarias y de otras organizaciones  especializadas",
+    },
+    {
+        value: "1210",
+        label: "Directores generales y gerentes generales de empresa",
+    },
+    {
+        value: "1221",
+        label: "Directores de departamentos de producción y operaciones, agricultura, caza, silvicultura y pesca",
+    },
+    {
+        value: "1222",
+        label: "Directores de departamentos de producción y operaciones, industrias manufactureras",
+    },
+    {
+        value: "1223",
+        label: "Directores de departamentos de producción y operaciones, construcción y obras públicas",
+    },
+    {
+        value: "1224",
+        label: "Directores de departamentos de producción y operaciones, comercio mayoristas y minoristas",
+    },
+    {
+        value: "1225",
+        label: "Directores de departamentos de producción y operaciones, restauración y hostelería",
+    },
+    {
+        value: "1226",
+        label: "Directores de departamentos de producción y operaciones, transporte, almacenamiento y comunicaciones",
+    },
+    {
+        value: "1227",
+        label: "Directores de departamentos de producción y operaciones, empresas de intermediación y servicios a empresas",
+    },
+    {
+        value: "1228",
+        label: "Directores de departamentos de producción y operaciones, servicios de cuidados personales, limpieza y servicios similares",
+    },
+    {
+        value: "1229",
+        label: "Directores de departamentos de producción y operaciones, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "1231",
+        label: "Directores de departamentos financieros y administrativos",
+    },
+    {
+        value: "1232",
+        label: "Directores de departamentos de personal y de relaciones laborales",
+    },
+    {
+        value: "1233",
+        label: "Directores de departamentos de ventas y comercialización",
+    },
+    {
+        value: "1234",
+        label: "Directores de departamentos de publicidad y de relaciones públicas",
+    },
+    {
+        value: "1235",
+        label: "Directores de departamentos de abastecimiento y distribución",
+    },
+    {
+        value: "1236",
+        label: "Directores de departamentos de servicios de informática",
+    },
+    {
+        value: "1237",
+        label: "Directores de departamentos de investigaciones y desarrollo",
+    },
+    {
+        value: "1239",
+        label: "Otros directores de departamentos, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "1311",
+        label: "Gerentes de empresas de agricultura, caza, silvicultura y pesca",
+    },
+    {
+        value: "1312",
+        label: "Gerentes de industrias manufactureras",
+    },
+    {
+        value: "1313",
+        label: "Gerentes de empresas de construcción y obras públicas",
+    },
+    {
+        value: "1314",
+        label: "Gerentes de comercios mayoristas y minoristas",
+    },
+    {
+        value: "1315",
+        label: "Gerentes de empresas de restauración y hostelería",
+    },
+    {
+        value: "1316",
+        label: "Gerentes de empresas de transporte, almacenamiento y comunicaciones",
+    },
+    {
+        value: "1317",
+        label: "Gerentes de empresas de intermediación y servicios a empresas",
+    },
+    {
+        value: "1318",
+        label: "Gerentes de empresas de servicios de cuidados personales, limpieza y servicios similares",
+    },
+    {
+        value: "1319",
+        label: "Gerentes de empresas, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2111",
+        label: "Físicios y astrónomos",
+    },
+    {
+        value: "2112",
+        label: "Meteorólogos",
+    },
+    {
+        value: "2113",
+        label: "Químicos",
+    },
+    {
+        value: "2114",
+        label: "Geólogos y geofísicos",
+    },
+    {
+        value: "2121",
+        label: "Matemáticos y afines",
+    },
+    {
+        value: "2122",
+        label: "Estadísticos",
+    },
+    {
+        value: "2131",
+        label: "Creadores y analistas de sistemas informáticos",
+    },
+    {
+        value: "2132",
+        label: "Programadores informáticos",
+    },
+    {
+        value: "2139",
+        label: "Profesionales de la informática, no clasificados bajos otros epígrafes",
+    },
+    {
+        value: "2141",
+        label: "Arquitectos, urbanistas e ingenieros de tránsito",
+    },
+    {
+        value: "2142",
+        label: "Ingenieros civiles",
+    },
+    {
+        value: "2143",
+        label: "Ingenieros electricístas",
+    },
+    {
+        value: "2144",
+        label: "Ingenieros electronicistas y de telecomunicaciones",
+    },
+    {
+        value: "2145",
+        label: "Ingenieros mecánicos",
+    },
+    {
+        value: "2146",
+        label: "Ingenieros químicos",
+    },
+    {
+        value: "2147",
+        label: "Ingenieros de minas y metalúrgicos y afines",
+    },
+    {
+        value: "2148",
+        label: "Cartógrafos y agrimensores",
+    },
+    {
+        value: "2149",
+        label: "Arquitectos, ingenieros y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2211",
+        label: "Biólogos, botánicos, zoólogos y afines",
+    },
+    {
+        value: "2212",
+        label: "Farmacólogos, patólogos y afines",
+    },
+    {
+        value: "2213",
+        label: "Agrónomos y afines",
+    },
+    {
+        value: "2221",
+        label: "Médicos",
+    },
+    {
+        value: "2222",
+        label: "Odontólogos",
+    },
+    {
+        value: "2223",
+        label: "Veterinarios",
+    },
+    {
+        value: "2224",
+        label: "Farmacéuticos",
+    },
+    {
+        value: "2229",
+        label: "Médicos y profesionales afines (excepto el personal de enfermería y partería), no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2230",
+        label: "Personal de enfermería y partería de nivel superior",
+    },
+    {
+        value: "2310",
+        label: "Profesores de universidades y otros establecimientos de la enseñanza superior",
+    },
+    {
+        value: "2320",
+        label: "Profesores de la enseñanza secundaria",
+    },
+    {
+        value: "2331",
+        label: "Maestros de nivel superior de la enseñanza primaria",
+    },
+    {
+        value: "2332",
+        label: "Maestros de nivel superior de la enseñanza preescolar",
+    },
+    {
+        value: "2340",
+        label: "Maestros e instructores de nivel superior de la enseñanza especial",
+    },
+    {
+        value: "2351",
+        label: "Especialistas en métodos pedagógicos y material didáctico",
+    },
+    {
+        value: "2352",
+        label: "Inspectores de la enseñanza",
+    },
+    {
+        value: "2359",
+        label: "Otros profesionales de la enseñanza, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2411",
+        label: "Contadores",
+    },
+    {
+        value: "2412",
+        label: "Especialistas en políticas y servicios de personal y afines",
+    },
+    {
+        value: "2419",
+        label: "Especialistas en organizacón y administración de empresas y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2421",
+        label: "Abogados",
+    },
+    {
+        value: "2422",
+        label: "Jueces",
+    },
+    {
+        value: "2429",
+        label: "Profesionales del derecho, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "2431",
+        label: "Archiveros y conservadores de museos",
+    },
+    {
+        value: "2432",
+        label: "Bibliotecarios, documentalistas y afines",
+    },
+    {
+        value: "2441",
+        label: "Economistas",
+    },
+    {
+        value: "2442",
+        label: "Sociólogos, antropólogos y afines",
+    },
+    {
+        value: "2443",
+        label: "Filósofos, historiadores y especialistas en ciencias políticas",
+    },
+    {
+        value: "2444",
+        label: "Filólogos, traductores e intérpretes",
+    },
+    {
+        value: "2445",
+        label: "Psicólogos",
+    },
+    {
+        value: "2446",
+        label: "Profesionales del trabajo social",
+    },
+    {
+        value: "2451",
+        label: "Autores, periodistas y otros escritores",
+    },
+    {
+        value: "2452",
+        label: "Escultores, pintores y afines",
+    },
+    {
+        value: "2453",
+        label: "Compositores, músicos y cantantes",
+    },
+    {
+        value: "2454",
+        label: "Coreógrafos y bailarines",
+    },
+    {
+        value: "2455",
+        label: "Actores y directores de cine, radio, teatro, televisión y afines",
+    },
+    {
+        value: "2460",
+        label: "Sacerdotes de distintas religiones",
+    },
+    {
+        value: "3111",
+        label: "Técnicos en ciencias físicas y químicas",
+    },
+    {
+        value: "3112",
+        label: "Técnicos en ingeniería civil",
+    },
+    {
+        value: "3113",
+        label: "Electrotécnicos",
+    },
+    {
+        value: "3114",
+        label: "Técnicos en electrónica y telecomunicaciones",
+    },
+    {
+        value: "3115",
+        label: "Técnicos en mecánica y construcción mecánica",
+    },
+    {
+        value: "3116",
+        label: "Técnicos en química industrial",
+    },
+    {
+        value: "3117",
+        label: "Técnicos en ingeniería de minas y metalurgia",
+    },
+    {
+        value: "3118",
+        label: "Delineantes y dibujantes técnicos",
+    },
+    {
+        value: "3119",
+        label: "Técnicos en ciencias físicas y químicas y en ingeniería no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3121",
+        label: "Técnicos en programación informática",
+    },
+    {
+        value: "3122",
+        label: "Técnicos en control de equipos informáticos",
+    },
+    {
+        value: "3123",
+        label: "Técnicos en control de robots industriales",
+    },
+    {
+        value: "3131",
+        label: "Fotógrafos y operadores de equipos de grabación de imagen y sonido",
+    },
+    {
+        value: "3132",
+        label: "Operadores de equipos de radiodifusión, televisión y telecomunicaciones",
+    },
+    {
+        value: "3133",
+        label: "Operadores de aparatos de diagnóstico y tratamientos médicos",
+    },
+    {
+        value: "3141",
+        label: "Oficiales maquinistas",
+    },
+    {
+        value: "3142",
+        label: "Capitanes, oficiales de cubierta y prácticos",
+    },
+    {
+        value: "3143",
+        label: "Pilotos de aviación y afines",
+    },
+    {
+        value: "3144",
+        label: "Controladores de tráfico aéreo",
+    },
+    {
+        value: "3145",
+        label: "Técnicos en seguridad aeronáutica",
+    },
+    {
+        value: "3151",
+        label: "Inspectores de edificios y de prevención e investigación de incendios",
+    },
+    {
+        value: "3152",
+        label: "Inspectores de seguridad y salud y control de calidad",
+    },
+    {
+        value: "3211",
+        label: "Técnicos en ciencias biológicas y afines",
+    },
+    {
+        value: "3212",
+        label: "Técnicos en agronomía, zootecnia y silvicultura",
+    },
+    {
+        value: "3213",
+        label: "Consejeros agrícolas y forestales",
+    },
+    {
+        value: "3221",
+        label: "Practicantes y asistentes médicos",
+    },
+    {
+        value: "3222",
+        label: "Higienistas y otro personal sanitario",
+    },
+    {
+        value: "3223",
+        label: "Técnicos en dietética y nutrición",
+    },
+    {
+        value: "3224",
+        label: "Técnicos en optometría y ópticos",
+    },
+    {
+        value: "3225",
+        label: "Dentistas auxiliares y ayudantes de odontología",
+    },
+    {
+        value: "3226",
+        label: "Fisioterapeutas y afines",
+    },
+    {
+        value: "3227",
+        label: "Técnicos y asistentes veterinarios",
+    },
+    {
+        value: "3228",
+        label: "Técnicos y asistentes farmacéuticos",
+    },
+    {
+        value: "3229",
+        label: "Profesionales de nivel medio de la medicina moderna y la salud (excepto el personal de enfermería y partería), no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3231",
+        label: "Personal de enfermería de nivel medio",
+    },
+    {
+        value: "3232",
+        label: "Personal de partería de nivel medio",
+    },
+    {
+        value: "3241",
+        label: "Practicantes  de la medicina tradicional",
+    },
+    {
+        value: "3242",
+        label: "Curanderos",
+    },
+    {
+        value: "3310",
+        label: "Maestros de nivel medio de la enseñanza primaria",
+    },
+    {
+        value: "3320",
+        label: "Maestros de nivel medio de la enseñanza preescolar",
+    },
+    {
+        value: "3330",
+        label: "Maestros de nivel medio de la enseñanza especial",
+    },
+    {
+        value: "3340",
+        label: "Otros maestros e instructores de nivel medio",
+    },
+    {
+        value: "3411",
+        label: "Agentes de bolsa, cambio y otros servicios financieros",
+    },
+    {
+        value: "3412",
+        label: "Agentes de seguros",
+    },
+    {
+        value: "3413",
+        label: "Agentes inmobiliarios",
+    },
+    {
+        value: "3414",
+        label: "Agentes de viajes",
+    },
+    {
+        value: "3415",
+        label: "Representantes comerciales y técnicos de ventas",
+    },
+    {
+        value: "3416",
+        label: "Compradores",
+    },
+    {
+        value: "3417",
+        label: "Tasadores y subastadores",
+    },
+    {
+        value: "3419",
+        label: "Profesionales de nivel medio en operaciones y comerciales, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3421",
+        label: "Agentes de compras y consignatarios",
+    },
+    {
+        value: "3422",
+        label: "Declarantes o gestores de aduana",
+    },
+    {
+        value: "3423",
+        label: "Agentes públicos y privados de colocación y contratistas de mano de obra",
+    },
+    {
+        value: "3429",
+        label: "Agentes comerciales y corredores, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3431",
+        label: "Profesionales de nivel medio de servicios administrativos y afines",
+    },
+    {
+        value: "3432",
+        label: "Profesionales de nivel medio del derecho y servicios legales o afines",
+    },
+    {
+        value: "3433",
+        label: "Tenedores de libros",
+    },
+    {
+        value: "3434",
+        label: "Profesionales de nivel medio de servicios estadísticos, matemáticos y afines",
+    },
+    {
+        value: "3439",
+        label: "Profesionales de nivel medio de servicios de administración, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3441",
+        label: "Agentes de aduana e inspectores de fronteras",
+    },
+    {
+        value: "3442",
+        label: "Funcionarios del fisco",
+    },
+    {
+        value: "3443",
+        label: "Funcionarios de servicios de seguridad social",
+    },
+    {
+        value: "3444",
+        label: "Funcionarios de servicios de expedición de licencias y permisos",
+    },
+    {
+        value: "3449",
+        label: "Agentes de las administraciones públicas de aduanas, impuestos y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "3450",
+        label: "Inspectores de policía y detectives",
+    },
+    {
+        value: "3460",
+        label: "Trabajadores y asistentes sociales de nivel medio",
+    },
+    {
+        value: "3471",
+        label: "Decoradores y diseñadores",
+    },
+    {
+        value: "3472",
+        label: "Locutores de radio y televisión y afines",
+    },
+    {
+        value: "3473",
+        label: "Músicos, cantantes y bailarines callejeros, de cabaret y afines",
+    },
+    {
+        value: "3474",
+        label: "Payasos, prestidigitadores, acróbatas y afines",
+    },
+    {
+        value: "3475",
+        label: "Atletas, deportistas y afines",
+    },
+    {
+        value: "3480",
+        label: "Auxiliares laicos de los cultos",
+    },
+    {
+        value: "4111",
+        label: "Taquígrafos y mecanógrafos",
+    },
+    {
+        value: "4112",
+        label: "Operadores de máquinas de tratamiento de textos y afines",
+    },
+    {
+        value: "4113",
+        label: "Operadores de entrada de datos",
+    },
+    {
+        value: "4114",
+        label: "Operadores de calculadoras",
+    },
+    {
+        value: "4115",
+        label: "Secretarios",
+    },
+    {
+        value: "4121",
+        label: "Empleados de contabilidad y cálculo de costos",
+    },
+    {
+        value: "4122",
+        label: "Empleados de servicios estadísticos y financieros",
+    },
+    {
+        value: "4131",
+        label: "Empleados de control de abastecimientos e inventario",
+    },
+    {
+        value: "4132",
+        label: "Empleados de servicios de apoyo a la producción",
+    },
+    {
+        value: "4133",
+        label: "Empleados de servicios de transporte",
+    },
+    {
+        value: "4141",
+        label: "Empleados de bibliotecas y archivos",
+    },
+    {
+        value: "4142",
+        label: "Empleados de servicios de correos",
+    },
+    {
+        value: "4143",
+        label: "Codificadores de datos, correctores de pruebas de imprenta y afines",
+    },
+    {
+        value: "4144",
+        label: "Escribientes públicos y afines",
+    },
+    {
+        value: "4190",
+        label: "Otros oficinistas",
+    },
+    {
+        value: "4211",
+        label: "Cajeros y expendedores de billetes",
+    },
+    {
+        value: "4212",
+        label: "Pagadores y cobradores de ventanilla y taquilleros",
+    },
+    {
+        value: "4213",
+        label: "Receptores de apuestas y afines",
+    },
+    {
+        value: "4214",
+        label: "Prestamistas",
+    },
+    {
+        value: "4215",
+        label: "Cobradores y afines",
+    },
+    {
+        value: "4221",
+        label: "Empleados de agencias de viajes",
+    },
+    {
+        value: "4222",
+        label: "Recepcionistas y empleados de informaciones",
+    },
+    {
+        value: "4223",
+        label: "Telefonistas",
+    },
+    {
+        value: "5111",
+        label: "Camareros y azafatas",
+    },
+    {
+        value: "5112",
+        label: "Revisores, guardas y cobradores de los transportes públicos",
+    },
+    {
+        value: "5113",
+        label: "Guías",
+    },
+    {
+        value: "5121",
+        label: "Ecónomos, mayordomos y afines",
+    },
+    {
+        value: "5122",
+        label: "Cocineros",
+    },
+    {
+        value: "5123",
+        label: "Camareros y taberneros",
+    },
+    {
+        value: "5131",
+        label: "Niñeras y celadoras infantiles",
+    },
+    {
+        value: "5132",
+        label: "Ayudantes de enfermería en instituciones",
+    },
+    {
+        value: "5133",
+        label: "Ayudantes de enfermería a domicilio",
+    },
+    {
+        value: "5139",
+        label: "Trabajadores de los cuidados personales y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "5141",
+        label: "Peluqueros, especialistas en tratamientos de belleza y afines",
+    },
+    {
+        value: "5142",
+        label: "Acompañantes y ayudas de cámara",
+    },
+    {
+        value: "5143",
+        label: "Personal de pompas fúnebres y embalsamadores",
+    },
+    {
+        value: "5149",
+        label: "Otros trabajadores de servicios personales a particulares, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "5151",
+        label: "Astrólogos y afines",
+    },
+    {
+        value: "5152",
+        label: "Adivinadores, quirománticos y afines",
+    },
+    {
+        value: "5161",
+        label: "Bomberos",
+    },
+    {
+        value: "5162",
+        label: "Policías",
+    },
+    {
+        value: "5163",
+        label: "Guardianes de prisión",
+    },
+    {
+        value: "5169",
+        label: "Personal de los servicios de protección y seguridad, no clasificado bajo otros epígrafes",
+    },
+    {
+        value: "5210",
+        label: "Modelos de modas, arte y publicidad",
+    },
+    {
+        value: "5220",
+        label: "Vendedores y demostradores de tiendas y almacenes",
+    },
+    {
+        value: "5230",
+        label: "Vendedores de quioscos y de puestos de mercado",
+    },
+    {
+        value: "6111",
+        label: "Agricultores y trabajadores calificados de cultivos extensivos",
+    },
+    {
+        value: "6112",
+        label: "Agricultores y trabajadores calificados de plantaciones de árboles y arbustos",
+    },
+    {
+        value: "6113",
+        label: "Agricultores y trabajadores calificados de huertas, invernaderos, viveros y jardines",
+    },
+    {
+        value: "6114",
+        label: "Agricultores y trabajadores calificados de cultivos mixtos",
+    },
+    {
+        value: "6121",
+        label: "Criadores de ganado y otros animales domésticos, productores de leche y sus derivados",
+    },
+    {
+        value: "6122",
+        label: "Avicultores y trabajadores calificados de la avicultura",
+    },
+    {
+        value: "6123",
+        label: "Agricultores y sericicultores y trabajadores calificados de la apicultura y la sericicultura",
+    },
+    {
+        value: "6124",
+        label: "Criadores y trabajadores calificados de la cría de animales domésticos diversos",
+    },
+    {
+        value: "6129",
+        label: "Criadores y trabajadores pecuarios calificados de la cría de animales para el mercado y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "6130",
+        label: "Productores y trabajadores agropecuarios calificados cuya producción se destina al mercado",
+    },
+    {
+        value: "6141",
+        label: "Taladores y otros trabajadores forestales",
+    },
+    {
+        value: "6142",
+        label: "Carboneros de carbón vegetal y afines",
+    },
+    {
+        value: "6151",
+        label: "Criadores de especies acuáticas",
+    },
+    {
+        value: "6152",
+        label: "Pescadores de agua dulce y aguas costeras",
+    },
+    {
+        value: "6153",
+        label: "Pescadores de alta mar",
+    },
+    {
+        value: "6154",
+        label: "Cazadores y tramperos",
+    },
+    {
+        value: "6210",
+        label: "Trabajadores agropecuarios y pesqueros de subsistencia",
+    },
+    {
+        value: "7111",
+        label: "Mineros y canteros",
+    },
+    {
+        value: "7112",
+        label: "Pegadores",
+    },
+    {
+        value: "7113",
+        label: "Tronzadores, labrantes y grabadores de piedra",
+    },
+    {
+        value: "7121",
+        label: "Constructores con técnicas y materiales tradicionales",
+    },
+    {
+        value: "7122",
+        label: "Albañiles y mamposteros",
+    },
+    {
+        value: "7123",
+        label: "Operarios en cemento armado, enfoscadores y afines",
+    },
+    {
+        value: "7124",
+        label: "Carpinteros de armar y de blanco",
+    },
+    {
+        value: "7129",
+        label: "Oficiales y operarios de la construcción (obra gruesa) y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "7131",
+        label: "Techadores",
+    },
+    {
+        value: "7132",
+        label: "Parqueteros y colocadores de suelos",
+    },
+    {
+        value: "7133",
+        label: "Revocadores",
+    },
+    {
+        value: "7134",
+        label: "Instaladores de material aislante y de insonorización",
+    },
+    {
+        value: "7135",
+        label: "Cristaleros",
+    },
+    {
+        value: "7136",
+        label: "Fontaneros e instaladores de tuberías",
+    },
+    {
+        value: "7137",
+        label: "Electricistas de obras y afines",
+    },
+    {
+        value: "7141",
+        label: "Pintores y empapeladores",
+    },
+    {
+        value: "7142",
+        label: "Barnizadores y afines",
+    },
+    {
+        value: "7143",
+        label: "Limpiadores de fachadas y deshollinadores",
+    },
+    {
+        value: "7211",
+        label: "Moldeadores y macheros",
+    },
+    {
+        value: "7212",
+        label: "Soldadores y oxicortadores",
+    },
+    {
+        value: "7213",
+        label: "Chapistas y caldereros",
+    },
+    {
+        value: "7214",
+        label: "Montadores de estructuras metálicas",
+    },
+    {
+        value: "7215",
+        label: "Aparejadores y empalmadores de cables",
+    },
+    {
+        value: "7216",
+        label: "Buzos",
+    },
+    {
+        value: "7221",
+        label: "Herreros y forjadores",
+    },
+    {
+        value: "7222",
+        label: "Herramentistas y afines",
+    },
+    {
+        value: "7223",
+        label: "Reguladores y reguladores-operadores de máquinas herramientas",
+    },
+    {
+        value: "7224",
+        label: "Pulidores de metales y afiladores de herramientas",
+    },
+    {
+        value: "7231",
+        label: "Mecánicos y ajustadores de vehículos de motor",
+    },
+    {
+        value: "7232",
+        label: "Mecánicos y ajustadores de motores de avión",
+    },
+    {
+        value: "7233",
+        label: "Mecánicos y ajustadores de máquinas agrícolas e industriales",
+    },
+    {
+        value: "7241",
+        label: "Mecánicos y ajustadores electricistas",
+    },
+    {
+        value: "7242",
+        label: "Ajustadores electronicistas",
+    },
+    {
+        value: "7243",
+        label: "Mecánicos y reparadores de aparatos electrónicos",
+    },
+    {
+        value: "7244",
+        label: "Instaladores y reparadores de telégrafos y teléfonos",
+    },
+    {
+        value: "7245",
+        label: "Instaladores y reparadores de líneas eléctricas",
+    },
+    {
+        value: "7311",
+        label: "Mecánicos y reparadores de instrumentos de precisión",
+    },
+    {
+        value: "7312",
+        label: "Constructores y afinadores de instrumentos musicales",
+    },
+    {
+        value: "7313",
+        label: "Joyeros, orfebres y plateros",
+    },
+    {
+        value: "7321",
+        label: "Alfareros y afines (barro, arcilla y abrasivos)",
+    },
+    {
+        value: "7322",
+        label: "Sopladores, modeladores, laminadores, cortadores y pulidores de vidrio",
+    },
+    {
+        value: "7323",
+        label: "Grabadores de vidrio",
+    },
+    {
+        value: "7324",
+        label: "Pintores decoradores de vidrio, cerámica y otros materiales",
+    },
+    {
+        value: "7331",
+        label: "Artesanos de la madera y materiales similares",
+    },
+    {
+        value: "7332",
+        label: "Artesanos de los tejidos, el cuero y materiales similares",
+    },
+    {
+        value: "7341",
+        label: "Cajistas, tipógrafos y afines",
+    },
+    {
+        value: "7342",
+        label: "Estereotipistas y galvanotipistas",
+    },
+    {
+        value: "7343",
+        label: "Grabadores de imprenta y fotograbadores",
+    },
+    {
+        value: "7344",
+        label: "Operarios de la fotografía y afines",
+    },
+    {
+        value: "7345",
+        label: "Encuadernadores y afines",
+    },
+    {
+        value: "7346",
+        label: "Impresores de sericigrafía y estampadores a la plancha y en textiles",
+    },
+    {
+        value: "7411",
+        label: "Carniceros, pescaderos y afines",
+    },
+    {
+        value: "7412",
+        label: "Panaderos, pasteleros y confiteros",
+    },
+    {
+        value: "7413",
+        label: "Operarios de la elaboración de productos lácteos",
+    },
+    {
+        value: "7414",
+        label: "Operarios de la conservación de frutas, legumbres, verduras y afines",
+    },
+    {
+        value: "7415",
+        label: "Catadores y clasificadores de alimentos y bebidas",
+    },
+    {
+        value: "7416",
+        label: "Preparadores y elaboradores de tabaco y sus productos",
+    },
+    {
+        value: "7421",
+        label: "Operarios del tratamiento de la madera",
+    },
+    {
+        value: "7422",
+        label: "Ebanistas y afines",
+    },
+    {
+        value: "7423",
+        label: "Reguladores y reguladores-operadores de máquinas de labrar madera",
+    },
+    {
+        value: "7424",
+        label: "Cesteros, bruceros y afines",
+    },
+    {
+        value: "7431",
+        label: "Preparadores de fibras",
+    },
+    {
+        value: "7432",
+        label: "Tejedores con telares o de tejidos de punto y afines",
+    },
+    {
+        value: "7433",
+        label: "Sastres, modistos y sombrereros",
+    },
+    {
+        value: "7434",
+        label: "Peleteros y afines",
+    },
+    {
+        value: "7435",
+        label: "Patronistas y cortadores de tela, cuero y afines",
+    },
+    {
+        value: "7436",
+        label: "Costureros, bordadores y afines",
+    },
+    {
+        value: "7437",
+        label: "Tapiceros, colchoneros y afines",
+    },
+    {
+        value: "7441",
+        label: "Apelambradores, pellejeros y curtidores",
+    },
+    {
+        value: "7442",
+        label: "Zapateros y afines",
+    },
+    {
+        value: "8111",
+        label: "Operadores de instalaciones mineras",
+    },
+    {
+        value: "8112",
+        label: "Operadores de instalaciones de procesamiento de minerales y rocas",
+    },
+    {
+        value: "8113",
+        label: "Perforadores y sondistas de pozos y afines",
+    },
+    {
+        value: "8121",
+        label: "Operadores de hornos de minerales y de hornos de primera fusión de metales",
+    },
+    {
+        value: "8122",
+        label: "Operadores de hornos de segunda fusión, máquinas de colar y moldear metales y trenes de laminación",
+    },
+    {
+        value: "8123",
+        label: "Operadores de instalaciones de tratamiento térmico de metales",
+    },
+    {
+        value: "8124",
+        label: "Operadores de máquinas trefiladoras y estiradoras de metales",
+    },
+    {
+        value: "8131",
+        label: "Operadores de hornos de vidriería y cerámica y operadores de máquinas afines",
+    },
+    {
+        value: "8139",
+        label: "Operadores de instalaciones de vidriería, cerámica y afines, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "8141",
+        label: "Operadores de instalaciones de procesamiento de la madera",
+    },
+    {
+        value: "8142",
+        label: "Operadores de instalaciones para la preparación de pasta para papel",
+    },
+    {
+        value: "8143",
+        label: "Operadores de instalaciones para la fabricación de papel",
+    },
+    {
+        value: "8151",
+        label: "Operadores de instalaciones quebrantadoras, trituradoras y mezcladoras de sustancias químicas",
+    },
+    {
+        value: "8152",
+        label: "Operadores de instalaciones de tratamiento químico térmico",
+    },
+    {
+        value: "8153",
+        label: "Operadores de equipos de filtración y separación de sustancias químicas",
+    },
+    {
+        value: "8154",
+        label: "Operadores de equipos de destilación y de reacción química (excepto petróleo y gas natural)",
+    },
+    {
+        value: "8155",
+        label: "Operadores de instalaciones de refinación de petróleo y gas natural",
+    },
+    {
+        value: "8159",
+        label: "Operadores de instalaciones de tratamientos químicos, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "8161",
+        label: "Operadores de instalaciones de producción de energía",
+    },
+    {
+        value: "8162",
+        label: "Operadores de máquinas de vapor y calderas",
+    },
+    {
+        value: "8163",
+        label: "Operadores de incineradores, instalaciones de tratamiento de agua y afines",
+    },
+    {
+        value: "8171",
+        label: "Operadores de cadenas de montaje automatizadas",
+    },
+    {
+        value: "8172",
+        label: "Operadores de robots industriales",
+    },
+    {
+        value: "8211",
+        label: "Operadores de máquinas herramientas",
+    },
+    {
+        value: "8212",
+        label: "Operadores de máquinas para fabricar cemento y otros productos minerales",
+    },
+    {
+        value: "8221",
+        label: "Operadores de máquinas para fabricar productos farmacéuticos y cosméticos",
+    },
+    {
+        value: "8222",
+        label: "Operadores de máquinas para fabricar municiones y explosivos",
+    },
+    {
+        value: "8223",
+        label: "Operadores de máquinas pulidoras, galvanizadoras y recubridoras de metales",
+    },
+    {
+        value: "8224",
+        label: "Operadores de máquinas para fabricar accesorios fotográficos",
+    },
+    {
+        value: "8229",
+        label: "Operadores de máquinas para fabricar productos químicos, no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "8231",
+        label: "Operadores de máquinas para fabricar productos de caucho",
+    },
+    {
+        value: "8232",
+        label: "Plastic-products machine operators",
+    },
+    {
+        value: "8240",
+        label: "Operadores de máquinas para fabricar productos de madera",
+    },
+    {
+        value: "8251",
+        label: "Operadores de máquinas de imprenta",
+    },
+    {
+        value: "8252",
+        label: "Operadores de máquinas de encuadernación",
+    },
+    {
+        value: "8253",
+        label: "Operadores de máquinas para fabricar productos de papel",
+    },
+    {
+        value: "8261",
+        label: "Operadores de máquinas de preparación de fibras, hilado y devanado",
+    },
+    {
+        value: "8262",
+        label: "Operadores de telares y otras máquinas tejedoras",
+    },
+    {
+        value: "8263",
+        label: "Operadores de máquinas para coser",
+    },
+    {
+        value: "8264",
+        label: "Operadores de máquinas de blanqueo, teñido y tintura",
+    },
+    {
+        value: "8265",
+        label: "Operadores de máquinas de tratamiento de pieles y cueros",
+    },
+    {
+        value: "8266",
+        label: "Operadores de máquinas para la fabricación de calzado y afines",
+    },
+    {
+        value: "8269",
+        label: "Operadores de máquinas para fabricar productos textiles y artículos de piel y cuero no clasificados bajo otros epígrafes",
+    },
+    {
+        value: "8271",
+        label: "Operadores de máquinas para elaborar carne, pescado y mariscos",
+    },
+    {
+        value: "8272",
+        label: "Operadores de máquinas para elaborar productos lácteos",
+    },
+    {
+        value: "8273",
+        label: "Operadores de máquinas para moler cereales y especias",
+    },
+    {
+        value: "8274",
+        label: "Operadores de máquinas para elaborar cereales, productos de panadería y repostería y artículos de chocolate",
+    },
+    {
+        value: "8275",
+        label: "Operadores de máquinas para elaborar frutos húmedos y secos y hortalizas",
+    },
+    {
+        value: "8276",
+        label: "Operadores de máquinas para fabricar azúcares",
+    },
+    {
+        value: "8277",
+        label: "Operadores de máquinas para elaborar té, café y cacao",
+    },
+    {
+        value: "8278",
+        label: "Operadores de máquinas para elaborar cerveza, vinos y otras bebidas",
+    },
+    {
+        value: "8279",
+        label: "Operadores de máquinas para elaborar productos del tabaco",
+    },
+    {
+        value: "8281",
+        label: "Montadores de mecanismos y elementos mecánicos de máquinas",
+    },
+    {
+        value: "8282",
+        label: "Montadores de equipos eléctricos",
+    },
+    {
+        value: "8283",
+        label: "Montadores de equipos electrónicos",
+    },
+    {
+        value: "8284",
+        label: "Montadores de productos metálicos, de caucho y de material plástico",
+    },
+    {
+        value: "8285",
+        label: "Montadores de productos de madera y de materiales afines",
+    },
+    {
+        value: "8286",
+        label: "Montadores de productos de cartón, textiles y materiales afines",
+    },
+    {
+        value: "8290",
+        label: "Otros operadores de máquinas y montadores",
+    },
+    {
+        value: "8311",
+        label: "Maquinistas de locomotoras",
+    },
+    {
+        value: "8312",
+        label: "Guardafrenos, guardagujas y agentes de maniobras",
+    },
+    {
+        value: "8321",
+        label: "Conductores de motocicletas",
+    },
+    {
+        value: "8322",
+        label: "Conductores de automóviles, taxis y camionetas",
+    },
+    {
+        value: "8323",
+        label: "Conductores de autobuses y tranvías",
+    },
+    {
+        value: "8324",
+        label: "Conductores de camiones pesados",
+    },
+    {
+        value: "8331",
+        label: "Operadores de maquinaria agrícola y forestal motorizada",
+    },
+    {
+        value: "8332",
+        label: "Operadores de máquinas de movimiento de tierras y afines",
+    },
+    {
+        value: "8333",
+        label: "Operadores de grúas de aparatos elevadores y afines",
+    },
+    {
+        value: "8334",
+        label: "Operadores de carretillas y elevadoras",
+    },
+    {
+        value: "8340",
+        label: "Marineros de cubierta y afines",
+    },
+    {
+        value: "9111",
+        label: "Vendedores ambulantes de productos comestibles",
+    },
+    {
+        value: "9112",
+        label: "Vendedores ambulantes de productos no comestibles",
+    },
+    {
+        value: "9113",
+        label: "Vendedores a domicilio y por teléfono",
+    },
+    {
+        value: "9120",
+        label: "Limpiabotas y otros trabajadores callejeros",
+    },
+    {
+        value: "9131",
+        label: "Personal doméstico",
+    },
+    {
+        value: "9132",
+        label: "Limpiadores de oficinas, hoteles y otros establecimientos",
+    },
+    {
+        value: "9133",
+        label: "Lavanderos y planchadores manuales",
+    },
+    {
+        value: "9141",
+        label: "Conserjes",
+    },
+    {
+        value: "9142",
+        label: "Lavadores de vehículos, ventanas y afines",
+    },
+    {
+        value: "9151",
+        label: "Mensajeros, porteadores y repartidores",
+    },
+    {
+        value: "9152",
+        label: "Porteros y guardianes y afines",
+    },
+    {
+        value: "9153",
+        label: "Recolectores de dinero en aparatos de venta automática, lectores de medidores y afines",
+    },
+    {
+        value: "9161",
+        label: "Recolectores de basura",
+    },
+    {
+        value: "9162",
+        label: "Barrenderos y afines",
+    },
+    {
+        value: "9211",
+        label: "Mozos de labranza y peones agropecuarios",
+    },
+    {
+        value: "9212",
+        label: "Peones forestales",
+    },
+    {
+        value: "9213",
+        label: "Peones de la pesca, la caza y la trampa",
+    },
+    {
+        value: "9311",
+        label: "Peones de minas y canteras",
+    },
+    {
+        value: "9312",
+        label: "Peones de obras públicas y mantenimiento carreteras, presas y obras similares",
+    },
+    {
+        value: "9313",
+        label: "Peones de la construcción de edificios",
+    },
+    {
+        value: "9321",
+        label: "Peones de montaje",
+    },
+    {
+        value: "9322",
+        label: "Embaladores manuales y otros peones de la industria manufacturera",
+    },
+    {
+        value: "9331",
+        label: "Conductores de vehículos accionados a pedal o a brazo",
+    },
+    {
+        value: "9332",
+        label: "Conductores de vehículos y máquinas de tracción animal",
+    },
+    {
+        value: "9333",
+        label: "Peones de carga",
+    },
+];

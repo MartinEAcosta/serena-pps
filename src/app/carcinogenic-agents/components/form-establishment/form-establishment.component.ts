@@ -11,6 +11,7 @@ import { SelectOption } from '../../../forms/models/form.interfaces';
 import { EmployerFieldsComponent } from '../employer-fields/employer-fields.component';
 import { ResponsibleFieldsComponent } from '../responsible-fields/responsible-fields.component';
 import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
+import { FilterOption } from '../../../utils/filters/filter.interface';
 
 const jobTitleOptions : SelectOption[]= [
   { label : 'Representante Legal', value: '' },
@@ -84,11 +85,11 @@ export class FormEstablishmentComponent {
     return this.isEditMode ? 'Modificación de presentación' : 'Presentación Anual' 
   }
 
-  public getJobTitleOptions(){
+  public getJobTitleOptions() : FilterOption[]{
     return jobTitleOptions;
   };
 
-  public getEmploymentTypeOptions() {
+  public getEmploymentTypeOptions() : FilterOption[] {
     return employmentTypeOptions;
   }
 

@@ -1,10 +1,9 @@
 @use '@variables' as v;
 
-
 .container-filter-select{
     display: flex;
     width: 65%;
-    height: 2rem;
+    max-height: 2.5rem;
     z-index: 1;
     padding-inline: 0.75rem;    
     flex-direction: column;

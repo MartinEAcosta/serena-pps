@@ -29,6 +29,7 @@
 .middle-form,
 .bottom-form {
   display: grid;
+  box-sizing: border-box;
   grid-template-columns: repeat(3, 1fr); // 3 columnas fijas siempre
   gap: 1rem;
   width: 100%;

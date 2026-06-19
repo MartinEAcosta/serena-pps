@@ -1,0 +1,185 @@
+@use '@variables' as v;
+
+
+.container-filter-select{
+    display: flex;
+    width: auto;
+    height: 2rem;
+    padding-inline: 0.75rem;    
+    flex-direction: column;
+    position: relative;
+    border: 2px solid v.$black-custom;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-family: v.$font-family;
+    color: v.$black-custom-light;
+    background-color: v.$white-custom;
+}
+
+.container-select{
+    display: flex;
+    margin: auto 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-filter-select.open{
+    border: 2px solid v.$accent-color;
+    & .options {
+        display: block;
+        visibility: visible;
+        transition: all 0.3s ease;
+    }
+}
+
+.container-filter-select.open{
+    & .down-icon{
+        fill: v.$accent-color;
+        transform: rotate(90deg);
+        transition: all 0.3s ease;    
+    }
+}
+
+.option-default {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: .5rem;
+}
+
+.option-default-selected {
+    min-width: 0;
+    max-width: 17rem;
+    flex: 1;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.container-down-icon {
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.down-icon {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    transform: rotate(-90deg);
+    transition: all 0.5s ease;
+}
+
+.option-filter-serchable{
+    padding: 0% 0%;   
+}
+
+.search-wrap {
+    padding: 0.5rem;
+    border-bottom: 1px solid v.$black-custom-light;
+    position: sticky;
+    top: 0;
+    background-color: v.$black-custom;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.search-input {
+  width: 100%;
+  height: 1.875rem;
+  border: 1px solid v.$black-custom-light;
+  border-radius: 6px;
+  background: #333333;
+  color: v.$white-custom;
+  font-size: 0.8125rem;
+  font-family: v.$font-family;
+  padding-inline: 0.625rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.list-filters-wrapper {
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+    overflow: hidden;
+    background-color: transparent;
+    
+}
+
+.list-filters{
+    display: flex;
+    flex-direction: column;
+    max-height: 7rem;
+    overflow-y: scroll;
+    scrollbar-width: thin; // Firefox
+    scrollbar-color: v.$accent-color v.$black-custom;
+}
+
+.list-filters::-webkit-scrollbar {
+    width: 8px;
+    overflow: hidden;
+}
+
+.list-filters::-webkit-scrollbar-track {
+    background: v.$black-custom;
+    border-radius: 999px;
+}
+
+.list-filters::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        v.$primary-color,
+        v.$accent-color
+    );
+    border-radius: 999px;
+    border: 2px solid v.$black-custom;
+    transition: background 0.2s ease;
+}
+
+.list-filters::-webkit-scrollbar-thumb:hover {
+    background: v.$accent-color;
+}
+
+.list-filters::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.options{
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.7));
+    display: none;
+    text-align: center;
+    appearance: none;
+    list-style: none;
+    visibility: hidden;
+    margin-top: 0.5rem;
+    width: 100%;
+    flex-direction: column;
+    z-index: 9999;
+    position: absolute;
+    top: 100%;
+    font-size: 0.8rem;
+    transition: all 0.3s ease 0.2s;
+}
+
+.option-filter{
+    border: none;
+    height: 25%;
+    z-index: 1000;
+    padding: 3% 4%;
+    color: v.$white-custom;
+    background-color: v.$black-custom;
+}
+
+.option-filter:hover{
+    background-color: v.$accent-color; 
+    cursor: pointer;
+}
+
+.option-filter:last-child{
+    border-radius: 0 0 0.5rem 0.5rem;
+}
