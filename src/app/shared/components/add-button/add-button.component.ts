@@ -11,6 +11,8 @@ export class AddButtonComponent {
   @Input({required : true}) text! : string;
   @Output() clicked = new EventEmitter();
 
+  
+
 }
 
 

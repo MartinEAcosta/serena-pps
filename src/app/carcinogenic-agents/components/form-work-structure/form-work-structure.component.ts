@@ -39,6 +39,10 @@ export class FormWorkStructureComponent {
     });
   }
 
+  public addJobPosition(): void {
+   this.jobPositions.push(this.createJobPosition());
+  }
+
   public onSubmit() : void {
     this.workStructureForm.markAllAsTouched();
     console.log(this.workStructureForm.value);
