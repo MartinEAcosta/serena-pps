@@ -3,10 +3,12 @@
 .form-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 columnas fijas siempre
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
-  padding: 1rem;
+  padding: 0 1.5rem;
   align-items: start;
+  box-sizing: border-box;
+
 }
 
 .col-1 { grid-column: 1; }

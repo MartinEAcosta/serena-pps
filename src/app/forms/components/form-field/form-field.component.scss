@@ -40,15 +40,6 @@
     -moz-appearance: textfield;
 }
 
-.input-name_employer, .input-last_name_employer, .input_mail,
-    .input-professional_license, .input-employment_type , .input_presentation ,
-    .input-name_employer_responsible, .input-last_name_employer_responsible, 
-    .input-name_security_responsible , .input-last_name_security_responsible,
-    .input-name_occupational_medicine_responsible, .input-last_name_occupational_medicine_responsible,
-    .input-name_data_responsible, .input-last_name_data_responsible , .input-job_position {
-    display: flex;
-    width: 70%;
-}
 
 .input-presentation{
     text-align: center;
@@ -59,11 +50,6 @@
     .input-cuit_occupational_medicine_responsible , .input-cuit_data_responsible{
     display: flex;
     width: 30%;
-}
-
-.input-sector_name{
-    display: flex;
-    width: 35%;
 }
 
 .input-hourse_worked_security_responsible, .input-hourse_worked_occupational_medicine_responsible{

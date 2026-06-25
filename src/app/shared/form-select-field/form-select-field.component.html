@@ -1,0 +1,11 @@
+<app-label-info [labelText]="labelText"
+    [info]="info" />
+<app-select 
+    [options]="options" 
+    [selected]="selectedOption"
+    [placeholder]="placeholder" 
+    (selectedChange)="onSelectedChange($event)"
+/>
+<div class="reserved-space">
+    <app-label-error [control]="form.get(prefix)!" />
+</div>

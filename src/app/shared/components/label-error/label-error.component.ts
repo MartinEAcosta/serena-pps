@@ -15,13 +15,11 @@ export class LabelErrorComponent {
   get errorMessage () {
     // En caso de que se encuentren errores los almacena, sino es un objeto vacio
     const errors : ValidationErrors = this.control.errors || {};
-
+    if( !this.control.touched ) return;
     // Si el formulario fue tocado y contiene errores retorna el texto, sino null.
     return this.control.touched && Object.keys(errors).length > 0
                 ? FormUtils.getTextError(errors)
-                : null
-    ;
-  
+                : null;
   }
 
 

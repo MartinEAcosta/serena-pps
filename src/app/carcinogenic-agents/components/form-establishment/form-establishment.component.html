@@ -59,12 +59,14 @@
                             [formControlName]="'contact_phone_establishment'">
                         <app-label-error [control]="establishmentForm.get('contact_phone_establishment')!" />
                     </div>
-                    <div class="form-field col-3">
+                    <div class="form-field">
                         <app-label-info [labelText]="'Correo electronico'"
                             [info]="'Correo electronico de la persona a contactar en el establecimiento.'" />
                         <input class="input input-mail" type="text" placeholder="example@google.com"
                             [formControlName]="'contact_email_establishment'">
-                        <app-label-error [control]="establishmentForm.get('contact_email_establishment')!" />
+                        <div class="reserved-space'">
+                            <app-label-error [control]="establishmentForm.get('contact_email_establishment')!" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,9 +107,6 @@
             </div>
         </app-form-section>
 
-        <div class="container-actions">
-           <app-btn-basic [label]="'Guardar'" [variant]="'secondary'" />
-           <app-btn-basic [label]="'Siguiente'" [variant]="'success'" />
-        </div>
+        <app-form-navigation-btns />
     </form>
 </main>

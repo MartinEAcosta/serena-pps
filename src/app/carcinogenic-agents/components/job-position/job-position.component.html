@@ -1,21 +1,27 @@
 <div class="form-job-position">
     <div class="form-section-content middle-form" container-inputs>
         <app-form-field [labelText]="'Nombre del sector'" [info]="'Nombre del sector expuesto a un agente cancerigeno.'"
-            [prefix]="'sector_name'" [placeholder]="'Producción'" [form]="form" />
-        <app-select-search [labelText]="'Actividad del sector'"
-            [info]="'Código de actividad relacionada al sector declarado.'" [options]="sectorActivityCodes"
-            [prefix]="'sector_activity_code'" [placeholder]="'Seleccionar código de actividad'" [form]="form" />
+            [type]="'text'" [prefix]="'sector_name'" [placeholder]="'Producción'" [form]="form" 
+        />
+        <div>
+            <app-select-search [labelText]="'Actividad del sector'"
+                [info]="'Actividad relacionada al sector declarado.'" [options]="sectorActivityCodes"
+                [prefix]="'sector_activity_code'" [placeholder]="'Seleccionar actividad'" [form]="form" />
+        </div>
         <app-form-field [labelText]="'Descripción adicional del sector'"
             [info]="'Descripción adicional del sector en caso de que se lo necesite.'"
             [prefix]="'sector_activity_additional_description'" [placeholder]="'Encargado de producción'"
-            [form]="form" />
+            [form]="form" 
+        />
     </div>
     <div class="form-section-content middle-form" container-inputs>
         <app-form-field [labelText]="'Nombre del Puesto'" [info]="'Nombre del puesto expuesto a un agente cancerigeno.'"
             [prefix]="'job_position'" [placeholder]="'Operador de linea de montaje'" [form]="form" />
-        <app-select-search [labelText]="'Actividad del puesto'"
-            [info]="'Código de actividad relacionada al puesto declarado.'" [options]="jobActivityCodes"
-            [prefix]="'job_activity_code'" [placeholder]="'Seleccionar código de actividad'" [form]="form" />
+        <div class="form-field">
+            <app-select-search [labelText]="'Actividad del puesto'"
+                [info]="'Actividad relacionada al puesto declarado.'" [options]="jobActivityCodes"
+                [prefix]="'job_activity_code'" [placeholder]="'Seleccionar actividad'" [form]="form" />
+        </div>
         <app-form-field [labelText]="'Descripción adicional del puesto'"
             [info]="'Descripción adicional del puesto en caso de que se lo necesite.'"
             [prefix]="'job_activity_additional_description'" [placeholder]="'Ensamblaje de modulos electronicos'"

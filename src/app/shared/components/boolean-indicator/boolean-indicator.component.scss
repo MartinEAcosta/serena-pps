@@ -1,0 +1,58 @@
+@use '@variables' as v;
+:host {
+    display: flex;
+    width: 100%;
+}
+.boolean-field{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.options{
+    display: flex;
+    background: v.$white-custom-dark;
+    border-radius: 12px;
+    padding: .25rem;
+    border: 2px solid v.$black-custom-light;
+}
+.segment{
+    flex: 1;
+    height: 1.75rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: v.$black-custom-light;
+    font-family: v.$font-family;
+    font-size: .95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .15s ease;
+}
+
+.segment:hover:not(.active){
+    background: rgba(v.$accent-color, .08);
+}
+
+.segment:active{
+    transform: scale(.98);
+}
+
+.segment.active{
+    background: linear-gradient(
+        135deg,
+        v.$primary-color,
+        v.$accent-color
+    );
+
+    color: v.$white-custom;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.18);
+}

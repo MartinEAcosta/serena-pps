@@ -1,4 +1,4 @@
-import { Component, Input, linkedSignal, signal } from '@angular/core';
+import { Component, EventEmitter, inject, input, Input, linkedSignal, Output, signal } from '@angular/core';
 import { FilterOption } from '../../../utils/filters/filter.interface';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { LabelInfoComponent } from "../label-info/label-info.component";
@@ -12,6 +12,8 @@ import { NgClass } from '@angular/common';
   styleUrl: './select-search.component.scss'
 })
 export class SelectSearchComponent {
+  
+  isOpen = signal<boolean>( false );
 
   @Input({ required : true }) labelText! : string;
   @Input({ required : true }) info! : string;
@@ -19,14 +21,22 @@ export class SelectSearchComponent {
   @Input({ required : true }) prefix! : string;
   @Input({ required : true }) placeholder! : string;
   @Input({ required : true }) form! : FormGroup;
-
+  
   searchText = signal<string>('');
-  isOpen = signal<boolean>( false );
-  selectedOption = signal<FilterOption | null>(null);
-
   inputValue = linkedSignal<string>(() => this.searchText() ?? '');
 
   constructor() {}
+
+  ngOnInit(): void {
+    // const currentActivityCode = this.form.get(this.prefix)?.value;
+
+    // if (currentActivityCode !== undefined && currentActivityCode !== null && currentActivityCode !== '') {
+    //   const found = this.options.find(opt => opt.value === currentActivityCode || opt.label === currentActivityCode);
+    //   if (found) {
+    //     this.selectedOption.set(found);
+    //   }
+    // }
+  }
 
   get filteredOptions () : FilterOption[] {
     const query = this.searchText().trim().toLowerCase();
@@ -47,10 +57,15 @@ export class SelectSearchComponent {
     console.log(this.searchText())
   }
 
-  public onClick ( filter : FilterOption ) : void {
-    this.selectedOption.set(filter);
+  get selectedOption(): FilterOption | null {
+    const value = this.form.get(this.prefix)?.value;
+
+    return this.options.find(o => o.value === value) ?? null;
+  }
+
+  public onSelectedChange ( option : FilterOption ) {
+    this.form.get(this.prefix)?.setValue(option.value);
+    this.close();
   }
  
-
-
 }

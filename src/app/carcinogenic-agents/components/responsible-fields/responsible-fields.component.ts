@@ -6,10 +6,11 @@ import { SelectComponent } from "@shared/components/select/select.component";
 import { LabelInfoComponent } from "@shared/components/label-info/label-info.component";
 import { FormGroup } from '@angular/forms';
 import { SelectOption } from '../../../forms/models/form.interfaces';
+import { FormSelectFieldComponent } from "@shared/form-select-field/form-select-field.component";
 
 @Component({
   selector: 'app-responsible-fields',
-  imports: [EmployerFieldsComponent, FormFieldComponent, LabelErrorComponent, SelectComponent, LabelInfoComponent],
+  imports: [EmployerFieldsComponent, FormFieldComponent, FormSelectFieldComponent],
   templateUrl: './responsible-fields.component.html',
   styleUrl: './responsible-fields.component.scss'
 })
@@ -20,6 +21,6 @@ export class ResponsibleFieldsComponent {
   @Input({ required: true }) jobTitleOptions! : SelectOption[];
   @Input({ required: true }) employmentTypeOptions! : SelectOption[];
   @Input({ required : true }) prefix_fields! : string;
-  
+
   
 }

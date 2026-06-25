@@ -17,6 +17,7 @@ export class BtnBasicComponent {
 
   @Input({ required : true }) label! : string;
   @Input({ required : true }) variant! : ButtonVariant;
+  @Input({ required : true }) type! : string;
 
   @Output() clicked = new EventEmitter<void>();
 

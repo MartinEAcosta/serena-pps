@@ -13,12 +13,12 @@ import { LabelErrorComponent } from "@shared/components/label-error/label-error.
 })
 export class FormFieldComponent {
 
-  @Input() labelText! : string;
-  @Input() info! : string;
+  @Input({ required : true }) labelText! : string;
+  @Input({ required : true }) info! : string;
+  @Input({ required : true }) placeholder! : string;
+  @Input({ required : true }) prefix! : string;
+  @Input({ required : true }) form! : FormGroup;
   @Input() type! : string;
-  @Input() placeholder! : string;
-  @Input() prefix! : string;
-  @Input() form! : FormGroup;
 
   get control( ) {
     // console.log('input-'+ this.prefix)

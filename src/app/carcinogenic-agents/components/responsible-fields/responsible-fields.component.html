@@ -4,23 +4,32 @@
 <app-employer-fields [prefix_fields]="prefix_fields" [form]="form" />
 <div class="form-container">
         <div class="form-field">
-            <app-label-info [labelText]="'Representación del responsable'"
-                [info]="'Cargo que ocupa en la empresa el responsable establecido.'" />
-            <app-select [options]="jobTitleOptions" [placeholder]="'Seleccionar cargo'" />
-            <app-label-error [control]="form.get('representation_type_' + prefix_fields)!" />
+            <app-form-select-field 
+                [labelText]="'Representación del responsable'"
+                [info]="'Cargo que ocupa en la empresa el responsable establecido.'"
+                [options]="jobTitleOptions"
+                [placeholder]="'Seleccionar cargo'" 
+                [form]="form"
+                [prefix]="'representation_type_' + prefix_fields" 
+            />
         </div>
-        <div class="form-field col-3">
-            <app-label-info [labelText]="'Tipo de contratación del responsable'"
-                [info]="'Tipo de contratación asignada del responsable establecido.'" />
-            <app-select [options]="employmentTypeOptions" [placeholder]="'Seleccionar contratación'" />
-            <app-label-error [control]="form.get('employment_type_' + prefix_fields)!" />
+        <div class="form-field">
+            <app-form-select-field
+                [labelText]="'Tipo de contratación del responsable'"
+                [info]="'Tipo de contratación asignada del responsable establecido.'"
+                [options]="employmentTypeOptions" 
+                [placeholder]="'Seleccionar contratación'" 
+                [prefix]="'employment_type_' + prefix_fields" 
+                [form]="form" 
+                [prefix]="'employment_type_' + prefix_fields" 
+            />
         </div>
         @if( prefix_fields != 'data_responsible'){
             <app-form-field [labelText]="'Matricula del responsable'"
                 [info]="'Matricula y Colegio profesional del responsable establecido.'" [type]="'text'"
                 [placeholder]="'Colegio de Profesionales Ejemplar MAT N° 35522'"
                 [prefix]="'professional_license_' + prefix_fields" [form]="form" />
-            <div class="form-field col-3">
+            <div class="form-field">
                 <app-form-field [labelText]="'Cantidad de horas trabajadas'"
                     [info]="'Numero asignado de horas realizadas mensualmente.'" [type]="'number'" [placeholder]="'32'"
                     [prefix]="'hourse_worked_' + prefix_fields" [form]="form" />

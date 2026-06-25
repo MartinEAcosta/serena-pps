@@ -1,0 +1,19 @@
+<div class="boolean-field">
+    <div class="options" [formGroup]="form">
+        <button
+            type="button"
+            class="segment"
+            [class.active]="form.get(prefix)?.value === true"
+            (click)="select(true)">
+            Sí
+        </button>
+
+        <button
+            type="button"
+            class="segment"
+            [class.active]="form.get(prefix)?.value === false"
+            (click)="select(false)">
+            No
+        </button>
+    </div>
+</div>

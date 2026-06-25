@@ -2,13 +2,14 @@
 
 .container-filter-select{
     display: flex;
-    width: 65%;
-    max-height: 2.5rem;
+    height: 2rem;
     z-index: 1;
     padding-inline: 0.75rem;    
     flex-direction: column;
     position: relative;
     border: 2px solid v.$black-custom;
+    background-color: v.$white-custom;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
     border-radius: 10px;
     letter-spacing: 1px;
     font-family: v.$font-family;
@@ -23,12 +24,13 @@
     align-items: center;
 }
 
-.container-filter-select:hover{
+.container-filter-select:hover {
     border: 2px solid v.$accent-color;
-    & .options {
-        display: block;
+
+    & .container-options {
         visibility: visible;
-        transition: all 0.3s ease;
+        opacity: 1;
+        pointer-events: auto;
     }
 }
 
@@ -36,7 +38,7 @@
     & .down-icon{
         fill: v.$accent-color;
         transform: rotate(90deg);
-        transition: all 0.3s ease;    
+        transition: all 0.2s ease;    
     }
 }
 
@@ -48,14 +50,12 @@
   justify-content: space-between;
 }
 
-
 .option-default-selected {
   display: flex;
   flex: 1;
   height: 100%;
   align-items: center;
 }
-
 
 .container-down-icon {
   width: 16px;
@@ -73,19 +73,37 @@
   transition: all 0.5s ease;
 }
 
-.options{
-    display: none;
+.container-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 0.5rem;
+    transition:
+        opacity 0.2s ease 0.4s,      // espera 0.4s, LUEGO anima 0.5s hacia opacity:0
+        visibility 0.2s ease 0.4s;   // mismo delay para visibility
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
+}
+
+.options {
+    display: flex;
     text-align: center;
     appearance: none;
     list-style: none;
-    visibility: hidden;
-    display: flex;
-    margin-top: 0.5rem;
-    width: 100%;
+    margin: 0; /* 3. Eliminamos el margen de aquí para quitar el hueco de arriba */
+    padding: 0;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    transition: all 0.3s ease 0.2s;
+
+    /* --- CONTROL DEL SCROLL --- */
+    max-height: 150px;       
+    overflow-y: auto;
+    scrollbar-width: thin; // Firefox
+    scrollbar-color: v.$accent-color v.$black-custom;
+
 }
 
 .option-filter{
@@ -94,20 +112,10 @@
     z-index: 1000;
     padding: 3% 4%;
     color: v.$white-custom;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.7);        
     background-color: v.$black-custom;
 }
 
 .option-filter:hover{
     background-color: v.$accent-color; 
     cursor: pointer;
-}
-
-
-.option-filter:first-child{
-    border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.option-filter:last-child{
-    border-radius: 0 0 0.5rem 0.5rem;
 }

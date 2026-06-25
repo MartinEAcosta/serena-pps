@@ -26,4 +26,9 @@ export class JobPositionComponent {
     return jobActivityCodes;
   }
 
+  public patchValuesForm ( prefix : string , filterOption : FilterOption ){
+    this.form.get(prefix+'_code')?.setValue( filterOption.value );
+    this.form.get(prefix +'_description')?.setValue( filterOption.label )
+  }
+
 }
