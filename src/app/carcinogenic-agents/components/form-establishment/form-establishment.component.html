@@ -77,8 +77,8 @@
                     <app-responsible-fields
                         [subtitle]="'Responsable del Servicio de Higiene y Seguridad Laboral'"
                         [form]="establishmentForm"
-                        [jobTitleOptions]="getEmploymentTypeOptions()"
-                        [employmentTypeOptions]="getJobTitleOptions()"
+                        [jobTitleOptions]="getJobTitleOptions()"
+                        [employmentTypeOptions]="getEmploymentTypeOptions()"
                         [prefix_fields]="'security_responsible'"
                     />
 
@@ -88,8 +88,8 @@
                     <app-responsible-fields
                         [subtitle]="'Responsable del Servicio de Medicina del Trabajo  '"
                         [form]="establishmentForm"
-                        [jobTitleOptions]="getEmploymentTypeOptions()"
-                        [employmentTypeOptions]="getJobTitleOptions()"
+                        [jobTitleOptions]="getJobTitleOptions()"
+                        [employmentTypeOptions]="getEmploymentTypeOptions()"
                         [prefix_fields]="'occupational_medicine_responsible'"
                     />
 
@@ -99,14 +99,17 @@
                     <app-responsible-fields
                         [subtitle]="'Responsable de Datos  '"
                         [form]="establishmentForm"
-                        [jobTitleOptions]="getEmploymentTypeOptions()"
-                        [employmentTypeOptions]="getJobTitleOptions()"
+                        [jobTitleOptions]="getJobTitleOptions()"
+                        [employmentTypeOptions]="getEmploymentTypeOptions()"
                         [prefix_fields]="'data_responsible'"
                     />
                 </div>
             </div>
         </app-form-section>
 
-        <app-form-navigation-btns />
+        <app-form-navigation-btns 
+            (next)="onNext()"
+            (save)="onSaveForm()"
+        />
     </form>
 </main>

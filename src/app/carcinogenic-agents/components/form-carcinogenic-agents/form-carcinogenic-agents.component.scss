@@ -88,3 +88,44 @@
   justify-content: flex-end;
   margin: 1rem;
 }
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-family: v.$font-family;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.25s ease;
+  background-color: v.$primary-color;
+  color: v.$white-custom-light;
+}
+
+.btn-submit.loading {
+  background-color: v.$black-custom-light;
+  cursor: default;
+}
+
+.btn-submit.success {
+  background-color: v.$primary-color;
+  cursor: default;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: v.$white-custom-light;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

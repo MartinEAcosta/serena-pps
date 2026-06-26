@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { EmployerFieldsComponent } from "../employer-fields/employer-fields.component";
 import { FormFieldComponent } from "../../../forms/components/form-field/form-field.component";
-import { LabelErrorComponent } from "@shared/components/label-error/label-error.component";
-import { SelectComponent } from "@shared/components/select/select.component";
-import { LabelInfoComponent } from "@shared/components/label-info/label-info.component";
 import { FormGroup } from '@angular/forms';
 import { SelectOption } from '../../../forms/models/form.interfaces';
 import { FormSelectFieldComponent } from "@shared/form-select-field/form-select-field.component";

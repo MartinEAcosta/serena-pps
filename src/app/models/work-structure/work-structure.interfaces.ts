@@ -1,13 +1,12 @@
 
 export interface JobPositionData {
-    sector_name : string;
-    sector_activity_code : number;
-    sector_activity_description : string;
-    sector_activity_additional_description : string;
-    job_position : string;
-    job_activity_code : number;
-    job_activity_description : string;
-    job_activity_additional_description : string;
+  sector_name: string;
+  sector_activity_code: string | number;
+  sector_activity_additional_description: string;
+
+  job_position: string;
+  job_activity_code: string | number;
+  job_activity_additional_description: string;
 }
 
 export interface WorkStructureData {

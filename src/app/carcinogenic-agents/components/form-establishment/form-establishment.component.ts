@@ -16,18 +16,18 @@ import { FormWizardService } from '../../../form-wizard.service';
 import { FormNavigationBtnsComponent } from "@shared/components/form-navigation-btns/form-navigation-btns.component";
 
 const jobTitleOptions : SelectOption[]= [
-  { label : 'Representante Legal', value: '' },
-  { label : 'Presidente', value: '' },
-  { label : 'Director General', value: '' },
-  { label : 'Administrador General', value: '' },
-  { label : 'Vicepresidente', value: '' },
-  { label : 'Gerente General', value: '' },
-  { label : 'Otros', value: '' },
+{ label: 'Representante Legal', value: 'legal_representative' },
+  { label: 'Presidente', value: 'president' },
+  { label: 'Director General', value: 'general_director' },
+  { label: 'Administrador General', value: 'general_administrator' },
+  { label: 'Vicepresidente', value: 'vice_president' },
+  { label: 'Gerente General', value: 'general_manager' },
+  { label: 'Otros', value: 'other' },
 ];
 
 const employmentTypeOptions = [
-  { label : 'Propio', value : '' },
-  { label : 'Contratado', value : '' },
+{ label: 'Propio', value: 'internal' },
+  { label: 'Contratado', value: 'outsourced' },
 ];
 
 @Component({
@@ -104,16 +104,22 @@ export class FormEstablishmentComponent implements OnInit{
     return employmentTypeOptions;
   }
 
-  public onSubmit(){
-    // console.log('enviado')
+  public onSaveForm(): void {
+    this.formWizardService.saveStep('establishment', this.establishmentForm.value);
+  }
+
+  public onNext(): void {
     this.establishmentForm.markAllAsTouched();
-    // console.log(this.establishmentForm.value)
-    this.formWizardService.saveStep('establishment' , this.establishmentForm.value );
-    // console.log(this.formWizardService.getStep('establishment'));
-    if(this.establishmentForm.valid){
-      return this.router.navigate(['../sectores-puestos'], {relativeTo : this.route});
+    if (this.establishmentForm.invalid) {
+      return;
     }
-    return;
+
+    this.formWizardService.saveStep('establishment', this.establishmentForm.value);
+    this.router.navigate(['../sectores-puestos'], { relativeTo: this.route });
+  }
+
+  public onSubmit(): void {
+    this.onNext();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BtnBasicComponent } from "../btn-basic/btn-basic.component";
 
 @Component({
@@ -9,4 +9,8 @@ import { BtnBasicComponent } from "../btn-basic/btn-basic.component";
 })
 export class FormNavigationBtnsComponent {
 
+  @Input() nextLabel: string = 'Siguiente';
+  @Input() nextDisabled: boolean = false;
+  @Output() save = new EventEmitter<void>();
+  @Output() next = new EventEmitter<void>();
 }

@@ -72,13 +72,19 @@
 }
 
 .row-title {
-    font-size: 0.8125rem;
+    font-size: 1rem;
     color: v.$white-custom;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
+.row-title p {
+    margin: 0;
+    max-width: 70rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .row-title .sep {
     color: v.$white-custom;
     margin: 0 6px;

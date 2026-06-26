@@ -1,11 +1,12 @@
 import { computed, effect, Injectable, signal } from '@angular/core';
 import { EstablishmentStepData } from '@models/establishment/establishment.interfaces';
+import { SubstanceData } from '@models/substances/substances.interfaces';
 import { WorkStructureData } from '@models/work-structure/work-structure.interfaces';
 
 export interface WizardStepData {
   establishment?: EstablishmentStepData;
   workStructure?: WorkStructureData;
-  substances?: any;
+  carcinogenicAgents?: SubstanceData[];
 };
 
 const STORAGE_KEY = 'carcinogenic_wizard';

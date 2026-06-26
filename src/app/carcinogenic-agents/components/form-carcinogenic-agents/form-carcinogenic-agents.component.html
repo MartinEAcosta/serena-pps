@@ -129,13 +129,17 @@
                     [mapSignal]="this.substances()"
                     [selectedItem]="this.substanceSelected()"
                     [placeholder]="'Todavía no agregaste ninguna sustancia.'"
-                    (removeItem)="onRemoveSubstance($event)"
+                    (removeItem)="this.onRemoveSubstance($event)"
                     (visualizeItem)="this.onSelectSubstance($event)"
                 />
             </div>
             <app-add-button (clicked)="this.addSubstance()" [text]="'Añadir sustancia'" />
         </app-form-section>
-        <app-form-navigation-btns />
-
+        <app-form-navigation-btns
+            [nextLabel]="submitLabel"
+            [nextDisabled]="submitState() !== 'idle'"
+            (save)="onSaveForm()"
+            (next)="onSubmit()"
+        />
     </form>
 </main>
