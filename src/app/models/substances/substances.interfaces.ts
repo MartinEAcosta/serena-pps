@@ -1,23 +1,28 @@
+import { ActionableListItem } from '@shared/components/actionable-list/actionable-list.component';
 import { SelectOption } from '../../forms/models/form.interfaces';
+import { JobPositionData } from '@models/work-structure/work-structure.interfaces';
 
-export interface SubstanceData  {
-  id ?: string;
-  job_position_relation : string;
-  substance_id : string;
-  substance_name : string;
-  usage_origin_type : string;
-  usage_origin_others : string;
-  application_method : string;
-  application_method_others : string;
-  annual_quantity : string;
-  measurament_unit : string;
-  protection_element : string;
-  risk_informed : false;
-  risk_training : false;
-  replacement_studies_analysis : false;
-  replacement_studies_analysis_desc : string;
-  has_special_license : false;
+export interface SubstanceData {
+  id?: string;
+  job_position_relation: JobPositionData;
+  substance_id: string;
+  substance_name: string;
+  substance_type?: string;
+  usage_origin_type: string;
+  usage_origin_others: string;
+  application_method: string;
+  application_method_others: string;
+  annual_quantity: string;
+  measurament_unit: string;
+  protection_element: string;
+  risk_informed: boolean;
+  risk_training: boolean;
+  replacement_studies_analysis: boolean;
+  replacement_studies_analysis_desc: string;
+  has_special_license: boolean;
 }
+
+export interface SubstanceDataListItem extends Omit<SubstanceData, 'id'>, ActionableListItem {}
 
 
 export const SubstanceCodes: SelectOption[] = [

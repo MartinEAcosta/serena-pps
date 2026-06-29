@@ -1,26 +1,21 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from "@angular/forms";
 import { Router } from '@angular/router';
 
 import { FormSectionComponent } from '../../../forms/components/form-section/form-section.component';
 import { FormWizardService } from '../../../form-wizard.service';
-import { FilterOption } from '../../../utils/filters/filter.interface';
 import { FormNavigationBtnsComponent } from "@shared/components/form-navigation-btns/form-navigation-btns.component";
-import { EmploymentModeCodes, ProtectionElements, SubstanceCodes, SubstanceData, SubstanceOriginCodes, UnitsOfQuantity } from '@models/substances/substances.interfaces';
+import { SubstanceData, SubstanceDataListItem } from '@models/substances/substances.interfaces';
 import { SelectSearchComponent } from "@shared/components/select-search/select-search.component";
 import { FormFieldComponent } from "../../../forms/components/form-field/form-field.component";
 import { AddButtonComponent } from "@shared/components/add-button/add-button.component";
 import { FormSelectFieldComponent } from "@shared/form-select-field/form-select-field.component";
-import { SelectOption } from '../../../forms/models/form.interfaces';
 import { BooleanIndicatorComponent } from "@shared/components/boolean-indicator/boolean-indicator.component";
 import { BtnBasicComponent } from "@shared/components/btn-basic/btn-basic.component";
 import { ActionableListComponent } from "@shared/components/actionable-list/actionable-list.component";
+import { CarcinogenicAgentsStoreService } from '../../service/carcinogenic-agents-store.service';
+import { WorkStructureStoreService } from '../../service/work-structure-store.service';
 
-const substanceCodes : SelectOption[] = SubstanceCodes;
-const substanceOriginCodes : SelectOption[] = SubstanceOriginCodes;
-const employmentModeCodes : SelectOption[] = EmploymentModeCodes;
-const unitsOfQuantity : SelectOption[] = UnitsOfQuantity;
-const protectionElements  : SelectOption[] = ProtectionElements;
 
 type SubmitState = 'idle' | 'loading' | 'success';
 
@@ -32,15 +27,27 @@ type SubmitState = 'idle' | 'loading' | 'success';
 })
 export class FormCarcinogenicAgentsComponent implements OnInit {
 
+  carcinogenicAgentsStore = inject(CarcinogenicAgentsStoreService);
+  workStructureStore = inject(WorkStructureStoreService);
+  submitState = signal<SubmitState>('idle');
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private formWizardService = inject(FormWizardService);
 
-  formWizardService = inject(FormWizardService);
-  submitState = signal<SubmitState>('idle');
-
-  substances = signal<SubstanceData[]>([]);
-  substanceSelected = signal<SubstanceData | null>( null );
-
+  readonly jobPositionOptions = this.workStructureStore.jobPositionListItems;
+  readonly substanceListItems = computed<SubstanceDataListItem[]>(() =>
+    this.carcinogenicAgentsStore.substances().map((s) => ({
+      id: s.id!,
+      label: this.buildSubstanceLabel(s),
+      ...s,
+    })),
+  );
+  readonly selectedSubstanceItem = computed<SubstanceDataListItem | null>(() => {
+    const selectedId = this.carcinogenicAgentsStore.selectedSubstance()?.id;
+    if (!selectedId) return null;
+    return this.substanceListItems().find((item) => item.id === selectedId) ?? null;
+  });
+  
   carcinogenicAgentForm : FormGroup = this.fb.group({
     job_position_relation : ['' , [Validators.required]],
     substance_id : ['' , [Validators.required]],
@@ -61,22 +68,31 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
 
   constructor(){}
 
-  private buildKey(jobPositionRelation: string, substance_name: string): string {
-    return `${jobPositionRelation}-${substance_name}`;
-  }
-
   ngOnInit(): void {
     const savedData = this.formWizardService.getStep('carcinogenicAgents');
     if (savedData && savedData.length > 0) {
-      // const substancesSaved = new Map<string,SubstanceData>(); 
-
-      //   savedData.forEach( substance => {
-    //     const key = this.buildKey(substance.job_position_relation, substance.substance_name);
-    //     substancesSaved.set(key, substance);
-    //   })
-    //   this.substances.set(substancesSaved);
+      const substances : SubstanceData[] = [];
+      savedData.forEach(substance => {
+        substances.push( substance );
+      });
+      this.carcinogenicAgentsStore.loadSubstances( substances );
     }
   }
+  
+  private buildSubstanceLabel(s: SubstanceData): string {
+    const positionLabel = s.job_position_relation
+      ? `${s.job_position_relation.sector_name} - ${s.job_position_relation.job_position}`
+      : 'Puesto no encontrado';
+
+    const substanceType = s.substance_type
+      ? s.substance_type.length > 35
+        ? `${s.substance_type.slice(0, 35)}...`
+        : s.substance_type
+      : 'Sustancia';
+
+    return `${substanceType} · ${positionLabel}`;
+  }
+
 
   get submitLabel(): string {
     switch (this.submitState()) {
@@ -86,72 +102,63 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
     }
   }
 
-  get jobPositionRelations(): FilterOption[] {
-    const positions = this.formWizardService.getStep('workStructure')?.job_positions ?? [];
-
-    return positions.map(position => {
-      const key = `${position.sector_name}-${position.job_position}`;
-      return { label: key, value: key };
-    });
-  }
-
   get riskInformed() : boolean {
     return this.carcinogenicAgentForm.get('risk_informed')!.value ?? false;
   }
 
-  get substanceCodes() : FilterOption[] {
-    return substanceCodes;
-  }
-
-  get substanceOriginCodes() : FilterOption[] {
-    return substanceOriginCodes;
-  }
-
-  get employmentModeCodes() : FilterOption[] {
-    return employmentModeCodes;
-  }
-
-  get unitsOfQuantity() : FilterOption[]{
-    return unitsOfQuantity;
-  }
-
-  get protectionElements() : FilterOption[]{
-    return protectionElements;
-  }
-
-  public getSubstanceName( itemId : string ) : FilterOption | null {
-    const substance = this.substanceCodes.find( opt => opt.value === itemId);
-    return substance ?? null;
-  }
-
   public onSelectSubstance( itemId : string ) : void {
-    const itemToSelect = this.substances().get( itemId );
-    if( itemToSelect ){
-      this.substanceSelected.set( itemToSelect );
-      this.carcinogenicAgentForm.patchValue( itemToSelect );
+    this.carcinogenicAgentsStore.selectSubstance(itemId);
+    const substance = this.carcinogenicAgentsStore.selectedSubstance();
+    if( substance ){
+      this.patchValuesForm( substance );
     }
   }
 
   public addSubstance(): void {
     this.carcinogenicAgentForm.markAllAsTouched();
-    if (this.carcinogenicAgentForm.valid) {
-      const substanceDto = this.createSubstance( this.carcinogenicAgentForm.value );
-      if( substanceDto ){
-        const key = this.buildKey(substanceDto.job_position_relation, substanceDto.substance_name);
-        const newMap = new Map(this.substances());
-        newMap.set(key, substanceDto);
-        this.substances.set(newMap);
-        this.reset();
-      }
+    if( this.carcinogenicAgentForm.invalid ) return;
+  
+    const substanceDto = this.createSubstance( this.carcinogenicAgentForm.value );
+    const selected = this.carcinogenicAgentsStore.selectedSubstance();
+    if( selected ){
+      substanceDto.id = selected.id;
     }
-    console.log(this.substances());
+    const substanceType = this.carcinogenicAgentsStore.substanceCodes.find(
+      sub => sub.value === substanceDto.substance_id
+    );
+
+    substanceDto.substance_type = substanceType?.label;
+
+    this.carcinogenicAgentsStore.onSaveSubstance(substanceDto);
+    this.reset();
+  }
+
+  public patchValuesForm( item : SubstanceData ) {
+    this.carcinogenicAgentForm.patchValue({
+      job_position_relation : item.job_position_relation!,
+      substance_id: item.substance_id!,
+      substance_name: item.substance_name!,
+      usage_origin_type :  item.usage_origin_type!,
+      usage_origin_others :  item.usage_origin_others!,
+      application_method :  item.application_method!,
+      application_method_others :  item.application_method_others!,
+      annual_quantity :  item.annual_quantity!,
+      measurament_unit :  item.measurament_unit!,
+      protection_element :  item.protection_element!,
+      risk_informed : item.risk_informed!,
+      risk_training : item.risk_training!,
+      replacement_studies_analysis : item.replacement_studies_analysis!,
+      replacement_studies_analysis_desc :  item.replacement_studies_analysis_desc!,
+      has_special_license : item.has_special_license!,
+    });
   }
 
   createSubstance( substance: Partial<SubstanceData> ) : SubstanceData {
     return {
+      id: substance.id  ?? crypto.randomUUID(),
       job_position_relation : substance.job_position_relation!,
       substance_id: substance.substance_id!,
-      substance_name: this.getSubstanceName( substance.substance_id! )?.label!,
+      substance_name: substance.substance_name!,
       usage_origin_type :  substance.usage_origin_type!,
       usage_origin_others :  substance.usage_origin_others!,
       application_method :  substance.application_method!,
@@ -168,20 +175,10 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
   }
 
   public onSaveForm(): void {
-    const substancesArray = Array.from(this.substances().values());
-
-    this.formWizardService.saveStep('carcinogenicAgents', substancesArray);
-    console.log(this.substances())
-  }
-
-  public onRemoveSubstance(itemId : string): void {
-    const newMap = new Map(this.substances());
-    newMap.delete(itemId);
-    this.substances.set(newMap);
+    this.formWizardService.saveStep('carcinogenicAgents', this.carcinogenicAgentsStore.substances());
   }
 
   public reset() : void {
-    this.substanceSelected.set(null);
     this.carcinogenicAgentForm.patchValue({
       job_position_relation : '',
       substance_id: '',
@@ -201,17 +198,17 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
     });
     this.carcinogenicAgentForm.markAsPristine();
     this.carcinogenicAgentForm.markAsUntouched();
+    this.carcinogenicAgentsStore.clearSubstanceSelected();
   }
  
   public onSubmit(): void {
-    if (this.substances().size === 0) {
+    if (this.carcinogenicAgentsStore.substances().length === 0) {
       return; // regla de negocio: al menos una sustancia declarada
     }
 
     this.submitState.set('loading');
-
-    const substancesArray = Array.from(this.substances().values());
-    this.formWizardService.saveStep('carcinogenicAgents', substancesArray);
+    this.formWizardService.saveStep('carcinogenicAgents',
+      this.carcinogenicAgentsStore.substances());
 
     // Simulamos la espera de red — reemplazar por la llamada real al backend cuando exista
     setTimeout(() => {
@@ -227,12 +224,11 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
   }
 
   public onNext(): void {
-    if (this.substances().size === 0) {
+    if (this.carcinogenicAgentsStore.substances().length === 0) {
       return; 
     }
 
-    const substancesArray = Array.from(this.substances().values());
-    this.formWizardService.saveStep('carcinogenicAgents', substancesArray);
+    this.formWizardService.saveStep('carcinogenicAgents', this.carcinogenicAgentsStore.substances());
   }
 
 }

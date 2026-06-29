@@ -8,8 +8,8 @@ import { LabelInfoComponent } from "@shared/components/label-info/label-info.com
 import { LabelErrorComponent } from "@shared/components/label-error/label-error.component";
 import { FormFieldComponent } from "../../../forms/components/form-field/form-field.component";
 import { SelectOption } from '../../../forms/models/form.interfaces';
-import { EmployerFieldsComponent } from '../employer-fields/employer-fields.component';
-import { ResponsibleFieldsComponent } from '../responsible-fields/responsible-fields.component';
+import { EmployerFieldsComponent } from '../../components/employer-fields/employer-fields.component';
+import { ResponsibleFieldsComponent } from '../../components/responsible-fields/responsible-fields.component';
 import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
 import { FilterOption } from '../../../utils/filters/filter.interface';
 import { FormWizardService } from '../../../form-wizard.service';

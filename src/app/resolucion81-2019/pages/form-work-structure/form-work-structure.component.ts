@@ -1,15 +1,16 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
 import { AddButtonComponent } from "@shared/components/add-button/add-button.component";
-import { JobPositionComponent } from "../job-position/job-position.component";
+import { JobPositionComponent } from "../../components/job-position/job-position.component";
 import { FormNavigationBtnsComponent } from "@shared/components/form-navigation-btns/form-navigation-btns.component";
 import { FormWizardService } from '../../../form-wizard.service';
 import { BtnBasicComponent } from "@shared/components/btn-basic/btn-basic.component";
 import { ActionableListComponent } from "@shared/components/actionable-list/actionable-list.component";
-import { JobPositionData } from '@models/work-structure/work-structure.interfaces';
+import { JobPositionData, JobPositionListItem, JobPositionRelationListItem } from '@models/work-structure/work-structure.interfaces';
 import { LabelErrorComponent } from "@shared/components/label-error/label-error.component";
+import { WorkStructureStoreService } from '../../service/work-structure-store.service';
 
 @Component({
   selector: 'app-form-work-structure',
@@ -23,6 +24,7 @@ export class FormWorkStructureComponent implements OnInit{
   private router = inject(Router);
   private fb = inject(FormBuilder);
   private wizardService = inject(FormWizardService);
+  workStructureStore = inject(WorkStructureStoreService);
 
   workStructureForm : FormGroup = this.fb.group({
     own_administrative_workers_count: [ '', [ Validators.min(0)] ],
@@ -30,32 +32,38 @@ export class FormWorkStructureComponent implements OnInit{
     temporary_service_administrative_workers_count: [ '', [ Validators.min(0)] ],
     temporary_service_production_workers_count: [ '', [ Validators.min(0)] ],
     
-    job_position: this.createJobPosition(),
+    job_position: this.buildJobPositionForm(),
   });
 
-  jobPositions = signal<Map<string,JobPositionData>>(new Map<string,JobPositionData>());
-  jobPositionSelected = signal<JobPositionData | null>( null );
+  readonly jobPositionRelations = computed<JobPositionListItem[]>(() =>
+    this.workStructureStore.jobPositions().map((jp) => ({
+      ...jp,
+      id: jp.id!,
+      label: `${jp.sector_name} - ${jp.job_position}`,
+    })),
+  );
+
+  readonly selectedJobPositionItem = computed<JobPositionListItem | null>(() => {
+    const selectedId = this.workStructureStore.selectedJobPosition()?.id;
+    if (!selectedId) return null;
+    return this.jobPositionRelations().find((item) => item.id === selectedId) ?? null;
+  });
 
   constructor () {}
-
-  private buildKey(sectorName: string, jobPosition: string): string {
-    return `${sectorName.trim()}-${jobPosition.trim()}`;
-  }
 
   get jobPositionForm(): FormGroup {
    return this.workStructureForm.get('job_position') as FormGroup;
   }
-
+ 
   ngOnInit(): void {
     const savedData = this.wizardService.getStep('workStructure');
     if (savedData) {
       if (savedData.job_positions && savedData.job_positions.length > 0) {
-        const positionsSaved = new Map<string, JobPositionData>();
+        const positions : JobPositionData[] = []; 
         savedData.job_positions.forEach(position => {
-          const key = this.buildKey(position.sector_name, position.job_position);
-          positionsSaved.set(key, position);
+          positions.push( position );
         });
-        this.jobPositions.set(positionsSaved);
+        this.workStructureStore.loadJobPositions( positions );
       }
 
       this.workStructureForm.patchValue({
@@ -67,7 +75,27 @@ export class FormWorkStructureComponent implements OnInit{
     }
   }
 
-  public createJobPosition() : FormGroup {
+  onSelectJobPosition ( itemId : string ) {
+    this.workStructureStore.selectJobPostionById( itemId );
+    const pos = this.workStructureStore.selectedJobPosition( )
+    if( pos ){
+      this.patchValuesJobPositionForm(pos)
+    }
+  }
+
+  public patchValuesJobPositionForm( item : JobPositionData ) : void{
+    this.jobPositionForm.patchValue({
+      sector_name: item.sector_name,
+      sector_activity_code: item.sector_activity_code,
+      sector_activity_additional_description: item.sector_activity_additional_description,
+
+      job_position: item.job_position,
+      job_activity_code: item.job_activity_code,
+      job_activity_additional_description: item.job_activity_additional_description,
+    })
+  }
+
+  public buildJobPositionForm() : FormGroup {
     return this.fb.group({
       sector_name: ['', [Validators.required , Validators.minLength(3)]],
       sector_activity_code: ['', [ Validators.required ]],
@@ -79,8 +107,10 @@ export class FormWorkStructureComponent implements OnInit{
     });
   };
 
-  private buildJobPositionDto(dto: Partial<JobPositionData>): JobPositionData {
+  private createJobPosition(dto: Partial<JobPositionData>): JobPositionData {
     return {
+      id: dto.id ?? crypto.randomUUID(),
+      
       sector_name: dto.sector_name!,
       sector_activity_code: dto.sector_activity_code ?? '',
       sector_activity_additional_description: dto.sector_activity_additional_description ?? '',
@@ -91,27 +121,8 @@ export class FormWorkStructureComponent implements OnInit{
     };
   }
 
-  public onRemoveJobPosition(itemKey: string): void {
-    const newMap = new Map(this.jobPositions());
-    newMap.delete(itemKey);
-    this.jobPositions.set(newMap);
-
-    if (this.jobPositionSelected() &&
-        this.buildKey(this.jobPositionSelected()!.sector_name, this.jobPositionSelected()!.job_position) === itemKey) {
-      this.resetJobPositionForm();
-    }
-  }
-
-  public onSelectJobPosition( itemId: string): void {
-    const itemToSelect = this.jobPositions().get( itemId );
-    if( itemToSelect ){
-      this.jobPositionSelected.set( itemToSelect);
-      this.jobPositionForm.patchValue( itemToSelect );
-    }
-  }
-
   public resetJobPositionForm(): void {
-    this.jobPositionSelected.set(null);
+    this.workStructureStore.clearJobPositionSelected();
     this.jobPositionForm.patchValue({
       sector_name : '',
       sector_activity_code : '',
@@ -127,26 +138,33 @@ export class FormWorkStructureComponent implements OnInit{
   public addJobPosition(): void {
     this.jobPositionForm.markAllAsTouched();
     if( this.jobPositionForm.invalid ) return;
-
-    const jobPositionDto = this.buildJobPositionDto( this.jobPositionForm.value );
-    const key = this.buildKey(jobPositionDto.sector_name, jobPositionDto.job_position);
-
-    const newMap = new Map(this.jobPositions());
-    newMap.set(key, jobPositionDto);
-    this.jobPositions.set(newMap);
-    this.resetJobPositionForm();
+    const jobPositionDto = this.createJobPosition( this.jobPositionForm.value );
+    if( this.workStructureStore.selectedJobPosition() != null ){
+      jobPositionDto.id = this.workStructureStore.selectedJobPosition()?.id;
+    }
+    if( jobPositionDto ){
+      this.workStructureStore.onSaveJobPosition( jobPositionDto );
+      this.onSaveForm()
+      this.resetJobPositionForm();
+    }
   }
-
 
   public onSaveForm(): void {
     this.wizardService.saveStep('workStructure', {
       ...this.workStructureForm.value,
-      job_positions: Array.from(this.jobPositions().values())
+      job_positions: this.workStructureStore.jobPositions(),
     });
   }
   
+  public onRemoveJobPosition( itemId : string ): void {
+    if( this.workStructureStore.selectedJobPosition()?.id === itemId){
+      this.workStructureStore.clearJobPositionSelected();
+      this.patchValuesJobPositionForm( this.buildJobPositionForm().value );
+    }
+    this.workStructureStore.onRemoveJobPosition( itemId );
+  }
+  
   public onNext(): void {
-    // Validamos solo los campos planos del form principal (no job_position, que es el form de edición)
     const mainFieldsValid = [
       'own_administrative_workers_count',
       'own_production_workers_count',
@@ -158,14 +176,11 @@ export class FormWorkStructureComponent implements OnInit{
       this.workStructureForm.markAllAsTouched();
       return;
     }
-
-    if (this.jobPositions().size === 0) {
+    if (this.workStructureStore.jobPositions().length === 0) {
       return; // regla de negocio: debe haber al menos un sector-puesto declarado
     }
-
     this.wizardService.saveStep('workStructure', {
       ...this.workStructureForm.value,
-      job_positions: Array.from(this.jobPositions().values())
     });
     this.router.navigate(['../sustancias-cancerigenas'], { relativeTo: this.route });
   }

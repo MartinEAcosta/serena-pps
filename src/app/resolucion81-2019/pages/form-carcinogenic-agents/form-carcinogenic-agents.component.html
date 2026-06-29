@@ -6,7 +6,7 @@
                     <app-form-select-field 
                         [labelText]="'Sector y puesto afectado'"
                         [info]="'Seleccionar el sector y puesto afectado por la sustancia cancerigena.'"
-                        [options]="jobPositionRelations" [placeholder]="'Seleccionar sector y puesto'" 
+                        [options]="jobPositionOptions()"
                         [placeholder]="'Seleccionar sector-puesto'"
                         [prefix]="'job_position_relation'" 
                         [form]="carcinogenicAgentForm"
@@ -15,7 +15,7 @@
                 <app-select-search 
                     [labelText]="'Sustancia cancerígena'"
                     [info]="'Seleccionar substancia cancerígena encontrada en el sector y puesto indicado.'"
-                    [options]="substanceCodes"
+                    [options]="this.carcinogenicAgentsStore.substanceCodes"
                     [placeholder]="'Seleccionar sustancia'"
                     [prefix]="'substance_id'"
                     [form]="carcinogenicAgentForm"
@@ -33,7 +33,7 @@
                     <app-form-select-field 
                         [labelText]="'Uso / Origen'"
                         [info]="'.'"
-                        [options]="substanceOriginCodes" 
+                        [options]="this.carcinogenicAgentsStore.substanceOriginCodes" 
                         [placeholder]="'Seleccionar uso/origen'"
                         [prefix]="'usage_origin_type'"
                         [form]="carcinogenicAgentForm"
@@ -43,7 +43,7 @@
                     <app-form-select-field 
                         [labelText]="'Modo de empleo'"
                         [info]="'.'"
-                        [options]="employmentModeCodes" 
+                        [options]="this.carcinogenicAgentsStore.employmentModeCodes" 
                         [placeholder]="'Seleccionar modo de empleo'"
                         [prefix]="'application_method'"
                         [form]="carcinogenicAgentForm"
@@ -63,7 +63,7 @@
                     <app-form-select-field 
                         [labelText]="'Tipo de unidad de medida'"
                         [info]="'Unidad de medida de la cantidad de producto utilizado.'"
-                        [options]="unitsOfQuantity"
+                        [options]="this.carcinogenicAgentsStore.unitsOfQuantity"
                         [placeholder]="'Seleccionar unidad de medida'"
                         [prefix]="'measurament_unit'"
                         [form]="carcinogenicAgentForm"
@@ -73,7 +73,7 @@
                     <app-form-select-field 
                         [labelText]="'Elementos de protección'"
                         [info]="'Indicar si se le provee elementos de protección al personal de acuerdo al puesto afectado.'"
-                        [options]="protectionElements"
+                        [options]="this.carcinogenicAgentsStore.protectionElements"
                         [placeholder]="'Seleccionar elemento de protección'"
                         [prefix]="'protection_element'"
                         [form]="carcinogenicAgentForm"
@@ -112,9 +112,9 @@
                     </div>
                 }
                 <div class="form-box-actions">
-                    <app-btn-basic [label]="substanceSelected()  === null ? 'Agregar a la lista' : 'Guardar cambios'"
+                    <app-btn-basic [label]="this.carcinogenicAgentsStore.selectedSubstance()  === null ? 'Agregar a la lista' : 'Guardar cambios'"
                         [variant]="'success'" (clicked)="addSubstance()" [type]="'button'" />
-                    @if (this.substanceSelected() !== null) {
+                    @if (this.carcinogenicAgentsStore.selectedSubstance() !== null) {
                         <app-btn-basic [label]="'Cancelar edición'" [variant]="'secondary'" [type]="'button'"
                             (clicked)="reset()" />
                     }
@@ -126,11 +126,11 @@
                     (clicked)="addSubstance()"
                 />
                 <app-actionable-list
-                    [mapSignal]="this.substances()"
-                    [selectedItem]="this.substanceSelected()"
+                    [arraySignal]="substanceListItems()"
+                    [selectedItem]="selectedSubstanceItem()"
                     [placeholder]="'Todavía no agregaste ninguna sustancia.'"
-                    (removeItem)="this.onRemoveSubstance($event)"
-                    (visualizeItem)="this.onSelectSubstance($event)"
+                    (removeItem)="this.carcinogenicAgentsStore.onRemoveSubstance($event.id)"
+                    (visualizeItem)="this.onSelectSubstance($event.id)"
                 />
             </div>
             <app-add-button (clicked)="this.addSubstance()" [text]="'Añadir sustancia'" />

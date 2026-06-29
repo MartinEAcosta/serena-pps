@@ -44,9 +44,9 @@
             <div class="form-box" container-inputs>
                 <app-job-position [form]="jobPositionForm" />
                 <div class="form-box-actions">
-                    <app-btn-basic [label]="jobPositionSelected() === null ? 'Agregar a la lista' : 'Guardar cambios'"
+                    <app-btn-basic [label]="this.workStructureStore.selectedJobPosition() === null ? 'Agregar a la lista' : 'Guardar cambios'"
                         [variant]="'success'" (clicked)="addJobPosition()" [type]="'button'" />
-                    @if (jobPositionSelected() !== null) {
+                    @if (workStructureStore.selectedJobPosition() !== null) {
                         <app-btn-basic [label]="'Cancelar edición'" [variant]="'secondary'" [type]="'button'"
                             (clicked)="resetJobPositionForm()" />
                     }
@@ -55,11 +55,11 @@
             <div container-inputs>
                 <app-add-button [text]="'Añadir sector y puesto'" (clicked)="addJobPosition()" />
                 <app-actionable-list
-                    [mapSignal]="this.jobPositions()"
-                    [selectedItem]="this.jobPositionSelected()"
+                    [arraySignal]="jobPositionRelations()"
+                    [selectedItem]="selectedJobPositionItem()"
                     [placeholder]="'Todavía no agregaste ningún sector y puesto.'"
-                    (removeItem)="this.onRemoveJobPosition($event)"
-                    (visualizeItem)="this.onSelectJobPosition($event)"
+                    (removeItem)="this.onRemoveJobPosition($event.id)"
+                    (visualizeItem)="this.onSelectJobPosition($event.id)"
                 />
             </div>
         </app-form-section>

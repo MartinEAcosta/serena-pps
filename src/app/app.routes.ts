@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent, ResourcesComponent } from '@shared/pages';
-import { CarcinogenicAgentsLayoutComponent } from './carcinogenic-agents/layout/carcinogenic-agents-layout/carcinogenic-agents-layout.component';
-import { FormEstablishmentComponent } from './carcinogenic-agents/components/form-establishment/form-establishment.component';
-import { FormWorkStructureComponent } from './carcinogenic-agents/components/form-work-structure/form-work-structure.component';
-import { FormCarcinogenicAgentsComponent } from './carcinogenic-agents/components/form-carcinogenic-agents/form-carcinogenic-agents.component';
+import { CarcinogenicAgentsLayoutComponent } from './resolucion81-2019/pages/layout/carcinogenic-agents-layout/carcinogenic-agents-layout.component';
+import { FormEstablishmentComponent } from './resolucion81-2019/pages/form-establishment/form-establishment.component';
+import { FormWorkStructureComponent } from './resolucion81-2019/pages/form-work-structure/form-work-structure.component';
+import { FormCarcinogenicAgentsComponent } from './resolucion81-2019/pages/form-carcinogenic-agents/form-carcinogenic-agents.component';
 
 export const routes: Routes = [
 

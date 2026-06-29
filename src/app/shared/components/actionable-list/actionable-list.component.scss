@@ -96,7 +96,11 @@
 }
 
 .tag-edit {
-    font-size: 0.625rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.725rem;
+    max-height: 1rem;
+    margin: auto;
     background-color: v.$accent-color;
     color: v.$white-custom-light;
     padding: 1px 7px;

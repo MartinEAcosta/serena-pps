@@ -1,17 +1,17 @@
 <div class="list">
-    @for (item of mapSignal | keyvalue; track item.key; let i = $index) {
-        <div class="row" [class.selected]="item.value === selectedItem">
+    @for (item of arraySignal; track item.id; let i = $index) {
+        <div class="row" [class.selected]="item.id === selectedItem?.id">
             <div class="row-left">
                 <div class="row-num">{{ i+1 }}</div>
                 <div class="row-title">
-                    <p>{{item.key}}</p>
+                    <p>{{item.label}}</p>
                 </div>
-                @if (item.value === selectedItem) {
-                    <span class="tag-edit">Editando</span>
-                }
             </div>
             <div class="row-actions">
-                <div class="icon-btn eye" (click)="this.visualizeItem.emit(item.key)" aria-label="Ver y editar">
+                @if (item.id === selectedItem?.id) {
+                    <span class="tag-edit">Editando</span>
+                }
+                <div class="icon-btn eye" (click)="this.visualizeItem.emit(item)" aria-label="Ver y editar">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -25,7 +25,7 @@
                         </g>
                     </svg>
                 </div>
-                <div class="icon-btn trash" (click)="this.removeItem.emit(item.key)" aria-label="Eliminar">
+                <div class="icon-btn trash" (click)="this.removeItem.emit(item)" aria-label="Eliminar">
                     <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -42,6 +42,6 @@
         </div>
     }
 </div>
-@if (mapSignal.size === 0) {
+@if (arraySignal.length === 0) {
     <p class="empty-state">{{ placeholder }}</p>
 }
