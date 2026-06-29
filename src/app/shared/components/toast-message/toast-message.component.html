@@ -1,0 +1,16 @@
+<section class="modal-message" [ngClass]="[toastTypeClass(), fadeAnimation() ? 'show' : '']">
+    <div class="svg">
+        @if( message()?.type === 'success' ) {
+            <svg fill="#333333" xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M26,2C12.7,2,2,12.7,2,26s10.7,24,24,24s24-10.7,24-24S39.3,2,26,2z M39.4,20L24.1,35.5 c-0.6,0.6-1.6,0.6-2.2,0L13.5,27c-0.6-0.6-0.6-1.6,0-2.2l2.2-2.2c0.6-0.6,1.6-0.6,2.2,0l4.4,4.5c0.4,0.4,1.1,0.4,1.5,0L35,15.5 c0.6-0.6,1.6-0.6,2.2,0l2.2,2.2C40.1,18.3,40.1,19.3,39.4,20z"></path> </g></svg>
+        }
+        @else if( message()?.type === 'warning'){
+            <svg fill="#333333" width="64px" height="64px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" stroke="#333333"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 768a256 256 0 1 1 0-512 256 256 0 0 1 0 512zm-27-168c-8 7-11 16-11 27s3 20 11 27c7 8 16 11 27 11s20-3 28-11c8-7 11-16 11-27s-3-20-11-27c-8-8-17-11-28-11s-20 4-27 11zm50-47l15-195h-76l15 195h46z"></path></g></svg>
+        }
+        @else if( message()?.type === 'error') {
+            <svg svg fill="#333333" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#333333"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M256,0C114.509,0,0,114.497,0,256c0,141.491,114.497,256,256,256c141.491,0,256-114.497,256-256 C512,114.509,397.503,0,256,0z M368.32,305.16c17.441,17.441,17.441,45.718,0,63.159c-17.441,17.441-45.718,17.442-63.159,0 l-49.16-49.16l-49.16,49.16c-17.441,17.441-45.718,17.442-63.159,0c-17.441-17.441-17.441-45.718,0-63.159l49.16-49.16 l-49.16-49.16c-17.441-17.441-17.441-45.718,0-63.159c17.441-17.441,45.718-17.441,63.159,0l49.16,49.16l49.16-49.16 c17.441-17.441,45.718-17.441,63.159,0c17.441,17.441,17.441,45.718,0,63.159L319.16,256L368.32,305.16z"></path> </g> </g> </g></svg>
+        }
+    </div>
+    <p class="message">
+        {{ message()?.text }}
+    </p>
+</section>

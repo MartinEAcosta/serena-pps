@@ -15,6 +15,8 @@ import { BtnBasicComponent } from "@shared/components/btn-basic/btn-basic.compon
 import { ActionableListComponent } from "@shared/components/actionable-list/actionable-list.component";
 import { CarcinogenicAgentsStoreService } from '../../service/carcinogenic-agents-store.service';
 import { WorkStructureStoreService } from '../../service/work-structure-store.service';
+import { UIService } from '@shared/service/ui.service';
+import { ConfirmDialogService } from '@shared/service/confirm-dialog.service';
 
 
 type SubmitState = 'idle' | 'loading' | 'success';
@@ -33,6 +35,9 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private formWizardService = inject(FormWizardService);
+  private uiService = inject(UIService);
+  private confirmDialogService = inject(ConfirmDialogService);
+
 
   readonly jobPositionOptions = this.workStructureStore.jobPositionListItems;
   readonly substanceListItems = computed<SubstanceDataListItem[]>(() =>
@@ -201,23 +206,27 @@ export class FormCarcinogenicAgentsComponent implements OnInit {
     this.carcinogenicAgentsStore.clearSubstanceSelected();
   }
  
-  public onSubmit(): void {
+  public async onSubmit(): Promise<void> {
     if (this.carcinogenicAgentsStore.substances().length === 0) {
       return; // regla de negocio: al menos una sustancia declarada
     }
+
+    const confirmed = await this.confirmDialogService.confirm(
+      '¿Estás seguro que quieres enviar la declaración jurada?'
+    );
+    if (!confirmed) return;
 
     this.submitState.set('loading');
     this.formWizardService.saveStep('carcinogenicAgents',
       this.carcinogenicAgentsStore.substances());
 
-    // Simulamos la espera de red — reemplazar por la llamada real al backend cuando exista
     setTimeout(() => {
       this.submitState.set('success');
+      this.uiService.showToastMessage('Declaración jurada enviada a Serena ART con exito.');
 
-      // Esperamos un poco más para que el usuario vea el estado "Enviado" antes de redirigir
       setTimeout(() => {
         this.formWizardService.clear(); // limpiamos el wizard, ya se completó la declaración
-        this.router.navigate(['/']); // o la ruta real del home
+        this.router.navigate(['/']);
       }, 1200);
 
     }, 1500);
