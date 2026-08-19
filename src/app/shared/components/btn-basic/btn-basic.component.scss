@@ -1,6 +1,6 @@
 @use '@variables' as v;
 
-.btn-basic{
+.btn-basic {
     display: flex;
     font-family: v.$font-family;
     color: v.$white-custom;
@@ -9,7 +9,7 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0,0,0 , 0.2);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 
     transition:
         background-color 0.2s ease,
@@ -17,7 +17,7 @@
         box-shadow 0.2s ease;
 
     &:hover {
-        box-shadow: 0px 5px 10px rgba(0,0,0 , 0.15);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
         transform: translateY(-1px);
     }
 
@@ -28,6 +28,15 @@
     &:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+        pointer-events: none; // evita que :hover se active sobre un botón deshabilitado
+    }
+}
+
+.btn-primary {
+    background-color: v.$primary-color;
+
+    &:hover {
+        background-color: v.$primary-color-light;
     }
 }
 
@@ -36,14 +45,21 @@
 
     &:hover {
         background-color: #1d4ed8;
-
     }
 }
 
-.btn-success{
+.btn-success {
     background-color: #16a34a;
 
     &:hover {
         background-color: #15803d;
+    }
+}
+
+.btn-danger {
+    background-color: v.$red-custom;
+
+    &:hover {
+        background-color: darken(#c50000, 10%);
     }
 }

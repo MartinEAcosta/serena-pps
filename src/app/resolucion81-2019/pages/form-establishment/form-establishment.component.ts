@@ -12,7 +12,7 @@ import { EmployerFieldsComponent } from '../../components/employer-fields/employ
 import { ResponsibleFieldsComponent } from '../../components/responsible-fields/responsible-fields.component';
 import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
 import { FilterOption } from '../../../utils/filters/filter.interface';
-import { FormWizardService } from '../../../form-wizard.service';
+import { FormWizardService } from '../../../wizard/form-wizard.service';
 import { FormNavigationBtnsComponent } from "@shared/components/form-navigation-btns/form-navigation-btns.component";
 
 const jobTitleOptions : SelectOption[]= [
@@ -32,80 +32,211 @@ const employmentTypeOptions = [
 
 @Component({
   selector: 'app-form-establishment',
-  imports: [ReactiveFormsModule, LabelInfoComponent, LabelErrorComponent, NgClass, FormFieldComponent, EmployerFieldsComponent, ResponsibleFieldsComponent, FormSectionComponent, FormNavigationBtnsComponent],
+  imports: [
+    ReactiveFormsModule,
+    LabelInfoComponent,
+    LabelErrorComponent,
+    NgClass,
+    FormFieldComponent,
+    EmployerFieldsComponent,
+    ResponsibleFieldsComponent,
+    FormSectionComponent,
+    FormNavigationBtnsComponent,
+  ],
   templateUrl: './form-establishment.component.html',
-  styleUrl: './form-establishment.component.scss'
+  styleUrl: './form-establishment.component.scss',
 })
-export class FormEstablishmentComponent implements OnInit{
-  
+export class FormEstablishmentComponent implements OnInit {
   private fb = inject(FormBuilder);
   private formWizardService = inject(FormWizardService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
   // En caso que se le de un establecimiento se renderiza como modificación
-  isEditMode : boolean = false;
-  
-  establishmentForm : FormGroup = this.fb.group({
-    /* Top Form */
-    name_employer : [ '' , [ Validators.required , Validators.minLength(2) ] ],
-    last_name_employer : [ '' , [ Validators.required , Validators.minLength(2) ] ], 
-    cuit_employer : [ '' , [ Validators.required , Validators.minLength(11) ,Validators.maxLength(13), Validators.pattern(FormUtils.cuitPattern) ] ],
-    same_as_contact_person : [ false ],
-    /* Middle Form */ 
-    id_establishment : [ '' , [ Validators.required ] ],
-    declaration_year : [ '' , [ Validators.required ] ],
-    presentation_type : [ '' , [ ] ],
-    name_employer_responsible : [ '' , [ Validators.minLength(2) ] ],
-    last_name_employer_responsible : [ '' , [ Validators.minLength(2) ] ], 
-    cuit_employer_responsible : [ '' , [ Validators.minLength(11) ,Validators.maxLength(13), Validators.pattern(FormUtils.cuitPattern) ] ],
-    contact_phone_establishment : [ '' , [ Validators.required, Validators.pattern(FormUtils.phonePattern) ] ],
-    contact_email_establishment : [ '' , [ Validators.required, Validators.pattern(FormUtils.emailPattern) ] ],
-    /* Bottom Form */
-    cuit_security_responsible : [ '' , [ Validators.required, Validators.minLength(11) ,Validators.maxLength(13), Validators.pattern(FormUtils.cuitPattern) ] ],
-    name_security_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    last_name_security_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    representation_type_security_responsible : [ '' , [ Validators.required ] ],
-    employment_type_security_responsible : [ '' , [ Validators.required ] ],
-    professional_license_security_responsible : [ '' , [ Validators.required ] ],
-    hourse_worked_security_responsible : [ '' , [ Validators.required , Validators.min(1) , Validators.max(744) ] ],
+  isEditMode: boolean = false;
 
-    cuit_occupational_medicine_responsible : [ '' , [ Validators.required, Validators.minLength(11) ,Validators.maxLength(13), Validators.pattern(FormUtils.cuitPattern) ] ],
-    name_occupational_medicine_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    last_name_occupational_medicine_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    representation_type_occupational_medicine_responsible : [ '' , [ Validators.required ] ],
-    employment_type_occupational_medicine_responsible : [ '' , [ Validators.required ] ],
-    professional_license_occupational_medicine_responsible : [ '' , [ Validators.required ] ],
-    hourse_worked_occupational_medicine_responsible : [ '' , [ Validators.required , Validators.min(1) , Validators.max(744) ] ],
-  
-    cuit_data_responsible : [ '' , [ Validators.required, Validators.minLength(11), Validators.maxLength(13), Validators.pattern(FormUtils.cuitPattern) ] ],
-    name_data_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    last_name_data_responsible : [ '' , [ Validators.required, Validators.minLength(2) ] ],
-    representation_type_data_responsible : [ '' , [ Validators.required ] ],
-    employment_type_data_responsible : [ '' , [ Validators.required ] ],
-  }); 
+  establishmentForm: FormGroup = this.fb.group({
+    /* Top Form */
+    name_employer: ['', [Validators.required, Validators.minLength(2)]],
+    last_name_employer: ['', [Validators.required, Validators.minLength(2)]],
+    cuit_employer: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(13),
+        Validators.pattern(FormUtils.cuitPattern),
+      ],
+    ],
+    same_as_contact_person: [false],
+    /* Middle Form */
+    id_establishment: ['', [Validators.required]],
+    declaration_year: ['', [Validators.required]],
+    presentation_type: ['', []],
+    name_employer_responsible: ['', [Validators.minLength(2)]],
+    last_name_employer_responsible: ['', [Validators.minLength(2)]],
+    cuit_employer_responsible: [
+      '',
+      [
+        Validators.minLength(11),
+        Validators.maxLength(13),
+        Validators.pattern(FormUtils.cuitPattern),
+      ],
+    ],
+    contact_phone_establishment: [
+      '',
+      [Validators.required, Validators.pattern(FormUtils.phonePattern)],
+    ],
+    contact_email_establishment: [
+      '',
+      [Validators.required, Validators.pattern(FormUtils.emailPattern)],
+    ],
+    /* Bottom Form */
+    cuit_security_responsible: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(13),
+        Validators.pattern(FormUtils.cuitPattern),
+      ],
+    ],
+    name_security_responsible: [
+      '',
+      [Validators.required, Validators.minLength(2)],
+    ],
+    last_name_security_responsible: [
+      '',
+      [Validators.required, Validators.minLength(2)],
+    ],
+    representation_type_security_responsible: ['', [Validators.required]],
+    employment_type_security_responsible: ['', [Validators.required]],
+    professional_license_security_responsible: ['', [Validators.required]],
+    hourse_worked_security_responsible: [
+      '',
+      [Validators.required, Validators.min(1), Validators.max(744)],
+    ],
+
+    cuit_occupational_medicine_responsible: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(13),
+        Validators.pattern(FormUtils.cuitPattern),
+      ],
+    ],
+    name_occupational_medicine_responsible: [
+      '',
+      [Validators.required, Validators.minLength(2)],
+    ],
+    last_name_occupational_medicine_responsible: [
+      '',
+      [Validators.required, Validators.minLength(2)],
+    ],
+    representation_type_occupational_medicine_responsible: [
+      '',
+      [Validators.required],
+    ],
+    employment_type_occupational_medicine_responsible: [
+      '',
+      [Validators.required],
+    ],
+    professional_license_occupational_medicine_responsible: [
+      '',
+      [Validators.required],
+    ],
+    hourse_worked_occupational_medicine_responsible: [
+      '',
+      [Validators.required, Validators.min(1), Validators.max(744)],
+    ],
+
+    cuit_data_responsible: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(13),
+        Validators.pattern(FormUtils.cuitPattern),
+      ],
+    ],
+    name_data_responsible: ['', [Validators.required, Validators.minLength(2)]],
+    last_name_data_responsible: [
+      '',
+      [Validators.required, Validators.minLength(2)],
+    ],
+    representation_type_data_responsible: ['', [Validators.required]],
+    employment_type_data_responsible: ['', [Validators.required]],
+  });
 
   ngOnInit(): void {
     const savedData = this.formWizardService.getStep('establishment');
-    if( savedData ){
-      this.establishmentForm.patchValue( savedData );
+    if (savedData) {
+      this.establishmentForm.patchValue(savedData);
     }
   }
 
   get presentation_type() {
-    return this.isEditMode ? 'Modificación de presentación' : 'Presentación Anual' 
+    return this.isEditMode
+      ? 'Modificación de presentación'
+      : 'Presentación Anual';
   }
 
-  public getJobTitleOptions() : FilterOption[]{
+  public getJobTitleOptions(): FilterOption[] {
     return jobTitleOptions;
-  };
+  }
 
-  public getEmploymentTypeOptions() : FilterOption[] {
+  public getEmploymentTypeOptions(): FilterOption[] {
     return employmentTypeOptions;
   }
 
   public onSaveForm(): void {
-    this.formWizardService.saveStep('establishment', this.establishmentForm.value);
+    this.formWizardService.saveStep(
+      'establishment',
+      this.establishmentForm.value,
+    );
+  }
+
+  public onClearForm(): void {
+    this.establishmentForm.patchValue({
+      name_employer: '',
+      last_name_employer: '',
+      cuit_employer: '',
+      same_as_contact_person: false,
+      id_establishment: '',
+      declaration_year: '',
+      presentation_type: '',
+      name_employer_responsible: '',
+      last_name_employer_responsible: '',
+      cuit_employer_responsible: '',
+      contact_phone_establishment: '',
+      contact_email_establishment: '',
+      cuit_security_responsible: '',
+      name_security_responsible: '',
+      last_name_security_responsible: '',
+      representation_type_security_responsible: '',
+      employment_type_security_responsible: '',
+      professional_license_security_responsible: '',
+      hourse_worked_security_responsible: '',
+      cuit_occupational_medicine_responsible: '',
+      name_occupational_medicine_responsible: '',
+      last_name_occupational_medicine_responsible: '',
+      representation_type_occupational_medicine_responsible: '',
+      employment_type_occupational_medicine_responsible: '',
+      professional_license_occupational_medicine_responsible: '',
+      hourse_worked_occupational_medicine_responsible: '',
+      cuit_data_responsible: '',
+      name_data_responsible: '',
+      last_name_data_responsible: '',
+      representation_type_data_responsible: '',
+      employment_type_data_responsible: '',
+    });
+    this.establishmentForm.markAsPristine();
+    this.establishmentForm.markAsUntouched();
+    this.formWizardService.saveStep(
+      'establishment',
+      undefined,
+    );
   }
 
   public onNext(): void {
@@ -114,12 +245,14 @@ export class FormEstablishmentComponent implements OnInit{
       return;
     }
 
-    this.formWizardService.saveStep('establishment', this.establishmentForm.value);
+    this.formWizardService.saveStep(
+      'establishment',
+      this.establishmentForm.value,
+    );
     this.router.navigate(['../sectores-puestos'], { relativeTo: this.route });
   }
 
   public onSubmit(): void {
     this.onNext();
   }
-
 }

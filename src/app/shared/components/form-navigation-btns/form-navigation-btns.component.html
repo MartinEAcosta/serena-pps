@@ -1,4 +1,12 @@
 <div class="container-actions">
+   <div class="form-clear-action">
+      <app-btn-basic 
+         [label]="'Limpiar formulario'" 
+         [variant]="'danger'" 
+         [type]="'button'"
+         (clicked)="remove.emit()" 
+      />
+   </div>
    <app-btn-basic [label]="'Guardar'" [variant]="'secondary'" [type]="'button'" (clicked)="save.emit()" />
    <app-btn-basic [label]="nextLabel" [variant]="'success'" [type]="'submit'" [disabled]="nextDisabled" (clicked)="next.emit()" />
 </div>

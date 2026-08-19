@@ -13,9 +13,11 @@ export class SelectComponent {
   options = input.required<FilterOption[]>();
   placeholder = input('Seleccionar');
   selected = input<FilterOption | null>();
+  disabled = input(false);
   @Output() selectedChange = new EventEmitter<FilterOption>();
 
   public onClick( item : FilterOption ) : void {
+    if (this.disabled()) return;
     this.selectedChange.emit( item );
   }
 

@@ -5,11 +5,11 @@ import { CarcinogenicAgentsLayoutComponent } from './resolucion81-2019/pages/lay
 import { FormEstablishmentComponent } from './resolucion81-2019/pages/form-establishment/form-establishment.component';
 import { FormWorkStructureComponent } from './resolucion81-2019/pages/form-work-structure/form-work-structure.component';
 import { FormCarcinogenicAgentsComponent } from './resolucion81-2019/pages/form-carcinogenic-agents/form-carcinogenic-agents.component';
+import { wizardStepGuard } from './wizard/wizard.step.guard';
 
 export const routes: Routes = [
-
-  { 
-    path: '' , 
+  {
+    path: '',
     component: HomeComponent,
   },
   {
@@ -19,28 +19,33 @@ export const routes: Routes = [
   {
     path: 'resolucion-cancerigenos',
     component: CarcinogenicAgentsLayoutComponent,
-    children : [
+    children: [
       {
         path: 'establecimiento',
-        component : FormEstablishmentComponent
+        component: FormEstablishmentComponent,
+        data: { stepKey: 'establishment' },
+        canActivate: [wizardStepGuard],
       },
       {
         path: 'sectores-puestos',
-        component: FormWorkStructureComponent
+        component: FormWorkStructureComponent,
+        data: { stepKey: 'workStructure' },
+        canActivate: [wizardStepGuard],
       },
       {
         path: 'sustancias-cancerigenas',
-        component: FormCarcinogenicAgentsComponent
+        component: FormCarcinogenicAgentsComponent,
+        data: { stepKey: 'carcinogenicAgents' },
+        canActivate: [wizardStepGuard],
       },
       {
         path: '**',
-        redirectTo : 'establecimiento'
-      }
-    ]
+        redirectTo: 'establecimiento',
+      },
+    ],
   },
   {
     path: '**',
-    redirectTo: ''
-  }
-
+    redirectTo: '',
+  },
 ];

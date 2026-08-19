@@ -1,5 +1,22 @@
 @use '@variables' as v;
 
-.reserved-space{
+.form-select-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.reserved-space {
     min-height: 1rem;
+}
+
+.disabled-hint {
+    display: block;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: v.$black-custom-light;
+}
+
+.form-select-field.is-disabled {
+    opacity: 0.6;
 }

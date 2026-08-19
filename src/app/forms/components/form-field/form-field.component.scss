@@ -33,6 +33,15 @@
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.input:disabled {
+    background-color: v.$white-custom-dark;
+    border-color: v.$white-custom-dark;
+    color: v.$black-custom-light;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
 .input::-webkit-inner-spin-button,
 .input::-webkit-outer-spin-button {
     appearance: textfield;
@@ -40,6 +49,12 @@
     -moz-appearance: textfield;
 }
 
+.disabled-hint {
+    display: block;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: v.$black-custom-light;
+}
 
 .input-presentation{
     text-align: center;

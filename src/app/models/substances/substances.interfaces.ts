@@ -20,9 +20,41 @@ export interface SubstanceData {
   replacement_studies_analysis: boolean;
   replacement_studies_analysis_desc: string;
   has_special_license: boolean;
+  preventive_measure : string;
 }
 
 export interface SubstanceDataListItem extends Omit<SubstanceData, 'id'>, ActionableListItem {}
+
+export const PreventiveMeasures : SelectOption[] = [
+  {
+    label: 'Política Documentada del Sistema de Gestión de Seguridad, Prevención y Salud Ocupacional',
+    value: '1',
+  },
+  {
+    label: 'Existencia del Servicio de Higiene y Seguridad del Trabajo y registros respectivos',
+    value: '2',
+  },
+  {
+    label: 'Existencia del Servicio de Medicina Laboral y registros respectivos',
+    value: '3',
+  },
+  {
+    label: 'Relevamiento General de Riesgos Laborales actualizado',
+    value: '4',
+  },
+  {
+    label: 'Documental actualizada de Análisis de Riesgos por puesto de trabajo con medidas preventivas. Normas de procedimiento de trabajo seguro actualizadas, de corresponder',
+    value: '5',
+  },
+  {
+    label: 'Nómina de trabajadores expuestos a cada uno de los agentes de riesgo (N.T.E.), actualizada',
+    value: '6',
+  },
+  {
+    label: 'Programa de Seguridad para las Obras Activas',
+    value: '7',
+  },
+];
 
 
 export const SubstanceCodes: SelectOption[] = [

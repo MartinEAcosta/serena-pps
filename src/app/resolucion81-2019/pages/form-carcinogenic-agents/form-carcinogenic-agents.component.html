@@ -39,16 +39,38 @@
                         [form]="carcinogenicAgentForm"
                     />
                 </div>
+                @if (showUsageOriginOthersField()) {
+                    <div class="form-field">
+                        <app-form-field 
+                            [labelText]="'Especificar uso/origen'"
+                            [info]="'Detallar el uso u origen de la sustancia.'"
+                            [placeholder]="'Especificar'"
+                            [prefix]="'usage_origin_others'"
+                            [form]="carcinogenicAgentForm"
+                        />
+                    </div>
+                }
                 <div class="form-field">
                     <app-form-select-field 
                         [labelText]="'Modo de empleo'"
-                        [info]="'.'"
+                        [info]="'Modo en el que se emplea la sustancia.'"
                         [options]="this.carcinogenicAgentsStore.employmentModeCodes" 
                         [placeholder]="'Seleccionar modo de empleo'"
                         [prefix]="'application_method'"
                         [form]="carcinogenicAgentForm"
                     />
                 </div>
+                @if (showApplicationMethodOthersField()) {
+                    <div class="form-field">
+                        <app-form-field 
+                            [labelText]="'Especificar modo de empleo'"
+                            [info]="'Detallar el modo de empleo de la sustancia.'"
+                            [placeholder]="'Especificar'"
+                            [prefix]="'application_method_others'"
+                            [form]="carcinogenicAgentForm"
+                        />
+                    </div>
+                }
                 <div class="form-field">
                     <app-form-field 
                         [labelText]="'Cantidad de sustancia anual'"
@@ -79,19 +101,29 @@
                         [form]="carcinogenicAgentForm"
                     />
                 </div>
+                <div class="form-field">
+                    <app-select-search 
+                        [labelText]="'Medida preventiva'"
+                        [info]="'Seleccionar la medida preventiva a la sustancia en el sector y puesto.'"
+                        [options]="this.carcinogenicAgentsStore.preventiveMeasures"
+                        [placeholder]="'Seleccionar medida preventiva'"
+                        [prefix]="'preventive_measure'"
+                        [form]="carcinogenicAgentForm"
+                    />
+                </div>
             </div>
             <div class="form-questions" container-inputs>
                 <label for="" class="subtitle">Gestión del riesgo</label>
                 <div class="container-question">
-                    <p class="">¿Se suministra información sobre los riesgos que implican a su salud el trabajar con la sustancia?</p>
-                    <div class="boolean-indicator">
-                        <app-boolean-indicator  [form]="carcinogenicAgentForm" [prefix]="'risk_informed'" />
-                    </div>
-                </div>
-                <div class="container-question">
                     <p>¿Se capacita al trabajador sobre los riesgos que implica para su salud la sustancia utilizada?</p>
                     <div class="boolean-indicator">
                         <app-boolean-indicator [form]="carcinogenicAgentForm" [prefix]="'risk_training'" />
+                    </div>
+                </div>
+                <div class="container-question">
+                    <p class="">¿Se suministra información sobre los riesgos que implican a su salud el trabajar con la sustancia?</p>
+                    <div class="boolean-indicator">
+                        <app-boolean-indicator  [form]="carcinogenicAgentForm" [prefix]="'risk_informed'" />
                     </div>
                 </div>
                 <div class="container-question">
@@ -100,7 +132,7 @@
                         <app-boolean-indicator [form]="carcinogenicAgentForm" [prefix]="'replacement_studies_analysis'" />
                     </div>
                 </div>
-                @if( riskInformed ){
+                @if( replacementStudiesAnalysis ){
                     <div class="form-field">
                         <app-form-field 
                             [labelText]="'Información sobre los estudios realizados'"
@@ -129,13 +161,14 @@
                     [arraySignal]="substanceListItems()"
                     [selectedItem]="selectedSubstanceItem()"
                     [placeholder]="'Todavía no agregaste ninguna sustancia.'"
-                    (removeItem)="this.carcinogenicAgentsStore.onRemoveSubstance($event.id)"
+                    (removeItem)="this.onRemoveSubstance($event.id)"
                     (visualizeItem)="this.onSelectSubstance($event.id)"
                 />
             </div>
             <app-add-button (clicked)="this.addSubstance()" [text]="'Añadir sustancia'" />
         </app-form-section>
         <app-form-navigation-btns
+            (remove)="onClearForm()"
             [nextLabel]="submitLabel"
             [nextDisabled]="submitState() !== 'idle'"
             (save)="onSaveForm()"

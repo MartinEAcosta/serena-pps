@@ -7,6 +7,10 @@
             [placeholder]="placeholder"
         >
     <div class="reserved-space">
-        <app-label-error [control]="control!" />
+        @if (isDisabled) {
+            <span class="disabled-hint">{{ disabledHint }}</span>
+        } @else {
+            <app-label-error [control]="control!" />
+        }
     </div>
 </div>

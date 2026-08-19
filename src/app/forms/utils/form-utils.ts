@@ -24,11 +24,13 @@ export class FormUtils {
                 case 'min':
                     return `El valor minimo es de ${ errors['min'].min }.`;
 
+                case 'max':
+                    return `El valor maximo es de ${ errors['max'].max }.`;
+                
                 case 'email':
                     return `El contenido del campo no luce como un email.`;
                 
                 case 'pattern':
-                    console.log(errors['pattern'])
                     const errorPatternStr = errors['pattern'].requiredPattern.toString();
                     if( errorPatternStr === FormUtils.notOnlySpacesPattern.toString() ) {
                         return `El campo no puede contener espacios.`;
@@ -40,7 +42,6 @@ export class FormUtils {
                         return `El contenido del campo no luce como un email.`;
                     }
                     else if( errorPatternStr === FormUtils.cuitPattern.toString() ){
-                        console.log('e')
                         return `El contenido del campo no luce como un CUIT 'XX-XXXXXXXX-X' o 'XXXXXXXXXXX'.`;
                     }   
                     return `Error de validación personalizada.`;    

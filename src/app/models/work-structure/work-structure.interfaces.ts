@@ -3,7 +3,6 @@ export interface JobPositionData {
   id?: string;
   sector_name: string;
   sector_activity_code: string | number;
-  sector_activity_additional_description: string;
 
   job_position: string;
   job_activity_code: string | number;

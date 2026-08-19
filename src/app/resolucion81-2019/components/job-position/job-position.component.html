@@ -8,11 +8,6 @@
                 [info]="'Actividad relacionada al sector declarado.'" [options]="sectorActivityCodes"
                 [prefix]="'sector_activity_code'" [placeholder]="'Seleccionar actividad'" [form]="form" />
         </div>
-        <app-form-field [labelText]="'Descripción adicional del sector'"
-            [info]="'Descripción adicional del sector en caso de que se lo necesite.'"
-            [prefix]="'sector_activity_additional_description'" [placeholder]="'Encargado de producción'"
-            [form]="form" 
-        />
     </div>
     <div class="form-section-content middle-form" container-inputs>
         <app-form-field [labelText]="'Nombre del Puesto'" [info]="'Nombre del puesto expuesto a un agente cancerigeno.'"
@@ -22,8 +17,8 @@
                 [info]="'Actividad relacionada al puesto declarado.'" [options]="jobActivityCodes"
                 [prefix]="'job_activity_code'" [placeholder]="'Seleccionar actividad'" [form]="form" />
         </div>
-        <app-form-field [labelText]="'Descripción adicional del puesto'"
-            [info]="'Descripción adicional del puesto en caso de que se lo necesite.'"
+        <app-form-field [labelText]="'Descripción de actividad'"
+            [info]="'Descripción de la actividad del puesto en caso de que se lo necesite.'"
             [prefix]="'job_activity_additional_description'" [placeholder]="'Ensamblaje de modulos electronicos'"
             [form]="form" />
     </div>

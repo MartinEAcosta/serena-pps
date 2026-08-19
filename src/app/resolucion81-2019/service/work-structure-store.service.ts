@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { JobPositionData } from '@models/work-structure/work-structure.interfaces';
 import { FilterOption } from '../../utils/filters/filter.interface';
-import { FormWizardService } from '../../form-wizard.service';
+import { FormWizardService } from '../../wizard/form-wizard.service';
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +31,11 @@ export class WorkStructureStoreService {
   }
 
   public clearJobPositionSelected(): void {
+    this._selectedId.set(null);
+  }
+
+  public clearAllJobPositions(): void {
+    this._jobPositions.set([]);
     this._selectedId.set(null);
   }
 

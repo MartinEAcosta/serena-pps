@@ -19,10 +19,14 @@ export class FormFieldComponent {
   @Input({ required : true }) prefix! : string;
   @Input({ required : true }) form! : FormGroup;
   @Input() type! : string;
+  @Input() disabledHint: string = 'Campo no disponible';
 
   get control( ) {
-    // console.log('input-'+ this.prefix)
     return this.form.get(this.prefix);
+  }
+
+  get isDisabled(): boolean {
+    return this.control?.disabled ?? false;
   }
   
 }

@@ -5,7 +5,12 @@
     [selected]="selectedOption"
     [placeholder]="placeholder" 
     (selectedChange)="onSelectedChange($event)"
+    [disabled]="isDisabled"
 />
 <div class="reserved-space">
-    <app-label-error [control]="form.get(prefix)!" />
+    @if (isDisabled) {
+        <span class="disabled-hint">{{ disabledHint }}</span>
+    } @else {
+        <app-label-error [control]="form.get(prefix)!" />
+    }
 </div>

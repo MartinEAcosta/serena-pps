@@ -6,16 +6,17 @@ import {
   SubstanceData,
   SubstanceOriginCodes,
   UnitsOfQuantity,
+  PreventiveMeasures
 } from '@models/substances/substances.interfaces';
 import { SelectOption } from '../../forms/models/form.interfaces';
 import { FilterOption } from '../../utils/filters/filter.interface';
-
 
 const substanceCodes: SelectOption[] = SubstanceCodes;
 const substanceOriginCodes: SelectOption[] = SubstanceOriginCodes;
 const unitsOfQuantity: SelectOption[] = UnitsOfQuantity;
 const protectionElements: SelectOption[] = ProtectionElements;
 const employmentModeCodes: SelectOption[] = EmploymentModeCodes;
+const preventiveMeasures: SelectOption[] = PreventiveMeasures; 
 
 @Injectable({
   providedIn: 'root',
@@ -35,12 +36,31 @@ export class CarcinogenicAgentsStoreService {
     this._selectedId.set(null);
   }
 
+  public clearAllSubstances(): void {
+    this._substances.set([]);
+    this._selectedId.set(null);
+  }
+
   public selectSubstance(id: string): void {
     this._selectedId.set(id);
   }
 
   public onRemoveSubstance(id: string): void {
     this._substances.update((items) => items.filter((x) => x.id !== id));
+  }
+
+  public removeSubstancesByJobPosition(jobPositionId: string): void {
+    this._substances.update((current) =>
+      current.filter(
+        (s) => s.job_position_relation?.id !== jobPositionId
+      )
+    );
+
+    // Si la sustancia seleccionada actualmente pertenecía al puesto eliminado, limpiarla
+    const selected = this.selectedSubstance();
+    if (selected?.job_position_relation?.id === jobPositionId) {
+      this._selectedId.set(null);
+    }
   }
 
   public onAddSubstance(item: SubstanceData): void {
@@ -80,5 +100,8 @@ export class CarcinogenicAgentsStoreService {
   }
   get employmentModeCodes(): FilterOption[] {
     return employmentModeCodes;
+  }
+  get preventiveMeasures(): FilterOption[] {
+    return preventiveMeasures;
   }
 }

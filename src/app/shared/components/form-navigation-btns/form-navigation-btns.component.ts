@@ -11,6 +11,7 @@ export class FormNavigationBtnsComponent {
 
   @Input() nextLabel: string = 'Siguiente';
   @Input() nextDisabled: boolean = false;
+  @Output() remove = new EventEmitter<void>();
   @Output() save = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
 }

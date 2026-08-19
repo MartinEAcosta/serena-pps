@@ -84,8 +84,8 @@
     opacity: 0;
     margin-top: 0.5rem;
     transition:
-        opacity 0.2s ease 0.4s,      // espera 0.4s, LUEGO anima 0.5s hacia opacity:0
-        visibility 0.2s ease 0.4s;   // mismo delay para visibility
+        opacity 0.2s ease 0.4s,
+        visibility 0.2s ease 0.4s;
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.7);
@@ -96,16 +96,13 @@
     text-align: center;
     appearance: none;
     list-style: none;
-    margin: 0; /* 3. Eliminamos el margen de aquí para quitar el hueco de arriba */
+    margin: 0;
     padding: 0;
     flex-direction: column;
-
-    /* --- CONTROL DEL SCROLL --- */
     max-height: 150px;       
     overflow-y: auto;
-    scrollbar-width: thin; // Firefox
+    scrollbar-width: thin;
     scrollbar-color: v.$accent-color v.$black-custom;
-
 }
 
 .option-filter{
@@ -119,4 +116,15 @@
 .option-filter:hover{
     background-color: v.$accent-color; 
     cursor: pointer;
+}
+
+// --- Estado disabled ---
+.container-filter-select.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none; // bloquea el :hover que abre el dropdown, y los clicks en las opciones
+
+    .down-icon {
+        fill: v.$black-custom-light;
+    }
 }

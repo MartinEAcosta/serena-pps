@@ -28,14 +28,6 @@ export class SelectSearchComponent {
   constructor() {}
 
   ngOnInit(): void {
-    // const currentActivityCode = this.form.get(this.prefix)?.value;
-
-    // if (currentActivityCode !== undefined && currentActivityCode !== null && currentActivityCode !== '') {
-    //   const found = this.options.find(opt => opt.value === currentActivityCode || opt.label === currentActivityCode);
-    //   if (found) {
-    //     this.selectedOption.set(found);
-    //   }
-    // }
   }
 
   get filteredOptions () : FilterOption[] {
@@ -49,6 +41,7 @@ export class SelectSearchComponent {
   }
 
   public close () : void {
+    this.searchText.set('');
     this.isOpen.set(false);
   }
 
@@ -59,7 +52,6 @@ export class SelectSearchComponent {
 
   get selectedOption(): FilterOption | null {
     const value = this.form.get(this.prefix)?.value;
-
     return this.options.find(o => o.value === value) ?? null;
   }
 

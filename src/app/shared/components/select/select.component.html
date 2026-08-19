@@ -1,5 +1,5 @@
 <div class="container-filter">
-    <div class="container-filter-select">
+    <div class="container-filter-select" [class.is-disabled]="disabled()" [attr.aria-disabled]="disabled()">
         <div class="container-select">
             <div class="option-default">
                 <p class="option-default-selected">
@@ -20,4 +20,4 @@
             </div>
         </div>
     </div>
-</div>  
+</div>

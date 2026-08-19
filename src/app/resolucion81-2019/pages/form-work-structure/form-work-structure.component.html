@@ -64,6 +64,7 @@
             </div>
         </app-form-section>
         <app-form-navigation-btns 
+            (remove)="onClearForm()"
             (next)="onNext()"
             (save)="onSaveForm()"
         />

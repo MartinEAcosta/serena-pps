@@ -19,14 +19,19 @@ export class FormSelectFieldComponent {
   @Input({ required : true }) prefix! : string;
   @Input({ required : true }) placeholder! : string;
   @Input({ required : true }) form! : FormGroup;
+  @Input() disabledHint: string = 'Campo no disponible';
 
   get selectedOption(): FilterOption | null {
     const value = this.form.get(this.prefix)?.value;
-
     return this.options.find(o => o.value === value) ?? null;
   }
 
+  get isDisabled(): boolean {
+    return this.form.get(this.prefix)?.disabled ?? false;
+  }
+
   public onSelectedChange ( option : FilterOption ) {
+    if (this.isDisabled) return;
     this.form.get(this.prefix)?.setValue(option.value);
   }
 }

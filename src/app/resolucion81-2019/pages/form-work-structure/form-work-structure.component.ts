@@ -1,16 +1,17 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormSectionComponent } from "../../../forms/components/form-section/form-section.component";
 import { AddButtonComponent } from "@shared/components/add-button/add-button.component";
 import { JobPositionComponent } from "../../components/job-position/job-position.component";
 import { FormNavigationBtnsComponent } from "@shared/components/form-navigation-btns/form-navigation-btns.component";
-import { FormWizardService } from '../../../form-wizard.service';
+import { FormWizardService } from '../../../wizard/form-wizard.service';
 import { BtnBasicComponent } from "@shared/components/btn-basic/btn-basic.component";
 import { ActionableListComponent } from "@shared/components/actionable-list/actionable-list.component";
-import { JobPositionData, JobPositionListItem, JobPositionRelationListItem } from '@models/work-structure/work-structure.interfaces';
+import { JobPositionData, JobPositionListItem } from '@models/work-structure/work-structure.interfaces';
 import { LabelErrorComponent } from "@shared/components/label-error/label-error.component";
 import { WorkStructureStoreService } from '../../service/work-structure-store.service';
+import { CarcinogenicAgentsStoreService } from '../../service/carcinogenic-agents-store.service';
 
 @Component({
   selector: 'app-form-work-structure',
@@ -25,6 +26,7 @@ export class FormWorkStructureComponent implements OnInit{
   private fb = inject(FormBuilder);
   private wizardService = inject(FormWizardService);
   workStructureStore = inject(WorkStructureStoreService);
+  carcinogenicAgentsStore = inject(CarcinogenicAgentsStoreService);
 
   workStructureForm : FormGroup = this.fb.group({
     own_administrative_workers_count: [ '', [ Validators.min(0)] ],
@@ -87,7 +89,6 @@ export class FormWorkStructureComponent implements OnInit{
     this.jobPositionForm.patchValue({
       sector_name: item.sector_name,
       sector_activity_code: item.sector_activity_code,
-      sector_activity_additional_description: item.sector_activity_additional_description,
 
       job_position: item.job_position,
       job_activity_code: item.job_activity_code,
@@ -99,7 +100,6 @@ export class FormWorkStructureComponent implements OnInit{
     return this.fb.group({
       sector_name: ['', [Validators.required , Validators.minLength(3)]],
       sector_activity_code: ['', [ Validators.required ]],
-      sector_activity_additional_description: ['', ],
 
       job_position: ['', [ Validators.required, Validators.minLength(3)]],
       job_activity_code: ['', [ Validators.required ]],
@@ -113,7 +113,6 @@ export class FormWorkStructureComponent implements OnInit{
       
       sector_name: dto.sector_name!,
       sector_activity_code: dto.sector_activity_code ?? '',
-      sector_activity_additional_description: dto.sector_activity_additional_description ?? '',
 
       job_position: dto.job_position!,
       job_activity_code: dto.job_activity_code ?? '',
@@ -126,13 +125,23 @@ export class FormWorkStructureComponent implements OnInit{
     this.jobPositionForm.patchValue({
       sector_name : '',
       sector_activity_code : '',
-      sector_activity_description : '',
       job_position : '',
       job_activity_code : '',
-      job_activity_description: '',
+      job_activity_additional_description: '',
     });
     this.jobPositionForm.markAsPristine();
     this.jobPositionForm.markAsUntouched();
+  }
+
+  public resetWorkStructureForm(): void {
+    this.workStructureForm.patchValue({
+      own_administrative_workers_count: '',
+      own_production_workers_count: '',
+      temporary_service_administrative_workers_count: '',
+      temporary_service_production_workers_count: '',
+    });
+    this.workStructureForm.markAsPristine();
+    this.workStructureForm.markAsUntouched();
   }
 
   public addJobPosition(): void {
@@ -155,13 +164,30 @@ export class FormWorkStructureComponent implements OnInit{
       job_positions: this.workStructureStore.jobPositions(),
     });
   }
+
+  public onClearForm() : void {
+    this.resetWorkStructureForm();
+    this.resetJobPositionForm();
+    this.workStructureStore.clearAllJobPositions();
+    this.onSaveForm();
+  }
   
-  public onRemoveJobPosition( itemId : string ): void {
-    if( this.workStructureStore.selectedJobPosition()?.id === itemId){
+  public onRemoveJobPosition(itemId: string): void {
+    if (this.workStructureStore.selectedJobPosition()?.id === itemId) {
       this.workStructureStore.clearJobPositionSelected();
-      this.patchValuesJobPositionForm( this.buildJobPositionForm().value );
+      this.patchValuesJobPositionForm(this.buildJobPositionForm().value);
     }
-    this.workStructureStore.onRemoveJobPosition( itemId );
+    this.workStructureStore.onRemoveJobPosition(itemId);
+
+    this.carcinogenicAgentsStore.removeSubstancesByJobPosition(itemId);
+
+    this.onSaveForm();
+    this.wizardService.saveStep(
+      'carcinogenicAgents',
+      this.carcinogenicAgentsStore.substances().length > 0
+        ? this.carcinogenicAgentsStore.substances()
+        : undefined
+    );
   }
   
   public onNext(): void {
@@ -171,7 +197,7 @@ export class FormWorkStructureComponent implements OnInit{
       'temporary_service_administrative_workers_count',
       'temporary_service_production_workers_count',
     ].every(field => this.workStructureForm.get(field)!.valid);
-
+    console.log(this.workStructureStore.jobPositions())
     if (!mainFieldsValid) {
       this.workStructureForm.markAllAsTouched();
       return;
@@ -179,9 +205,7 @@ export class FormWorkStructureComponent implements OnInit{
     if (this.workStructureStore.jobPositions().length === 0) {
       return; // regla de negocio: debe haber al menos un sector-puesto declarado
     }
-    this.wizardService.saveStep('workStructure', {
-      ...this.workStructureForm.value,
-    });
+    this.onSaveForm();
     this.router.navigate(['../sustancias-cancerigenas'], { relativeTo: this.route });
   }
 
