@@ -72,6 +72,14 @@ src/
   styles.scss
 ```
 
+## Deploy / GitHub Pages
+
+El sitio se publica automáticamente en GitHub Pages mediante GitHub Actions (`.github/workflows/deploy-pages.yml`): cada push a `main` compila la app en producción con `--base-href /serena-pps/` y publica `dist/serena-mockup/browser`.
+
+URL: `https://MartinEAcosta.github.io/serena-pps/`
+
+> Requiere que en el repo esté activado **Settings → Pages → Build and deployment → Source: GitHub Actions** (paso único, manual, ya que no se configura desde código).
+
 ## Recursos adicionales
 
 - [Documentación de Angular CLI](https://angular.dev/tools/cli)
