@@ -1,60 +1,77 @@
-# serena-pps
-# SerenaMockup
+# Serena Mockup
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Mockup/prototipo frontend construido con **Angular 19** (standalone components). No tiene backend real: todo el estado de los formularios y wizards se maneja en memoria usando **Angular Signals**. No requiere base de datos, variables de entorno ni servicios externos para funcionar.
 
-## Development server
+## Requisitos previos
 
-To start a local development server, run:
+- **Node.js**: se recomienda una versión LTS compatible con Angular 19 (Node `20.x` o `22.x`).
+- **npm**: incluido con Node.js (el repo usa `package-lock.json`, no `yarn`/`pnpm`).
+- **Angular CLI** (opcional): puede instalarse global con `npm install -g @angular/cli`, o usar `npx ng` sin instalación global.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación
 
 ```bash
-ng generate component component-name
+git clone <url-del-repositorio>
+cd serena-mockup
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Levantar en desarrollo
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Equivale a `ng serve`. La app queda disponible en `http://localhost:4200/` y se recarga automáticamente al guardar cambios.
 
-To build the project run:
+## Build de producción
 
 ```bash
-ng build
+npm run build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Genera los artefactos en `dist/serena-mockup`.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Build en modo watch (desarrollo)
 
 ```bash
-ng test
+npm run watch
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Tests unitarios
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Ejecuta los tests con Karma + Jasmine.
 
-## Additional Resources
+> **Nota:** actualmente el proyecto no tiene lint (ESLint) ni tests end-to-end configurados.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Variables de entorno
+
+Este proyecto **no requiere** archivo `.env` ni ninguna otra configuración externa. Es un mockup autocontenido: no hay llamadas a APIs externas ni conexión a base de datos.
+
+## Estructura del proyecto
+
+```
+src/
+  app/
+    forms/                 # Componentes, modelos y utilidades de formularios
+    models/                 # Modelos de dominio (establecimiento, recursos, sustancias, estructura de trabajo)
+    resolucion81-2019/      # Feature: componentes, páginas y servicios propios de Resolución 81/2019
+    shared/                 # Componentes, campos y servicios compartidos entre features
+    utils/                  # Utilidades generales (códigos de actividad, filtros)
+    wizard/                 # Servicio y guard del wizard multi-paso (form-wizard.service.ts)
+    app.component.*         # Componente raíz
+    app.config.ts           # Configuración/providers de la app
+    app.routes.ts           # Definición de rutas
+  assets/
+  index.html
+  main.ts
+  styles.scss
+```
+
+## Recursos adicionales
+
+- [Documentación de Angular CLI](https://angular.dev/tools/cli)
