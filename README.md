@@ -72,6 +72,14 @@ src/
   styles.scss
 ```
 
+## Cómo llegar al formulario de la Resolución 81/2019
+
+1. **Home**: al abrir la app (`/`) se carga la `HomeComponent`, con el carrusel y el header de la homepage.
+2. En el header, hacer **hover sobre el anchor "RECURSOS"** para desplegar el dropdown de navegación.
+3. Del dropdown, seleccionar **"TRÁMITES Y FORMULARIOS"**. Esto navega a `/recursos` (`ResourcesComponent`).
+4. En la página de Recursos, dentro del bloque "Resolución 81/2019", pulsar el botón **"Carga tu formulario aqui"**.
+5. Ese botón navega a `/resolucion-cancerigenos` (`CarcinogenicAgentsLayoutComponent`), donde arranca el wizard del formulario (pasos: `establecimiento` → `sectores-puestos` → `sustancias-cancerigenas`).
+
 ## Deploy / GitHub Pages
 
 El sitio se publica automáticamente en GitHub Pages mediante GitHub Actions (`.github/workflows/deploy-pages.yml`): cada push a `main` compila la app en producción con `--base-href /serena-pps/` y publica `dist/serena-mockup/browser`.
